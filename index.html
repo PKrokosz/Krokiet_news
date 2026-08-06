@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartBuyers — B2B Dropshipping Intelligence</title>
+  <meta name="description" content="AI-powered content hub. Automatycznie generowane artykuły SEO z RSS feedów. Newsy z branży e-commerce i AI.">
+  <meta property="og:title" content="SmartBuyers — B2B Dropshipping Intelligence">
+  <meta property="og:description" content="AI-powered content hub. Automatycznie generowane artykuły SEO z RSS feedów. Newsy z branży e-commerce i AI.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pkrokosz.github.io/smartbuyers/">
+  <meta name="twitter:card" content="summary">
+<style>
+:root{--accent:#159957;--accent-dark:#0f6e3f;--accent-light:#e6f5ee;--text:#111;--text-dim:#555;--text-muted:#888;--bg:#f5f5f0;--card-bg:#fff;--border:#ddd;--radius:6px;--shadow-sm:0 1px 3px rgba(0,0,0,.06);--shadow-md:0 4px 16px rgba(0,0,0,.08);--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;--font-mono:'SF Mono','Fira Code',Consolas,monospace;--max-w:1200px;--content-w:740px;--badge-tech:#e84d0e;--badge-reddit:#5461c8;--badge-blog:#159957;--badge-default:#636363}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.7;min-height:100vh}
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(245,245,240,.95);border-bottom:1px solid var(--border);padding:0 clamp(1rem,3vw,2rem)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;gap:clamp(.4rem,1.5vw,1.2rem);height:52px}
+.nav-logo{font-size:1.1rem;font-weight:800;color:var(--accent);text-decoration:none;letter-spacing:-.03em;margin-right:auto;text-transform:uppercase}
+.nav-link{font-size:.85rem;color:var(--text-dim);text-decoration:none;padding:.3rem .6rem;border-radius:4px;transition:color .2s,background .2s}
+.nav-link:hover{color:var(--accent);background:var(--accent-light)}
+.nav-link.active{color:var(--accent);font-weight:600}
+.nav-link.external{color:var(--accent)}
+.page-wrap{max-width:var(--max-w);margin:0 auto;padding:0 clamp(1rem,3vw,2rem)}
+.hero{background:linear-gradient(135deg,#0a3d25,#062818);color:#fff;padding:clamp(2.5rem,5vw,4rem) clamp(1rem,3vw,2rem);margin-bottom:clamp(1.5rem,3vw,2rem)}
+.hero-inner{max-width:var(--max-w);margin:0 auto}
+.hero-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.5);margin-bottom:.5rem}
+.hero h1{font-size:clamp(1.6rem,3.5vw,2.5rem);line-height:1.15;margin-bottom:.6rem;letter-spacing:-.02em;font-weight:800}
+.hero p{font-size:clamp(.9rem,1.3vw,1.05rem);color:rgba(255,255,255,.75);max-width:600px}
+.hero-line{width:50px;height:3px;background:var(--accent);margin-top:1rem;border-radius:2px}
+.hero-featured{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.15)}
+.hero-featured-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:.5rem}
+.hero-featured a{color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600;display:block;margin-bottom:.3rem}
+.hero-featured a:hover{color:var(--accent)}
+.hero-featured .meta{font-size:.8rem;color:rgba(255,255,255,.5)}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin:clamp(1.5rem,2.5vw,2.5rem) 0 1rem}
+.section-title{font-size:clamp(1.1rem,1.8vw,1.4rem);font-weight:700;letter-spacing:-.01em}
+.section-link{font-size:.82rem;color:var(--accent);text-decoration:none;font-weight:500}
+.section-link:hover{text-decoration:underline}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(.8rem,1.5vw,1.2rem)}
+.card{background:var(--card-bg);border-radius:var(--radius);border:1px solid var(--border);padding:1.3rem;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;gap:.5rem}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.card-badge{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.15rem .5rem;border-radius:3px;align-self:flex-start;background:var(--badge-default);color:#fff}
+.card-badge.is-tech{background:var(--badge-tech)}
+.card-badge.is-reddit{background:var(--badge-reddit)}
+.card-badge.is-blog{background:var(--badge-blog)}
+.card-badge.is-article{background:var(--accent)}
+.card-title{font-size:1rem;font-weight:600;line-height:1.35}
+.card-title a{color:var(--text);text-decoration:none}
+.card-title a:hover{color:var(--accent)}
+.card-meta{font-size:.76rem;color:var(--text-muted);display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.card-source{color:var(--accent);font-size:.76rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}
+.card-link{font-size:.82rem;color:var(--accent);text-decoration:none;font-weight:500;align-self:flex-start}
+.card-link:hover{text-decoration:underline}
+.blog-card{background:var(--card-bg);border-radius:var(--radius);border:1px solid var(--border);padding:1.3rem;box-shadow:var(--shadow-sm);margin-bottom:.8rem}
+.blog-card h3{font-size:1rem;margin-bottom:.3rem}
+.blog-card h3 a{color:var(--text);text-decoration:none}
+.blog-card h3 a:hover{color:var(--accent)}
+.blog-card .excerpt{font-size:.85rem;color:var(--text-dim);line-height:1.5;margin-bottom:.3rem}
+.blog-card .meta{font-size:.76rem;color:var(--text-muted)}
+.blog-empty{padding:2rem;text-align:center;color:var(--text-muted);font-style:italic}
+.page-wrap.article{max-width:var(--content-w)}
+.article-header{margin:clamp(1.5rem,3vw,2.5rem) 0 clamp(1rem,2vw,1.5rem)}
+.article-header h1{font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;margin-bottom:.6rem;font-weight:800}
+.article-meta{display:flex;align-items:center;gap:1rem;font-size:.85rem;color:var(--text-dim);flex-wrap:wrap}
+.article-meta span{display:flex;align-items:center;gap:.3rem}
+.article-body{font-size:clamp(1rem,1.3vw,1.1rem);line-height:1.8}
+.article-body h2{font-size:1.3rem;margin:2.5rem 0 .8rem;padding-bottom:.4rem;border-bottom:2px solid var(--border)}
+.article-body h3{font-size:1.1rem;margin:1.8rem 0 .5rem}
+.article-body p{margin:.85rem 0}
+.article-body ul,.article-body ol{margin:.85rem 0;padding-left:1.5rem}
+.article-body li{margin:.35rem 0}
+.article-body a{color:var(--accent);text-decoration:none}
+.article-body a:hover{text-decoration:underline}
+.article-body img{max-width:100%;height:auto;border-radius:var(--radius);margin:1.5rem 0}
+.article-body blockquote{border-left:4px solid var(--accent);background:var(--accent-light);padding:.8rem 1.2rem;border-radius:0 var(--radius) var(--radius) 0;margin:1.2rem 0;color:var(--text-dim);font-style:italic}
+.article-body pre,code{background:#eee;border-radius:4px;font-family:var(--font-mono);font-size:.88em}
+.article-body code{padding:.15rem .4rem}
+.article-body pre{padding:1rem;overflow-x:auto;line-height:1.5}
+.article-body pre code{padding:0;background:none}
+.article-body table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.92em}
+.article-body th,.article-body td{padding:.5rem .8rem;border:1px solid var(--border);text-align:left}
+.article-body th{background:#f2f2f2;font-weight:600}
+.article-source{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem;color:var(--text-dim)}
+.article-source a{color:var(--accent)}
+.article-related{margin-top:2rem;padding:1.2rem;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius)}
+.article-related h2{font-size:1rem;margin-bottom:.8rem;border:none}
+.article-related ul{padding-left:1rem}
+.article-related li{margin:.4rem 0;font-size:.9rem}
+.article-footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-size:.82rem;color:var(--text-muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.article-footer a{color:var(--accent)}
+.reading-progress{position:fixed;top:52px;left:0;height:3px;background:var(--accent);z-index:99;width:0;transition:width .08s linear}
+.site-footer{margin-top:clamp(2.5rem,4vw,4rem);padding:clamp(1.2rem,2.5vw,2rem) clamp(1rem,3vw,2rem);background:#1a1a1a;color:rgba(255,255,255,.65);font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-links{display:flex;gap:1.2rem}
+.footer-links a{color:rgba(255,255,255,.65);text-decoration:none}
+.footer-links a:hover{color:var(--accent)}
+@media(max-width:768px){.card-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.nav-inner{flex-wrap:wrap;height:auto;padding:.4rem 0;gap:.2rem}.nav-logo{width:100%;margin-bottom:.15rem;font-size:1rem}.reading-progress{top:0}}
+@media print{.site-nav,.site-footer,.reading-progress{display:none}body{font-size:11pt;color:#000;background:#fff}}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/smartbuyers/" class="nav-logo">SmartBuyers</a>
+    <a href="/smartbuyers/" class="nav-link active">Home</a>
+    <a href="/smartbuyers/articles/" class="nav-link">Artykuły</a>
+    <a href="/smartbuyers/blog/" class="nav-link">Blog</a>
+    <a href="https://selleetools.com" class="nav-link external" target="_blank" rel="noopener">SelleeTools ↗</a>
+  </div>
+</nav>
+<div class="reading-progress" id="readingProgress"></div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">SmartBuyers — Content Hub</div>
+    <h1>B2B Dropshipping Intelligence</h1>
+    <p>AI-powered news & analysis. Automatycznie generowane artykuły SEO z TechCrunch, Google News, Reddit. Newsy z branży e-commerce i AI publikowane codziennie.</p>
+    <div class="hero-line"></div>
+    <div class="hero-featured">
+      <div class="hero-featured-label">→ Przeglądaj</div>
+      <a href="/smartbuyers/articles/">Wszystkie artykuły &mdash; najnowsze analizy i newsy</a>
+      <div class="meta">25.06.2026 &middot; Generator AI</div>
+    </div>
+  </div>
+</div>
+
+<main class="page-wrap">
+
+  <div class="section-header">
+    <h2 class="section-title">📝 Ostatnie wpisy na blogu</h2>
+    <a href="/smartbuyers/blog/" class="section-link">Zobacz wszystkie →</a>
+  </div>
+
+  <article class="blog-card">
+    <h3><a href="/smartbuyers/blog/witaj-na-blogu-smartbuyers.html">Witaj na blogu SmartBuyers</a></h3>
+    <div class="excerpt">To jest pierwszy wpis na blogu SmartBuyers. Wkrótce pojawią się tutaj artykuły o dropshippingu, SelleeTools i optymalizacji sprzedaży na marketplace'ach.</div>
+    <div class="meta">24.06.2026</div>
+  </article>
+
+  <article class="blog-card">
+    <h3><a href="/smartbuyers/blog/dropshipping-b2b-przewodnik-po-selleetools.html">Dropshipping B2B — Przewodnik po SelleeTools</a></h3>
+    <div class="excerpt">Nauka korzystania z SelleeTools do efektywnego prowadzenia biznesu dropshippingowego w modelu B2B.</div>
+    <div class="meta">24.06.2026</div>
+  </article>
+
+  <div class="section-header" style="margin-top:2.5rem">
+    <h2 class="section-title">📰 Najnowsze artykuły</h2>
+    <a href="/smartbuyers/articles/" class="section-link">Zobacz wszystkie →</a>
+  </div>
+
+  <p style="color:var(--text-dim);margin-bottom:1.5rem;font-size:.9rem">
+    AI-generated SEO content — newsy, analizy, poradniki z branży e-commerce, dropshippingu B2B i technologii.
+    Artykuły generowane automatycznie z RSS feedów i publikowane na GitHub Pages.
+  </p>
+
+  <div style="background:var(--card-bg);border-radius:var(--radius);border:1px solid var(--border);padding:2rem;text-align:center">
+    <p style="margin-bottom:.8rem;font-size:1.05rem;font-weight:600">
+      <a href="/smartbuyers/articles/" style="color:var(--accent);text-decoration:none">
+        Przejdź do listy artykułów →
+      </a>
+    </p>
+    <p style="font-size:.85rem;color:var(--text-dim)">
+      Aktualnie 13 artykułów
+    </p>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 SmartBuyers — Grupa SmartBuyers</span>
+    <div class="footer-links">
+      <a href="/smartbuyers/">Home</a>
+      <a href="/smartbuyers/articles/">Artykuły</a>
+      <a href="/smartbuyers/blog/">Blog</a>
+      <a href="https://selleetools.com">SelleeTools</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var bar=document.getElementById('readingProgress');
+    if(!bar)return;
+    window.addEventListener('scroll',function(){
+      var h=document.documentElement;
+      var pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+      bar.style.width=Math.min(pct,100)+'%';
+    },{passive:true});
+  })();
+</script>
+</body>
+</html>

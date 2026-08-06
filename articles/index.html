@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KROKIET NEWS — Archiwum</title>
+<meta name="description" content="Terminal news feed — automatycznie generowane artykuły AI z branży e-commerce, dropshippingu, AI i technologii.">
+<meta property="og:title" content="KROKIET NEWS — Archiwum">
+<meta property="og:description" content="Terminal news feed">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pkrokosz.github.io/smartbuyers/articles/">
+<meta name="twitter:card" content="summary">
+<style>
+:root{--green:#0f0;--green-dim:#0a0;--cyan:#0ff;--bg:#050505;--panel:#0a0a0a;--border:#1a3a1a;--text:#0f0;--dim:#0a0;--font:'Courier New',Courier,monospace}
+*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;font-size:15px}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.65;min-height:100vh;position:relative}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;background:repeating-linear-gradient(0deg,rgba(0,0,0,.06) 0px,rgba(0,0,0,.06) 2px,transparent 2px,transparent 4px);animation:scan 1s linear infinite}
+@keyframes scan{0%{background-position:0 0}100%{background-position:0 4px}}
+@keyframes flicker{0%,100%{opacity:1}50%{opacity:.82}}
+@keyframes glitch{0%{transform:translate(0);text-shadow:none}20%{transform:translate(-1px,1px);text-shadow:-1px 0 var(--cyan)}40%{transform:translate(1px,-1px);text-shadow:1px 0 var(--green)}60%{transform:translate(-1px,1px)}80%{transform:translate(1px,-1px)}100%{transform:translate(0);text-shadow:none}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.term-header,.term-footer{animation:flicker 3s infinite;color:var(--green-dim);font-size:.82rem;text-align:center;padding:.75rem 1rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);letter-spacing:.04em}
+.term-header{margin-bottom:1.5rem}
+.term-footer{margin-top:2.5rem}
+.term-nav{display:flex;justify-content:center;gap:1.5rem;padding:.5rem 0;font-size:.8rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem}
+.term-nav a{color:var(--dim);text-decoration:none;transition:color .2s}
+.term-nav a:hover,.term-nav a.active{color:var(--green);text-shadow:0 0 6px rgba(0,255,0,.3)}
+.term-nav a::before{content:'['}
+.term-nav a::after{content:']'}
+.term-wrap{max-width:860px;margin:0 auto;padding:.5rem clamp(.8rem,2vw,1.5rem)}
+.glitch{display:inline-block;animation:glitch 3.5s infinite;text-shadow:0 0 8px rgba(0,255,0,.35)}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%}
+.glitch::before{animation:glitch 3.5s infinite;clip-path:polygon(0 0,100% 0,100% 35%,0 35%);transform:translate(-.03em,-.03em)}
+.glitch::after{animation:glitch 2.5s infinite;clip-path:polygon(0 65%,100% 65%,100% 100%,0 100%);transform:translate(.03em,.03em)}
+h1{font-size:1.45rem;line-height:1.25;margin-bottom:.6rem;color:var(--green);position:relative}
+h2{font-size:1.1rem;margin:2rem 0 .6rem;padding-bottom:.3rem;border-bottom:1px solid var(--border);color:var(--cyan)}
+h3{font-size:1rem;margin:1.5rem 0 .4rem;color:var(--green-dim)}
+p{margin:.7rem 0}
+ul,ol{margin:.7rem 0;padding-left:1.4rem}
+li{margin:.3rem 0}
+li::marker{color:var(--dim)}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline;text-shadow:0 0 6px rgba(0,255,255,.3)}
+img{max-width:100%;height:auto;border:1px solid var(--border);margin:1rem 0}
+blockquote{border-left:3px solid var(--green-dim);padding:.5rem 1rem;margin:1rem 0;color:var(--dim);font-style:italic}
+pre,code{background:var(--panel);border:1px solid var(--border);border-radius:3px;font-family:var(--font);font-size:.88em}
+code{padding:.1rem .35rem;color:var(--cyan)}
+pre{padding:.8rem;overflow-x:auto;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9em}
+th,td{padding:.4rem .7rem;border:1px solid var(--border);text-align:left}
+th{background:var(--panel);color:var(--cyan)}
+.meta-line{display:flex;align-items:center;gap:1.2rem;font-size:.78rem;color:var(--dim);margin-bottom:1.5rem;flex-wrap:wrap}
+.article-source{margin:2rem 0 1rem;padding-top:.8rem;border-top:1px solid var(--border);font-size:.78rem;color:var(--dim)}
+.article-source a{color:var(--cyan)}
+.related-section{margin-top:2rem;padding:1rem;border:1px solid var(--border);background:var(--panel)}
+.related-section h2{font-size:.95rem;margin-top:0;color:var(--green)}
+.related-section ul{padding-left:1rem;margin-bottom:0}
+.related-section li{margin:.3rem 0;font-size:.85rem}
+.article-footer{margin-top:2rem;padding-top:.8rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--dim);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.cursor::after{content:'_';animation:blink 1s step-end infinite}
+/* ── index feed ── */
+.feed-line{display:flex;align-items:baseline;gap:.5rem;padding:.35rem 0;border-bottom:1px solid rgba(0,255,0,.06);font-size:.85rem;flex-wrap:wrap}
+.feed-line:hover{background:rgba(0,255,0,.03)}
+.feed-num{color:var(--dim);font-size:.75rem;min-width:2.2rem}
+.feed-tag{font-size:.65rem;font-weight:700;text-transform:uppercase;padding:.08rem .4rem;border:1px solid;white-space:nowrap}
+.feed-tag-tech{border-color:var(--cyan);color:var(--cyan)}
+.feed-tag-reddit{border-color:#ff4500;color:#ff4500}
+.feed-tag-article{border-color:var(--green-dim);color:var(--green-dim)}
+.feed-date{color:var(--dim);font-size:.72rem;min-width:5rem}
+.feed-title{flex:1;min-width:200px}
+.feed-title a{color:var(--green)}
+.feed-title a:hover{color:var(--cyan);text-shadow:0 0 8px rgba(0,255,255,.25)}
+.feed-link{font-size:.75rem;color:var(--dim)}
+.hero-panel{border:1px solid var(--border);background:var(--panel);padding:1.5rem;margin-bottom:2rem;text-align:center}
+.hero-panel h1{font-size:1.6rem;margin-bottom:.3rem}
+.hero-panel .sub{font-size:.8rem;color:var(--dim)}
+.count-line{font-size:.75rem;color:var(--dim);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.empty-line{text-align:center;padding:2rem;color:var(--dim)}
+@media(max-width:600px){h1{font-size:1.2rem}.meta-line{font-size:.7rem;gap:.6rem}.feed-line{font-size:.78rem}.term-header,.term-footer{font-size:.7rem}}
+@media print{body::before{display:none}body{color:#000;background:#fff}}
+</style>
+</head>
+<body>
+<header class="term-header">//====[ KROKIET NEWS ]====\\</header>
+<div class="term-nav">
+  <a href="https://pkrokosz.github.io/smartbuyers/">home</a>
+  <a href="https://pkrokosz.github.io/smartbuyers/articles/" class="active">archiwum</a>
+  <a href="https://pkrokosz.github.io/smartbuyers/articles/feed.xml">rss</a>
+</div>
+<div class="term-wrap">
+<div class="hero-panel">
+<h1 class="glitch" data-text="KROKIET NEWS">KROKIET NEWS</h1>
+<div class="sub">terminal news feed &mdash; AI-generated</div>
+</div>
+<div class="count-line">&gt; 23 sygnałów w archiwum</div>
+
+      <div class="feed-line">
+        <span class="feed-num">01</span>
+        <span class="feed-tag feed-tag-article">art</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/7-trend-w-e-commerce-kt-re-zmieni-zakupy-w-2026-roku.html">7 Trendów E-commerce, które zmienią zakupy w 2026 roku</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/7-trend-w-e-commerce-kt-re-zmieni-zakupy-w-2026-roku.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">02</span>
+        <span class="feed-tag feed-tag-article">art</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/cicha-si-a-konsystencji-co-skrywa-sukces-stabilnie-rosn-cych.html">Cicha siła konsystencji: co skrywa sukces stabilnie rosnących sklepów e-commerce</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/cicha-si-a-konsystencji-co-skrywa-sukces-stabilnie-rosn-cych.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">03</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/claude-tag-od-anthropic-ai-te-owie-w-slacku-ucz-si-twojej-fi.html">Claude Tag od Anthropic: AI teśćowie w Slacku uczą się Twojej firmy</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/claude-tag-od-anthropic-ai-te-owie-w-slacku-ucz-si-twojej-fi.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">04</span>
+        <span class="feed-tag feed-tag-article">art</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/czerwone-flagi-przy-wyborze-agencji-e-commerce-co-powinno-wa.html">Czerwone flagi przy wyborze agencji e-commerce: co powinno was zaalarmować</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/czerwone-flagi-przy-wyborze-agencji-e-commerce-co-powinno-wa.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">05</span>
+        <span class="feed-tag feed-tag-article">art</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/czym-jest-dropshipping.html">Czym jest dropshipping</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/czym-jest-dropshipping.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">06</span>
+        <span class="feed-tag feed-tag-article">art</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/ocalenie-pami-ci-jak-nie-zapomnie-o-wa-nych-postach-w-sieci.html">Ocalenie pamięci: Jak nie zapomnieć o ważnych postach w sieci</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/ocalenie-pami-ci-jak-nie-zapomnie-o-wa-nych-postach-w-sieci.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">07</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/openai-i-bezpiecze-stwo-kodu-open-source-5-mit-w-vs-fakty.html">OpenAI i bezpieczeństwo kodu open source: 5 mitów vs fakty</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/openai-i-bezpiecze-stwo-kodu-open-source-5-mit-w-vs-fakty.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">08</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/przesuni-cie-z-mailchimp-dla-sklepu-shopify-czy-warto.html">Przesunięcie z Mailchimp dla sklepu Shopify: czy warto?</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/przesuni-cie-z-mailchimp-dla-sklepu-shopify-czy-warto.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">09</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/przysz-o-marketingu-w-indiach-jak-miliony-agent-w-ai-zmieni-.html">Przyszłość marketingu w Indiach? Jak miliony agentów AI zmienią podejście do klienta</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/przysz-o-marketingu-w-indiach-jak-miliony-agent-w-ai-zmieni-.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">10</span>
+        <span class="feed-tag feed-tag-article">art</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/reklamy-p-atne-czy-organiczny-wzrost-dylemat-dla-ma-ych-bizn.html">Reklamy płatne czy organiczny wzrost? Dylemat dla małych biznesów z ograniczonym czasem</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/reklamy-p-atne-czy-organiczny-wzrost-dylemat-dla-ma-ych-bizn.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">11</span>
+        <span class="feed-tag feed-tag-article">art</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/rozpoczynanie-dropshippingu-porady-i-wskaz-wki-dla-pocz-tkuj.html">Rozpoczynanie dropshippingu: Porady i wskazówki dla początkujących</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/rozpoczynanie-dropshippingu-porady-i-wskaz-wki-dla-pocz-tkuj.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">12</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/ecommerce-tygodniu-ai-wsp-praca-z-google-cloud-i-porady-dla-.html">Przegląd tygodnia: 6.08.2026</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/ecommerce-tygodniu-ai-wsp-praca-z-google-cloud-i-porady-dla-.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">13</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">6.08.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/rewolucja-ai-5-najwa-niejszych-news-w-tygodnia.html">Przegląd tygodnia: 6.08.2026</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/rewolucja-ai-5-najwa-niejszych-news-w-tygodnia.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">14</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">25.06.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/top-4-graczy-kt-rzy-chc-zrewolucjonizowa-wiat-it-us-ug.html">Top 4 graczy, którzy chcą zrewolucjonizować świat IT usług</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/top-4-graczy-kt-rzy-chc-zrewolucjonizowa-wiat-it-us-ug.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">15</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">25.06.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/top-5-zmian-w-globalnym-rynku-chip-w-co-to-oznacza-dla-polsk.html">Top 5 zmian w globalnym rynku chipów – co to oznacza dla Polski?</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/top-5-zmian-w-globalnym-rynku-chip-w-co-to-oznacza-dla-polsk.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">16</span>
+        <span class="feed-tag feed-tag-article">art</span>
+        <span class="feed-date">24.06.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/newsletter-latest.html">Newsletter SmartBuyers — 24.06.2026</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/newsletter-latest.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">17</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">24.06.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/digest-technologiczny-tygodnia-od-ai-do-robot-w-i-projektowa.html">Digest Technologiczny Tygodnia: Od AI do Robotów i Projektowania</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/digest-technologiczny-tygodnia-od-ai-do-robot-w-i-projektowa.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">18</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">24.06.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/nvidia-chce-oszcz-dza-wod-w-centrach-danych-ale-to-tylko-za-.html">Nvidia chce oszczędzać wodę w centrach danych, ale to tylko załata na problem AI</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/nvidia-chce-oszcz-dza-wod-w-centrach-danych-ale-to-tylko-za-.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">19</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">24.06.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/openai-stawia-na-w-asne-chipy-jak-jalape-o-mo-e-zmieni-gr-w-.html">OpenAI stawia na własne chipy: Jak Jalapeño może zmienić grę w AI</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/openai-stawia-na-w-asne-chipy-jak-jalape-o-mo-e-zmieni-gr-w-.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">20</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">24.06.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/techcrunch-founder-summit-2026-pass-deal-expires-soon.html">TechCrunch Founder Summit 2026 Pass Deal Expires Soon</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/techcrunch-founder-summit-2026-pass-deal-expires-soon.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">21</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">24.06.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/google-deepmind-i-a24-stworz-narz-dzia-ai-w-filmowym-stylu.html">Google DeepMind i A24 stworzą narzędzia AI w filmowym stylu</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/google-deepmind-i-a24-stworz-narz-dzia-ai-w-filmowym-stylu.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">22</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">24.06.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/amazon-testuje-now-wersj-alexa-z-pod-hindi-w-indiach.html">Amazon Testuje Nową Wersję Alexa+ z Podдержкой Hindi w Indiach</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/amazon-testuje-now-wersj-alexa-z-pod-hindi-w-indiach.html">[read]</a>
+      </div>
+      <div class="feed-line">
+        <span class="feed-num">23</span>
+        <span class="feed-tag feed-tag-tech">tech</span>
+        <span class="feed-date">24.06.2026</span>
+        <span class="feed-title"><a href="https://pkrokosz.github.io/smartbuyers/articles/anthropic-s-claude-tag-szybki-i-zdecydowany-przys-ogiciel-dl.html">Anthropic’s Claude Tag: Szybki i Zdecydowany Przysłogiciel dla Slack</a></span>
+        <a class="feed-link" href="https://pkrokosz.github.io/smartbuyers/articles/anthropic-s-claude-tag-szybki-i-zdecydowany-przys-ogiciel-dl.html">[read]</a>
+      </div>
+</div>
+<footer class="term-footer">[STATUS] NET-LINK ACTIVE &mdash; <a href="https://pkrokosz.github.io/smartbuyers/articles/sitemap.xml">sitemap</a> &middot; <a href="https://pkrokosz.github.io/smartbuyers/articles/feed.xml">rss</a> &mdash; KROKIET NEWS</footer>
+</body>
+</html>
