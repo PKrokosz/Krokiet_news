@@ -285,7 +285,7 @@ async function main() {
   const idxCount = generateIndex();
   generateSitemap();
   generateFeed();
-  if (!jsonMode) console.log(`  → articles/index.html (${idxCount} artykułów) | feed.xml | sitemap.xml`);
+  if (!jsonMode) console.log(`  → index.html (${idxCount} artykułów) | feed.xml | sitemap.xml`);
 
   // [10] NB sync
   if (nb) {

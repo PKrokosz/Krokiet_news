@@ -315,10 +315,10 @@ async function main() {
 
   if (totalGenerated > 0 && flagPush) {
     step("Git push", C.ylw, "publish");
-    if (gitPush("articles/ feeds.json generated.json", `Auto: ${totalGenerated} artykuł(i) z RSS`)) {
+    if (gitPush("index.html articles/ feeds.json generated.json", `Auto: ${totalGenerated} artykuł(i) z RSS`)) {
       if (lastPageUrl) { googleIndexingPing(lastPageUrl); postToLinkedIn("KROKIET NEWS — Nowy artykuł", "", lastPageUrl); }
     }
-    if (!jsonMode) console.log(`\n${C.cyn}🔗 https://pkrokosz.github.io/smartbuyers/articles/${C.rst}\n`);
+    if (!jsonMode) console.log(`\n${C.cyn}🔗 https://pkrokosz.github.io/smartbuyers/${C.rst}\n`);
   } else if (totalGenerated > 0) {
     step("Brak nowych wpisów");
   }
