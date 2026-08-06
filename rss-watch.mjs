@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { createInterface } from "readline";
 import { execSync } from "child_process";
 import Parser from "rss-parser";
-import { C, ts, stepReset, step, log, loadGen, isGen, markGen, ollamaPs, parseFlag, FORMATS, PERSONAS, TONES, LANGS, buildPrompt, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, validate, streamResponse, buildHtml, gitPush, googleIndexingPing, generateIndex, generateSitemap, generateFeed, NB_SOURCES_ID, NB_NEWS_ID, setJsonMode, isJsonMode, emitJSON } from "./lib/shared.mjs";
+import { C, ts, stepReset, step, log, loadGen, isGen, markGen, DEFAULT_MODEL, chatUrl, chatHeaders, providerStatus, parseFlag, FORMATS, PERSONAS, TONES, LANGS, buildPrompt, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, validate, streamResponse, buildHtml, gitPush, googleIndexingPing, generateIndex, generateSitemap, generateFeed, NB_SOURCES_ID, NB_NEWS_ID, setJsonMode, isJsonMode, emitJSON } from "./lib/shared.mjs";
 import { postToLinkedIn } from "./social.mjs";
 import { generateNewsletter } from "./newsletter.mjs";
 
@@ -21,7 +21,7 @@ function nbPushArticle(url, title) {
 }
 
 const FEEDS_FILE = "feeds.json";
-const mi = process.argv.indexOf("--model"); const MODEL = (mi >= 0 && mi + 1 < process.argv.length) ? process.argv[mi + 1] : "gemma4:e4b";
+const mi = process.argv.indexOf("--model"); const MODEL = (mi >= 0 && mi + 1 < process.argv.length) ? process.argv[mi + 1] : DEFAULT_MODEL;
 const MAX_ITEMS_PER_FEED = 5;
 const verb = process.argv.includes("--verbose") || process.argv.includes("-v");
 const flagReview = process.argv.includes("--review");
@@ -39,10 +39,10 @@ const optLang    = parseFlag(process.argv, "--lang", LANGS, DEF_LANG);
 // --- generate single ---
 async function generate(itemTitle, snippet, attempt = 0) {
   const bp = buildPrompt({ format: optFormat, persona: optPersona, tone: optTone, lang: optLang, rssTitle: itemTitle, rssSnippet: snippet });
-  const body = { model: MODEL, messages: [{ role: "system", content: bp.system }, { role: "user", content: bp.user }], temperature: 0.3, max_tokens: 8192, stream: true, response_format: { type: "json_object" }, think: false };
+  const body = { model: MODEL, messages: [{ role: "system", content: bp.system }, { role: "user", content: bp.user }], temperature: 0.3, max_tokens: 8192, stream: true, response_format: { type: "json_object" } };
   if (attempt > 0) console.log(`    ${C.ylw}RETRY ${attempt + 1}/2${C.rst}`);
   const t0 = Date.now();
-  const res = await fetch("http://localhost:11434/v1/chat/completions", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  const res = await fetch(chatUrl(), { method: "POST", headers: chatHeaders(), body: JSON.stringify(body) });
   if (!res.ok) { const err = await res.text(); throw new Error(`HTTP ${res.status}: ${err.slice(0, 200)}`); }
   const raw = await streamResponse(res, "    ");
   console.log(`    → ${((Date.now() - t0) / 1000).toFixed(1)}s | ${raw.length} znaków`);
@@ -59,11 +59,11 @@ async function generate(itemTitle, snippet, attempt = 0) {
 // --- generate digest ---
 async function generateDigest(items) {
   const bp = buildPrompt({ format: "digest", persona: optPersona, tone: optTone, lang: optLang, rssTitle: "Przegląd tygodnia", rssSnippet: items.map((it, i) => `${i + 1}. ${it.title}\n${it.snippet.slice(0, 500)}`).join("\n---\n") });
-  const body = { model: MODEL, messages: [{ role: "system", content: bp.system }, { role: "user", content: bp.user }], temperature: 0.3, max_tokens: 8192, stream: true, response_format: { type: "json_object" }, think: false };
+  const body = { model: MODEL, messages: [{ role: "system", content: bp.system }, { role: "user", content: bp.user }], temperature: 0.3, max_tokens: 8192, stream: true, response_format: { type: "json_object" } };
   console.log(`    → Digest: ${items.length} wpisów, ${bp.user.length} zn prompta`);
 
   const t0 = Date.now();
-  const res = await fetch("http://localhost:11434/v1/chat/completions", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  const res = await fetch(chatUrl(), { method: "POST", headers: chatHeaders(), body: JSON.stringify(body) });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const raw = await streamResponse(res, "    ");
   console.log(`    → ${((Date.now() - t0) / 1000).toFixed(1)}s | ${raw.length} znaków`);
@@ -106,14 +106,14 @@ function matchFilter(feed, title, snippet) {
   return feed.filter.some(kw => txt.includes(kw.toLowerCase()));
 }
 
-// --- warmup ---
+// --- warmup (connectivity check) ---
 async function warmup() {
   try {
-    await fetch("http://localhost:11434/v1/chat/completions", {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ model: MODEL, messages: [{ role: "user", content: "OK" }], max_tokens: 1, think: false }),
+    const res = await fetch(chatUrl(), {
+      method: "POST", headers: chatHeaders(),
+      body: JSON.stringify({ model: MODEL, messages: [{ role: "user", content: "OK" }], max_tokens: 1 }),
     });
-    return true;
+    return res.ok;
   } catch { return false; }
 }
 
@@ -129,9 +129,9 @@ async function main() {
     console.log("╚══════════════════════════════════════════╝");
     console.log(`  Tryb: ${verb ? "verbose" : "normalny"}${flagReview ? " + review" : " (auto)"}${flagDigest ? " + digest" : ""}`);
     console.log(`  Model: ${MODEL} | Format: ${FORMATS[optFormat].label} | ${LANGS[optLang].label}`);
-    console.log(`  Ollama: ${ollamaPs() || "brak"}\n`);
+    console.log(`  Provider: ${providerStatus()}\n`);
   }
-  if (jsonMode) emitJSON("meta", { format: optFormat, persona: optPersona, tone: optTone, lang: optLang, model: MODEL, provider: "ollama", mode: flagDigest ? "digest" : "watch", feeds: null });
+  if (jsonMode) emitJSON("meta", { format: optFormat, persona: optPersona, tone: optTone, lang: optLang, model: MODEL, provider: "nvidia", mode: flagDigest ? "digest" : "watch", feeds: null });
 
   stepReset(99); step("Wczytywanie feedów", C.cyn, "rss_fetch");
   if (!existsSync(FEEDS_FILE)) { log("ERR", `Brak ${FEEDS_FILE}`, C.red); process.exit(1); }
@@ -164,7 +164,7 @@ async function main() {
   }
   if (jsonMode) emitJSON("info", { tag: "feeds", msg: `${feeds.length} feedów` });
 
-  const parser = new Parser({ timeout: 30000, headers: { 'User-Agent': 'SmartBuyers/3.0' } });
+  const parser = new Parser({ timeout: 30000, headers: { 'User-Agent': 'KROKIET-NEWS/3.0' } });
   let totalGenerated = 0;
   let lastPageUrl;
   const digestItems = [];
@@ -181,22 +181,32 @@ async function main() {
     const newestGuid = newest.guid || newest.link || newest.title;
     if (!newestGuid) { log("WARN", "Brak GUID"); continue; }
 
+    // Reddit trzyma przypięte posty moderatorów na pozycji 0 — zawsze je pomijaj
+    const isReddit = /reddit\.com/.test(feed.url);
+    const startIdx = isReddit ? 1 : 0;
+
     if (!feed.lastGuid) {
-      feed.lastGuid = newestGuid;
+      feed.lastGuid = (parsed.items[startIdx] || newest).guid || newestGuid;
       if (!jsonMode) console.log(`  ${C.dim}→ Pierwsze uruchomienie – GUID zapamiętany${C.rst}`);
       nbPushSource(feed.url, feed.name || "RSS Feed");
       continue;
     }
 
-    const foundIdx = parsed.items.findIndex(i => (i.guid || i.link || i.title) === feed.lastGuid);
+    // marker może wskazywać na przypięty post (reddit) → nie ufaj pozycji 0
+    let markerIdx = parsed.items.findIndex(i => (i.guid || i.link || i.title) === feed.lastGuid);
+    if (markerIdx === 0 && isReddit) markerIdx = -1;
     let newCount = 0;
     let feedGenerated = 0;
+    let resumeGuid = null;
+    // limit dotyczy tylko realnego generowania (nie track/digest)
+    const capped = !flagDigest && feed.mode !== "track";
 
-    for (const [ii, item] of parsed.items.entries()) {
+    for (let ii = startIdx; ii < parsed.items.length; ii++) {
+      const item = parsed.items[ii];
       const guid = item.guid || item.link || item.title;
       if (!guid) continue;
-      if (guid === feed.lastGuid) break;
-      if (foundIdx === -1 && feedGenerated >= MAX_ITEMS_PER_FEED) break;
+      if (markerIdx !== -1 && guid === feed.lastGuid) break;
+      if (capped && feedGenerated >= MAX_ITEMS_PER_FEED) { resumeGuid = guid; break; }
 
       const itemLink = item.link || item.guid;
       if (itemLink && isGen(itemLink)) continue;
@@ -243,7 +253,7 @@ async function main() {
         }
       }
 
-      if (feedGenerated === 1 && !(await warmup())) { if (!jsonMode) console.log(`  ${C.red}Ollama offline${C.rst}`); break; }
+      if (feedGenerated === 1 && !(await warmup())) { if (!jsonMode) console.log(`  ${C.red}NVIDIA API offline${C.rst}`); break; }
 
       if (!jsonMode) console.log(`  ${C.dim}── generowanie ──${C.rst}`);
       let gen;
@@ -261,7 +271,9 @@ async function main() {
     }
 
     if (newCount > 0 && !jsonMode) console.log(`  → Nowych: ${newCount}${feed.filter ? ` (filtr: ${feed.filter.join(", ")})` : ""}`);
-    feed.lastGuid = newestGuid;
+    // resumeGuid = zatrzymaliśmy się na limicie MAX na przebieg → kontynuuj stąd następnym razem;
+    // marker nieznaleziony i doszliśmy do końca → najnowszy wpis; inaczej zostaw marker bez zmian
+    feed.lastGuid = resumeGuid || (markerIdx === -1 ? (parsed.items[startIdx]?.guid || feed.lastGuid) : feed.lastGuid);
   }
 
   // --- digest mode: generate one roundup ---
@@ -271,7 +283,7 @@ async function main() {
     } else {
       step("Generowanie digestu", C.ylw, "generating");
       if (!jsonMode) console.log(`  → ${digestItems.length} wpisów zebranych`);
-      if (!(await warmup())) { if (!jsonMode) console.log(`  ${C.red}Ollama offline${C.rst}`); }
+      if (!(await warmup())) { if (!jsonMode) console.log(`  ${C.red}NVIDIA API offline${C.rst}`); }
       else {
         const dig = await generateDigest(digestItems);
         if (dig && dig.data) {
@@ -304,7 +316,7 @@ async function main() {
   if (totalGenerated > 0 && flagPush) {
     step("Git push", C.ylw, "publish");
     if (gitPush("articles/ feeds.json generated.json", `Auto: ${totalGenerated} artykuł(i) z RSS`)) {
-      if (lastPageUrl) { googleIndexingPing(lastPageUrl); postToLinkedIn("SmartBuyers — Nowy artykuł", "", lastPageUrl); }
+      if (lastPageUrl) { googleIndexingPing(lastPageUrl); postToLinkedIn("KROKIET NEWS — Nowy artykuł", "", lastPageUrl); }
     }
     if (!jsonMode) console.log(`\n${C.cyn}🔗 https://pkrokosz.github.io/smartbuyers/articles/${C.rst}\n`);
   } else if (totalGenerated > 0) {

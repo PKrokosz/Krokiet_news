@@ -30,7 +30,7 @@
     'rss-check':'Sprawdzanie RSS','rss-images':'Generowanie obrazków','rss-feed':'Generowanie feeda RSS',
     'auto-watch':'Auto-watch','review':'Przegląd','review-fail':'Przegląd (fail)','analyze':'Analiza',
     'newsletter':'Generowanie newslettera','send-newsletter':'Wysyłanie newslettera',
-    'warmup':'Warmup Ollama',
+    'warmup':'Warmup NVIDIA',
   };
 
   // --- State ---
@@ -269,9 +269,9 @@
 
     // Status section — always visible at top
     sec('🧠','Status systemu');
-    const ollamaOnline = modelsList.length > 0;
+    const nvidiaOnline = modelsList.length > 0;
     tiles.push(
-      { type:'config', icon: ollamaOnline ? '🟢' : '🔴', label:'Ollama', desc: ollamaOnline ? `Online · ${modelsList[0] || settingsCache.model || '—'}` : 'Offline — uruchom `ollama serve`' },
+      { type:'config', icon: nvidiaOnline ? '🟢' : '🔴', label:'NVIDIA API', desc: nvidiaOnline ? `Online · ${settingsCache.model || modelsList[0] || '—'}` : 'Offline — ustaw NVIDIA_API_KEY' },
     );
     if (!nbAuthed) {
       tiles.push(
@@ -297,7 +297,7 @@
     sec('⚡','Szybkie akcje');
     tiles.push(
       { type:'action', icon:'💬', label:'Generuj z tematu', desc:'Wpisz temat — AI napisze artykuł', action:'generate', needsInput:true, inputLabel:'Temat artykułu', inputPlaceholder:'np. Jak zacząć dropshipping B2B...', inputDefault:'Czym jest dropshipping B2B', askPush:true },
-      { type:'action', icon:'🔥', label:'Warmup Ollama', desc:'Załaduj model do RAM (przyspiesza ~2x)', action:'warmup' },
+      { type:'action', icon:'🔥', label:'Warmup NVIDIA', desc:'Sprawdź połączenie z NVIDIA API', action:'warmup' },
     );
 
     sec('🛠️','Narzędzia');
@@ -1347,7 +1347,7 @@
     let nbData;
     try { const r = await fetch('/api/nb/telemetry'); nbData = await r.json(); } catch { nbData = {}; }
     const tiles = [
-      { type:'stat', icon:'🧠', label:'Modele Ollama', value: String(data.ollamaModels || 0) },
+      { type:'stat', icon:'🧠', label:'Modele NVIDIA', value: String(data.ollamaModels || 0) },
       { type:'stat', icon:'📓', label:'Notebooki NB', value: String(nbData.notebooks || data.nbNotebooks || 0) },
       { type:'stat', icon:'📚', label:'Źródła NB', value: String(nbData.totalSources || 0) },
       { type:'stat', icon:'📄', label:'Wygenerowane artykuły', value: String(data.generatedTotal || 0) },
@@ -1793,7 +1793,7 @@
       var grReadability = genResult.readability || '';
       var grFile = genResult.file || '';
       var grUrl = genResult.url || '';
-      var grModel = genResult.model || 'gemma4:e4b';
+      var grModel = genResult.model || 'nvidia/llama-3.3-nemotron-super-49b-v1';
       var grSizeKB = genResult.sizeKB || '';
       var grH2 = String(genResult.h2count || 0);
 
@@ -1947,7 +1947,7 @@
 
     // ── New article generation view ──
     const phases = [
-      { id:'warmup', icon:'🔄', label:'Ładowanie modelu', desc:'gemma4:e4b ładuje się do RAM...' },
+      { id:'warmup', icon:'🔄', label:'Sprawdzanie NVIDIA', desc:'Test połączenia z NVIDIA API...' },
       { id:'generating', icon:'✍️', label:'Pisanie artykułu', desc:'AI generuje treść — live preview poniżej' },
       { id:'publish', icon:'🚀', label:'Publikacja', desc:'Zapis HTML, Git push, indeksacja' },
     ];
@@ -1970,7 +1970,7 @@
           }).join('') +
         '</div>' +
         '<div class="gen-bar-wrap"><div class="gen-bar-fill" id="genBar"></div></div>' +
-        '<div class="gen-status" id="genStatus">🔄 Ładowanie modelu do RAM...</div>' +
+        '<div class="gen-status" id="genStatus">🔄 Sprawdzanie NVIDIA API...</div>' +
         '<div class="gen-preview-wrap" id="genPreviewWrap">' +
           '<div class="gen-preview-empty" id="genPreviewEmpty">Artykuł pojawi się tutaj w czasie rzeczywistym...</div>' +
           '<div class="gen-preview-text" id="genPreviewText"></div>' +
@@ -2044,7 +2044,7 @@
       // Phase transition messages
       var statusEl = document.getElementById('genStatus');
       var messages = {
-        warmup:'🔄 Ładowanie modelu do RAM...',
+        warmup:'🔄 Sprawdzanie NVIDIA API...',
         generating:'✍️ AI pisze artykuł...',
         publish:'📦 Zapis i publikacja...',
       };
@@ -2145,7 +2145,7 @@
   async function handleWarmup(el) {
     if (running) { showToast('Poczekaj na zakończenie zadania', 'err'); return; }
     el.classList.add('running');
-    showToast('🔥 Warmup — ładuję model do RAM...', '');
+    showToast('🔥 Warmup — sprawdzam połączenie z NVIDIA API...', '');
     
     const es = new EventSource('/api/warmup');
     es.onmessage = (e) => {
@@ -2156,7 +2156,7 @@
           es.close();
           el.classList.remove('running');
           const success = msg.success !== false;
-          showToast(success ? '✅ Model załadowany — gotowy do pracy!' : '❌ ' + (msg.error || 'Błąd'), success ? '' : 'err');
+          showToast(success ? '✅ NVIDIA API OK — gotowy do pracy!' : '❌ ' + (msg.error || 'Błąd'), success ? '' : 'err');
           return;
         }
       } catch {}
@@ -2511,7 +2511,7 @@
   function showResetConfirm() {
     showConfirm('Przywróć domyślne', 'Czy na pewno przywrócić domyślne ustawienia?', 'Przywróć', 'Anuluj').then(ok => {
       if (!ok) return;
-      settingsCache = { model:'gemma4:e4b', format:'article', persona:'journalist', tone:'casual', lang:'pl', queries:0 };
+      settingsCache = { model:'nvidia/llama-3.3-nemotron-super-49b-v1', format:'article', persona:'journalist', tone:'casual', lang:'pl', queries:0 };
       delete settingsCache._digest;
       delete settingsCache._newsletter;
       delete settingsCache._verbose;
@@ -2632,13 +2632,17 @@
       const data = await resp.json();
       const dot = headerStatus.querySelector('.status-dot');
       const label = headerStatus.querySelector('.status-label');
-      if (data.ollama) {
+      if (data.configured && data.models.length > 0) {
         dot.className = 'status-dot on';
         label.textContent = 'Online';
         headerModel.textContent = data.models[0] || '—';
+      } else if (data.configured) {
+        dot.className = 'status-dot on';
+        label.textContent = 'Online';
+        headerModel.textContent = data.model || '—';
       } else {
         dot.className = 'status-dot off';
-        label.textContent = 'Ollama offline';
+        label.textContent = 'NVIDIA offline';
         headerModel.textContent = '—';
       }
     } catch {

@@ -2,9 +2,9 @@
 
 ## Stan obecny
 
-Mamy pipeline: **RSS → Ollama → HTML → GitHub Pages** z podstawową telemetrią, deduplikacją (`generated.json`) i jednym punktem startowym (`menu.mjs`).
+Mamy pipeline: **RSS → NVIDIA NIM → HTML → GitHub Pages** z podstawową telemetrią, deduplikacją (`generated.json`) i jednym punktem startowym (`menu.mjs`).
 
-**Co działa:** streaming tokenów, `response_format: json_object`, walidacja + retry, warmup modelu, auto git push, Task Scheduler co 30min.
+**Co działa:** streaming tokenów, `response_format: json_object`, walidacja + retry, connectivity check, auto git push, Task Scheduler co 30min.
 
 **Co nie działa:** 500 linii kodu skopiowanych między `generate.mjs` a `rss-watch.mjs`. Każda zmiana wymaga edycji w dwóch plikach. Model `qwen2.5:latest` produkuje ~200 słów słabej polszczyzny w ~220s.
 
@@ -25,7 +25,7 @@ lib/shared.mjs:
   buildHtml() (szablon HTML)
   slugify() (slug z tytułu)
   gitPush() (git add/commit/push)
-  warmup() (Ollama warmup)
+  providerStatus() (NVIDIA API connectivity check)
 ```
 
 **Dlaczego to jest fundament wszystkiego dalej:** każde nowe rozszerzenie (format, persona, ton, SEO schema) dodaje się **raz** w `lib/shared.mjs` i oba skrypty dziedziczą automatycznie.

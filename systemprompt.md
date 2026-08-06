@@ -70,5 +70,5 @@ albo wejść na nowy rynek.
 1. **RSS + Google News** → zbieramy nagłówki z 40+ kanałów branżowych
 2. **Kolejka tematów** → zapisujemy interesujące tematy do opracowania
 3. **Research (Ty!)** → analizujesz źródła, znajdujesz głębszy kontekst
-4. **Ollama (gemma4:e4b)** → generuje artykuł SEO po polsku
+4. **NVIDIA NIM (LLM)** → generuje artykuł SEO po polsku
 5. **Publikacja** → GitHub Pages + Google Indexing + LinkedIn

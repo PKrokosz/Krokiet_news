@@ -5,7 +5,7 @@
 **AI-powered SEO content engine** — RSS → AI → HTML → GitHub Pages.
 
 [![Node version](https://img.shields.io/badge/Node.js-%3E%3D18-3c873a?style=flat-square)](https://nodejs.org)
-[![Ollama](https://img.shields.io/badge/Ollama-required-ff7000?style=flat-square)](https://ollama.com)
+[![NVIDIA API](https://img.shields.io/badge/NVIDIA-API-76b900?style=flat-square)](https://build.nvidia.com)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-222?style=flat-square)](https://pkrokosz.github.io/smartbuyers)
 [![License](https://img.shields.io/badge/License-ISC-blue?style=flat-square)](LICENSE)
 <br>
@@ -16,7 +16,7 @@
 
 </div>
 
-SmartBuyers monitors RSS feeds, generates structured SEO articles using a local LLM (Ollama), and publishes them to GitHub Pages — fully automated. It runs entirely on your hardware with zero API costs, or optionally uses OpenRouter for cloud-based models.
+SmartBuyers monitors RSS feeds, generates structured SEO articles using NVIDIA NIM API (LLM inference), and publishes them to GitHub Pages — fully automated. It uses NVIDIA's hosted models with streaming support for fast, high-quality content generation.
 
 ## Features
 
@@ -26,7 +26,7 @@ SmartBuyers monitors RSS feeds, generates structured SEO articles using a local 
 - **Competitor Tracking** — Track competitor feeds in a separate log (`mode: "track"`), analyzed in gap reports
 - **Content Gap Analysis** — TF-IDF keyword extraction from article HTML, identifies sparse topics, produces structured `gap-report.json`
 - **Distribution Pipeline** — Auto git push to GitHub Pages, Google Indexing API ping, LinkedIn auto-post, weekly newsletter digest
-- **Local-first** — Runs on Ollama (no API costs). Optional OpenRouter for cloud models
+- **Cloud-powered** — Runs on NVIDIA NIM API. Optional OpenRouter for cloud models
 - **Menu-driven** — `node menu.mjs` provides access to all features without remembering CLI flags
 
 ## Getting Started
@@ -34,7 +34,7 @@ SmartBuyers monitors RSS feeds, generates structured SEO articles using a local 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org) 18+
-- [Ollama](https://ollama.com) with at least one model pulled
+- [NVIDIA API key](https://build.nvidia.com) — set as `NVIDIA_API_KEY` environment variable
 
 ```bash
 # Clone
@@ -44,8 +44,8 @@ cd smartbuyers
 # Install
 npm install
 
-# Pull a model (gemma4:e4b recommended for Polish SEO content)
-ollama pull gemma4:e4b
+# Set API key
+setx NVIDIA_API_KEY "nvapi-..."
 ```
 
 > [!TIP]
@@ -77,7 +77,7 @@ Settings are persisted in `settings.json`. Access them via the menu or edit dire
 
 ```json
 {
-  "model": "gemma4:e4b",
+  "model": "nvidia/llama-3.3-nemotron-super-49b-v1",
   "format": "article",
   "persona": "journalist",
   "tone": "casual",
@@ -121,7 +121,8 @@ The optional `filter` array restricts processing to items matching any keyword.
 | Variable | Purpose |
 |----------|---------|
 | `GOOGLE_INDEXING_KEY` | Google Indexing API key for instant indexing pings |
-| `OPENROUTER_KEY` | Enables cloud models via OpenRouter (overrides local Ollama) |
+| `NVIDIA_API_KEY` | **Required** — NVIDIA NIM API key for LLM inference |
+| `OPENROUTER_KEY` | Enables cloud models via OpenRouter (falls back from NVIDIA) |
 | `LINKEDIN_TOKEN` | LinkedIn OAuth token for auto-posting |
 
 ## Architecture
@@ -144,7 +145,7 @@ menu.mjs                          # Interactive CLI menu
 
 ```
 RSS feed / topic → prompt builder (format+persona+tone+lang)
-                → Ollama/OpenRouter streaming
+                → NVIDIA NIM / OpenRouter streaming
                 → JSON validation + retry
                 → HTML builder (Schema.org, OG, Twitter)
                 → save to articles/ + mark in generated.json

@@ -1,7 +1,7 @@
 import { createInterface } from "readline";
 import { spawn } from "child_process";
 import { readFileSync, writeFileSync, existsSync } from "fs";
-import { C, FORMATS, PERSONAS, TONES, LANGS, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, ollamaModels } from "./lib/shared.mjs";
+import { C, FORMATS, PERSONAS, TONES, LANGS, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, DEFAULT_MODEL, listModels } from "./lib/shared.mjs";
 
 let rl = createInterface({ input: process.stdin, output: process.stdout });
 function ask(q) { return new Promise(r => rl.question(q, r)); }
@@ -10,7 +10,7 @@ const SETTINGS_FILE = "settings.json";
 
 function loadSettings() {
   try { return JSON.parse(readFileSync(SETTINGS_FILE, "utf8")); }
-  catch { return { model: "gemma4:e4b", format: DEF_FORMAT, persona: DEF_PERSONA, tone: DEF_TONE, lang: DEF_LANG, queries: 0 }; }
+  catch { return { model: DEFAULT_MODEL, format: DEF_FORMAT, persona: DEF_PERSONA, tone: DEF_TONE, lang: DEF_LANG, queries: 0 }; }
 }
 function saveSettings(s) { writeFileSync(SETTINGS_FILE, JSON.stringify(s, null, 2)); }
 
@@ -56,7 +56,7 @@ function buildArgs(s, extra = {}) {
   if (s.persona !== DEF_PERSONA) { a.push("--persona", s.persona); }
   if (s.tone !== DEF_TONE) { a.push("--tone", s.tone); }
   if (s.lang !== DEF_LANG) { a.push("--lang", s.lang); }
-  if (s.model !== "gemma4:e4b") { a.push("--model", s.model); }
+  if (s.model !== DEFAULT_MODEL) { a.push("--model", s.model); }
   if (s.queries > 0) { a.push("--queries", String(s.queries)); }
   if (extra.digest) a.push("--digest");
   if (extra.review) a.push("--review");
@@ -103,12 +103,14 @@ async function showConfigAndRun(mode) {
 }
 
 async function pickModel(s) {
-  const models = ollamaModels();
-  if (models.length === 0) { console.log(`  ${C.red}→ Brak modeli — uruchom Ollamę${C.rst}`); return; }
-  console.log(`  ${C.dim}Dostępne modele:${C.rst}`);
-  models.forEach((m, i) => console.log(`    ${i + 1}. ${m}${m === s.model ? ` ${C.grn}← obecny${C.rst}` : ""}`));
-  const p = parseInt(await ask(`  Wybierz (1-${models.length}, Enter=bez zmian): `), 10);
-  if (p >= 1 && p <= models.length) s.model = models[p - 1];
+  const models = await listModels();
+  const list = models.length ? models : [DEFAULT_MODEL];
+  if (models.length === 0) console.log(`  ${C.ylw}→ NVIDIA API nie odpowiada — pokazuję domyślny model${C.rst}`);
+  console.log(`  ${C.dim}Dostępne modele (NVIDIA):${C.rst}`);
+  list.slice(0, 30).forEach((m, i) => console.log(`    ${i + 1}. ${m}${m === s.model ? ` ${C.grn}← obecny${C.rst}` : ""}`));
+  if (models.length > 30) console.log(`    … i ${models.length - 30} więcej`);
+  const p = parseInt(await ask(`  Wybierz (1-${Math.min(list.length, 30)}, Enter=bez zmian): `), 10);
+  if (p >= 1 && p <= list.length) s.model = list[p - 1];
 }
 
 async function settingsMenu(sub) {
@@ -127,7 +129,7 @@ async function settingsMenu(sub) {
     const p = parseInt(await ask(`  Wybierz (1-8): `), 10);
     if (p === 8) return;
     if (p === 7) {
-      Object.assign(s, { model: "gemma4:e4b", format: DEF_FORMAT, persona: DEF_PERSONA, tone: DEF_TONE, lang: DEF_LANG, queries: 0 });
+      Object.assign(s, { model: DEFAULT_MODEL, format: DEF_FORMAT, persona: DEF_PERSONA, tone: DEF_TONE, lang: DEF_LANG, queries: 0 });
       delete s._digest; delete s._newsletter; delete s._verbose;
       saveSettings(s);
       console.log(`  ${C.grn}→ Ustawienia domyślne przywrócone${C.rst}`);

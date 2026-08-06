@@ -1,4 +1,4 @@
-import { createServer, request } from "http";
+import { createServer } from "http";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { spawn, exec, execSync } from "child_process";
 import { randomBytes } from "crypto";
@@ -441,22 +441,24 @@ const server = createServer((req, res) => {
 
   // GET /api/models
   if (m === "GET" && p === "/api/models") {
-    try {
-      const out = execSync("ollama list", { encoding: "utf8", timeout: 5000 });
-      const models = out.trim().split("\n").slice(1).map(l => l.split(/\s+/)[0]).filter(Boolean);
-      json(res, models);
-    } catch { json(res, []); }
+    (async () => {
+      try {
+        const shared = await import(path.join(ROOT, "lib", "shared.mjs"));
+        json(res, await shared.listModels());
+      } catch (e) { json(res, [], 500); }
+    })();
     return;
   }
 
   // GET /api/status
   if (m === "GET" && p === "/api/status") {
-    try {
-      const out = execSync("ollama list", { encoding: "utf8", timeout: 3000 }).trim();
-      const lines = out.split("\n").filter(l => l.trim());
-      const models = lines.length > 1 ? lines.slice(1).map(l => l.trim().split(/\s+/)[0]).filter(Boolean) : [];
-      json(res, { ollama: models.length > 0, models });
-    } catch { json(res, { ollama: false, models: [] }); }
+    (async () => {
+      try {
+        const shared = await import(path.join(ROOT, "lib", "shared.mjs"));
+        const models = await shared.listModels();
+        json(res, { provider: "nvidia", model: shared.DEFAULT_MODEL, models, configured: !!shared.nvidiaKey() });
+      } catch (e) { json(res, { provider: "nvidia", models: [], configured: false }); }
+    })();
     return;
   }
 
@@ -758,7 +760,7 @@ const server = createServer((req, res) => {
       const nbCount = nbStatus.notebooks || 0;
       const recentRuns = Array.from(runs.values()).filter(r => r.buf && r.buf.length > 0).length;
       json(res, {
-        ollamaModels: (() => { try { return execSync("ollama list", { encoding: "utf8", timeout: 3000 }).trim().split("\n").length - 1; } catch { return 0; } })(),
+        ollamaModels: (() => { try { return process.env.NVIDIA_API_KEY ? 1 : 0; } catch { return 0; } })(),
         nbNotebooks: nbCount,
         activeRuns: recentRuns,
         generatedTotal: Object.keys(readJSON(path.join(ROOT, "generated.json")) || {}).length,
@@ -836,31 +838,30 @@ const server = createServer((req, res) => {
     return;
   }
 
-  // GET /api/warmup — preload Ollama model into RAM (SSE via EventSource)
+  // GET /api/warmup — check NVIDIA API connectivity (SSE via EventSource)
   if (m === "GET" && p === "/api/warmup") {
-    const model = (() => { try { const s = readJSON(path.join(ROOT, "settings.json")); return s.model || "gemma4:e4b"; } catch { return "gemma4:e4b"; } })();
-    sseHeaders(res);
-    sendSSE(res, { type: "step", step: "warmup_start", data: `Ładowanie modelu ${model} do RAM...\n` });
-    const start = Date.now();
-    const timer = setInterval(() => {
-      sendSSE(res, { type: "step", step: "warmup_progress", data: `⌛ ładuję... (${Math.floor((Date.now()-start)/1000)}s)\n` });
-    }, 5000);
-    const body = JSON.stringify({ model, messages: [{ role: "user", content: "OK" }], max_tokens: 1, stream: false, think: false });
-    const hreq = request({ hostname: "localhost", port: 11434, path: "/v1/chat/completions", method: "POST", headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(body) }, timeout: 300000 }, hres => {
-      let data = "";
-      hres.on("data", c => data += c);
-      hres.on("end", () => {
-        clearInterval(timer);
+    (async () => {
+      const shared = await import(path.join(ROOT, "lib", "shared.mjs"));
+      const model = (() => { try { const s = readJSON(path.join(ROOT, "settings.json")); return s.model || shared.DEFAULT_MODEL; } catch { return shared.DEFAULT_MODEL; } })();
+      sseHeaders(res);
+      sendSSE(res, { type: "step", step: "warmup_start", data: `Sprawdzanie NVIDIA API (${model})...\n` });
+      const start = Date.now();
+      try {
+        const wup = await fetch(shared.chatUrl(), {
+          method: "POST", headers: shared.chatHeaders(),
+          body: JSON.stringify({ model, messages: [{ role: "user", content: "OK" }], max_tokens: 1 }),
+        });
         const elapsed = ((Date.now() - start) / 1000).toFixed(1);
-        try { const j = JSON.parse(data); const mdl = j.model || (j.choices?.[0]?.model) || model; sendSSE(res, { done: true, success: true, step: "warmup_done", data: `✅ Gotowe! ${elapsed}s | ${mdl}\n`, output: `✅ Model ${model} załadowany w ${elapsed}s` }); }
-        catch { sendSSE(res, { done: true, success: true, step: "warmup_done", data: `✅ Gotowe! ${elapsed}s\n`, output: `✅ Model załadowany w ${elapsed}s` }); }
-      });
-    });
-    hreq.on("error", e => { clearInterval(timer); sendSSE(res, { done: true, success: false, step: "warmup_error", data: `❌ ${e.message}\n`, error: e.message }); });
-    hreq.on("timeout", () => { hreq.destroy(); clearInterval(timer); sendSSE(res, { done: true, success: false, step: "warmup_error", data: "❌ Timeout\n", error: "Timeout" }); });
-    hreq.write(body);
-    hreq.end();
-    req.on("close", () => { clearInterval(timer); hreq.destroy(); });
+        if (wup.ok) {
+          sendSSE(res, { done: true, success: true, step: "warmup_done", data: `✅ Połączono! ${elapsed}s | ${model}\n`, output: `✅ NVIDIA API OK (${model}) w ${elapsed}s` });
+        } else {
+          const errTxt = await wup.text().catch(() => "");
+          sendSSE(res, { done: true, success: false, step: "warmup_error", data: `❌ HTTP ${wup.status}: ${errTxt.slice(0, 120)}\n`, error: `HTTP ${wup.status}` });
+        }
+      } catch (e) {
+        sendSSE(res, { done: true, success: false, step: "warmup_error", data: `❌ ${e.message}\n`, error: e.message });
+      }
+    })();
     return;
   }
 
@@ -896,7 +897,7 @@ const server = createServer((req, res) => {
           format: v.format || "article",
           persona: v.persona || "",
           tone: v.tone || "",
-          model: v.model || "gemma4:e4b",
+          model: v.model || "nvidia/llama-3.3-nemotron-super-49b-v1",
           words: v.words || 0,
           size: v.size || "",
           file: filePath,

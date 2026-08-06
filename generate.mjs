@@ -3,7 +3,7 @@ import { execSync } from "child_process";
 import { createInterface } from "readline";
 import { setTimeout } from "timers/promises";
 import Parser from "rss-parser";
-import { C, esc, ts, stepReset, step, loadGen, markGen, ollamaModels, parseFlag, FORMATS, PERSONAS, TONES, LANGS, buildPrompt, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, validate, streamResponse, buildHtml, gitPush, googleIndexingPing, generateIndex, generateSitemap, generateFeed, NB_NEWS_ID, NB_SOURCES_ID, setJsonMode, isJsonMode, emitJSON } from "./lib/shared.mjs";
+import { C, esc, ts, stepReset, step, loadGen, markGen, NVIDIA_BASE, DEFAULT_MODEL, listModels, parseFlag, FORMATS, PERSONAS, TONES, LANGS, buildPrompt, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, validate, streamResponse, buildHtml, gitPush, googleIndexingPing, generateIndex, generateSitemap, generateFeed, NB_NEWS_ID, NB_SOURCES_ID, setJsonMode, isJsonMode, emitJSON } from "./lib/shared.mjs";
 import { postToLinkedIn } from "./social.mjs";
 
 function nbPush(url, title) {
@@ -20,15 +20,19 @@ function cleanup() { try { rl.close(); } catch {} }
 
 // --- generation ---
 async function generate(model, systemPrompt, userContent, minWords = 200, attempt = 0) {
-  const isOllama = !process.env.OPENROUTER_KEY;
-  const url = isOllama
-    ? "http://localhost:11434/v1/chat/completions"
-    : "https://openrouter.ai/api/v1/chat/completions";
+  const useNvidia = !!process.env.NVIDIA_API_KEY;
+  const useOpenRouter = !!process.env.OPENROUTER_KEY;
+  const url = useNvidia
+    ? `${NVIDIA_BASE}/chat/completions`
+    : useOpenRouter
+      ? "https://openrouter.ai/api/v1/chat/completions"
+      : null;
+  if (!url) throw new Error("Brak NVIDIA_API_KEY — ustaw zmienną środowiskową");
   const headers = { "Content-Type": "application/json" };
-  if (!isOllama) headers["Authorization"] = `Bearer ${process.env.OPENROUTER_KEY}`;
+  if (useNvidia) headers.Authorization = `Bearer ${process.env.NVIDIA_API_KEY}`;
+  else if (useOpenRouter) headers.Authorization = `Bearer ${process.env.OPENROUTER_KEY}`;
 
   const b = { model, messages: [{ role: "system", content: systemPrompt }, { role: "user", content: userContent }], temperature: 0.3, max_tokens: 8192, stream: true, response_format: { type: "json_object" } };
-  if (isOllama) b.think = false;
 
   if (attempt > 0) console.log(`\n  ${C.ylw}── RETRY ${attempt + 1}/2 ──${C.rst}`);
   const t0 = Date.now();
@@ -58,7 +62,9 @@ async function generate(model, systemPrompt, userContent, minWords = 200, attemp
 async function main() {
   process.on("SIGINT", () => { console.log(`\n${C.ylw}⏹ Przerwano${C.rst}`); cleanup(); process.exit(0); });
   const start = Date.now();
+  const useNvidia = !!process.env.NVIDIA_API_KEY;
   const useOpenRouter = !!process.env.OPENROUTER_KEY;
+  const providerName = useNvidia ? "NVIDIA" : useOpenRouter ? "OpenRouter" : "brak klucza (NVIDIA_API_KEY)";
   const jsonMode = process.argv.includes("--json-output");
   if (jsonMode) setJsonMode(true);
 
@@ -95,7 +101,7 @@ async function main() {
   if (!jsonMode) {
     console.log("╔══════════════════════════════════════════╗");
     console.log(`║     Generator v3${rssUrl ? " RSS" : ""} · ${fmtShort} · ${personaShort} · ${toneShort} · ${langShort}  ║`);
-    console.log(`║     Provider: ${useOpenRouter ? "OpenRouter" : "Ollama"}                         ║`);
+    console.log(`║     Provider: ${providerName}                         ║`);
     console.log("╚══════════════════════════════════════════╝\n");
   }
 
@@ -105,7 +111,7 @@ async function main() {
   step(rssUrl ? "Pobieranie RSS" : "Pobieranie tematu", C.cyn, "rss_fetch");
 
   if (rssUrl) {
-    const parser = new Parser({ timeout: 30000, headers: { 'User-Agent': 'SmartBuyers/3.0' } });
+    const parser = new Parser({ timeout: 30000, headers: { 'User-Agent': 'KROKIET-NEWS/3.0' } });
     let parsed;
     try {
       parsed = await parser.parseURL(rssUrl);
@@ -175,25 +181,31 @@ async function main() {
   // [2] Model
   step("Wybór modelu AI", C.cyn, "model_select");
   let model = (positional[1] || "").trim();
-  if (!useOpenRouter) {
-    const models = ollamaModels();
-    if (models.length === 0) { if (!jsonMode) console.log(`  ${C.red}→ Brak modeli – uruchom Ollamę${C.rst}`); cleanup(); process.exit(1); }
+  if (useNvidia) {
+    const models = await listModels();
     if (!model) {
       if (flagNonInteractive) {
-        model = models[0];
-        if (!jsonMode) console.log(`  → ${models.length} modele, auto: ${model}`);
+        model = DEFAULT_MODEL;
+        if (!jsonMode) console.log(`  → domyślny: ${model}`);
       } else {
+        const list = models.length ? models : [DEFAULT_MODEL];
         if (!jsonMode) {
-          console.log("  Dostępne modele:");
-          models.forEach((m, i) => console.log(`    ${i + 1}. ${m}`));
+          console.log("  Dostępne modele (NVIDIA):");
+          list.slice(0, 30).forEach((m, i) => console.log(`    ${i + 1}. ${m}`));
+          if (models.length > 30) console.log(`    … i ${models.length - 30} więcej`);
         }
-        const p = parseInt(await ask(`  Wybierz (1-${models.length}, Enter=domyślny): `), 10);
-        model = models[p - 1] || models[0];
+        const p = parseInt(await ask(`  Wybierz (1-${Math.min(list.length, 30)}, Enter=${DEFAULT_MODEL}): `), 10);
+        model = list[p - 1] || DEFAULT_MODEL;
       }
-    } else if (!models.includes(model)) { if (!jsonMode) console.log(`  ${C.ylw}→ "${model}" nie znaleziony – używam ${models[0]}${C.rst}`); model = models[0]; }
-  } else { if (!model) model = "qwen/qwen-2.5-7b-instruct"; }
+    }
+  } else if (useOpenRouter) {
+    if (!model) model = "qwen/qwen-2.5-7b-instruct";
+  } else {
+    if (!jsonMode) console.log(`  ${C.red}→ Brak NVIDIA_API_KEY — ustaw zmienną środowiskową${C.rst}`);
+    cleanup(); process.exit(1);
+  }
   if (!jsonMode) console.log(`  → ${model}`);
-  if (jsonMode) emitJSON("meta", { format: optFormat, persona: optPersona, tone: optTone, lang: optLang, model, provider: useOpenRouter ? "openrouter" : "ollama" });
+  if (jsonMode) emitJSON("meta", { format: optFormat, persona: optPersona, tone: optTone, lang: optLang, model, provider: useNvidia ? "nvidia" : useOpenRouter ? "openrouter" : "none" });
 
   // [3] Dir
   step("Katalog wyjściowy", C.cyn, "dir_check");
@@ -208,31 +220,20 @@ async function main() {
     if (flagVerb) { console.log(`\n  ${C.dim}──${systemPrompt.slice(0,150)}...──${C.rst}`); console.log(`\n  ${C.dim}──${userContent.slice(0,150)}...──${C.rst}`); }
   }
 
-  // [5] Warmup
-  if (!useOpenRouter) {
-    step("Warmup modelu (pierwsze uruchomienie — ładuję do RAM)", C.ylw, "warmup");
-    if (!jsonMode) console.log(`  ${C.dim}→ Model ${model} może ładować się 60-120s przy pierwszym użyciu${C.rst}`);
+  // [5] Warmup (connectivity check — NVIDIA nie ładuje modelu do RAM)
+  if (useNvidia) {
+    step("Sprawdzanie połączenia z NVIDIA API", C.ylw, "warmup");
     const tw = Date.now();
-    let warmupDone = false;
-    const dotTimer = setInterval(() => {
-      const elapsed = Math.floor((Date.now() - tw) / 1000);
-      if (!warmupDone) {
-        if (jsonMode) emitJSON("warmup_tick", { elapsed });
-        else console.log(`  ${C.dim}⌛ wciąż ładuję model... (${elapsed}s)${C.rst}`);
-      }
-    }, 5000);
     try {
-      const wup = await fetch("http://localhost:11434/v1/chat/completions", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ model, messages: [{ role: "user", content: "OK" }], max_tokens: 1, think: false }),
+      const wup = await fetch(`${NVIDIA_BASE}/chat/completions`, {
+        method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${process.env.NVIDIA_API_KEY}` },
+        body: JSON.stringify({ model, messages: [{ role: "user", content: "OK" }], max_tokens: 1 }),
       });
-      clearInterval(dotTimer); warmupDone = true;
       if (!wup.ok) { if (!jsonMode) console.log(`  ${C.red}→ ${wup.status}${C.rst}`); cleanup(); process.exit(1); }
-      const wj = await wup.json();
       const wElapsed = ((Date.now() - tw) / 1000).toFixed(1);
-      if (jsonMode) emitJSON("warmup_done", { elapsed: parseFloat(wElapsed), model: wj.model || model });
-      else console.log(`  ${C.grn}→ Gotowe! ${wj.model || model} | ${wElapsed}s | ${wj.usage?.total_tokens || "?"} tokenów${C.rst}`);
-    } catch (e) { clearInterval(dotTimer); if (!jsonMode) console.log(`  ${C.red}→ ${e.cause?.message || e.message}${C.rst}`); cleanup(); process.exit(1); }
+      if (jsonMode) emitJSON("warmup_done", { elapsed: parseFloat(wElapsed), model });
+      else console.log(`  ${C.grn}→ Połączono z NVIDIA API | ${wElapsed}s | ${model}${C.rst}`);
+    } catch (e) { if (!jsonMode) console.log(`  ${C.red}→ ${e.cause?.message || e.message}${C.rst}`); cleanup(); process.exit(1); }
   }
 
   // [6] Generate

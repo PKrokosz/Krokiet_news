@@ -1,7 +1,7 @@
 ## Wymagania
 
 - [Node.js 18+](https://nodejs.org/)
-- [Ollama](https://ollama.com/) z przynajmniej jednym modelem
+- [NVIDIA API key](https://build.nvidia.com) — ustaw zmienną środowiskową `NVIDIA_API_KEY`
 
 ## Instalacja
 
@@ -11,13 +11,17 @@ cd smartbuyers
 npm install
 ```
 
-## Modele Ollamy (minimum jeden)
+## Klucz API NVIDIA
 
 ```powershell
-ollama pull qwen2.5:1.5b    # szybki (~1GB, do testów)
-ollama pull qwen3.5:4b      # zbalansowany (~3.4GB)
-ollama pull qwen2.5:latest  # pełny (~4.7GB, najlepsza jakość)
+# Ustaw zmienną środowiskową (stała dla użytkownika)
+setx NVIDIA_API_KEY "nvapi-..."
+
+# Sprawdź
+$env:NVIDIA_API_KEY
 ```
+
+Domyślny model: `nvidia/llama-3.3-nemotron-super-49b-v1` — zmień w `settings.json`.
 
 ## Konfiguracja RSS (opcjonalnie)
 
