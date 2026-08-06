@@ -2,11 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>KROKIET NEWS</title>
-    <link>https://pkrokosz.github.io/smartbuyers/articles/</link>
+    <link>https://pkrokosz.github.io/smartbuyers/</link>
     <description>Automatycznie generowane artykuły SEO z RSS feedów. B2B dropshipping, e-commerce, AI.</description>
     <language>pl</language>
-    <lastBuildDate>Thu, 06 Aug 2026 15:06:48 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2026 15:36:42 GMT</lastBuildDate>
     <atom:link href="https://pkrokosz.github.io/smartbuyers/articles/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.github.io/smartbuyers/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.github.io/smartbuyers/articles/digest.html</guid>
+      <pubDate>Thu, 06 Aug 2026 15:36:41 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB2Z0Fvd1hJM0lqT1k4d3psM2ZIbDd3YUdrZ1c1aVQ2SU9ha3BVY2Z2bE9zM2xWNWZGN3ZQRks5eEJnZEVnNUIteWk4UGNMVEhwTUMtLTBEYVVQcU5abzk5M3ZfTGU2S3c?oc=5">https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB2Z0Fvd1h</source>
+    </item>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.github.io/smartbuyers/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.github.io/smartbuyers/articles/digest.html</guid>
+      <pubDate>Thu, 06 Aug 2026 15:36:41 GMT</pubDate>
+      <source url="https://techcrunch.com/2026/08/06/openai-says-apples-own-security-practices-undermine-its-trade-secrets-case/">https://techcrunch.com/2026/08/06/openai-says-apples-own-sec</source>
+    </item>
+    <item>
+      <title>Przegl D Tygodnia Openai Kontra Apple I Live Shopping Na Sho</title>
+      <link>https://pkrokosz.github.io/smartbuyers/articles/przegl-d-tygodnia-openai-kontra-apple-i-live-shopping-na-sho.html</link>
+      <guid isPermaLink="true">https://pkrokosz.github.io/smartbuyers/articles/przegl-d-tygodnia-openai-kontra-apple-i-live-shopping-na-sho.html</guid>
+      <pubDate>Thu, 06 Aug 2026 15:36:40 GMT</pubDate>
+      <source url="https://techcrunch.com/2026/08/06/openai-says-apples-own-security-practices-undermine-its-trade-secrets-case/ | https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB2Z0Fvd1hJM0lqT1k4d3psM2ZIbDd3YUdrZ1c1aVQ2SU9ha3BVY2Z2bE9zM2xWNWZGN3ZQRks5eEJnZEVnNUIteWk4UGNMVEhwTUMtLTBEYVVQcU5abzk5M3ZfTGU2S3c?oc=5">https://techcrunch.com/2026/08/06/openai-says-apples-own-sec</source>
+    </item>
     <item>
       <title>Digest</title>
       <link>https://pkrokosz.github.io/smartbuyers/articles/digest.html</link>
@@ -125,27 +146,6 @@
       <guid isPermaLink="true">https://pkrokosz.github.io/smartbuyers/articles/digest.html</guid>
       <pubDate>Thu, 06 Aug 2026 13:06:35 GMT</pubDate>
       <source url="https://www.reddit.com/r/dropshipping/comments/1vg9cqs/need_some_honest_advice/">https://www.reddit.com/r/dropshipping/comments/1vg9cqs/need_</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.github.io/smartbuyers/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.github.io/smartbuyers/articles/digest.html</guid>
-      <pubDate>Thu, 06 Aug 2026 13:06:35 GMT</pubDate>
-      <source url="https://www.reddit.com/r/dropshipping/comments/1vgv0ng/episode_2_i_switched_from_looking_for_an_equity/">https://www.reddit.com/r/dropshipping/comments/1vgv0ng/episo</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.github.io/smartbuyers/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.github.io/smartbuyers/articles/digest.html</guid>
-      <pubDate>Thu, 06 Aug 2026 13:06:35 GMT</pubDate>
-      <source url="https://www.reddit.com/r/dropshipping/comments/1vgvvw3/looking_for_some_advice_for_first_timer/">https://www.reddit.com/r/dropshipping/comments/1vgvvw3/looki</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.github.io/smartbuyers/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.github.io/smartbuyers/articles/digest.html</guid>
-      <pubDate>Thu, 06 Aug 2026 13:06:35 GMT</pubDate>
-      <source url="https://www.reddit.com/r/dropshipping/comments/1vgw8qq/filipino_dropshippers/">https://www.reddit.com/r/dropshipping/comments/1vgw8qq/filip</source>
     </item>
   </channel>
 </rss>
