@@ -91,7 +91,7 @@ header.top .nav span.on{color:var(--cyan);text-decoration:underline}
     <div class="wrap">
       <div class="brand">KROKIET NEWS</div>
       <div class="rule">////////////////////////////</div>
-      <div class="sub">system feedu aktywny — <span id="totalCount">35</span> sygnałów</div>
+      <div class="sub">system feedu aktywny — <span id="totalCount">35</span> sygnałów · <span id="pageViews">—</span> wizyt</div>
       <div id="menuItems"></div>
       <div class="hint-bar">
         <kbd>&uarr;</kbd><kbd>&darr;</kbd> nawigacja &nbsp; <kbd>enter</kbd> wybierz &nbsp; lub kliknij myszką
@@ -164,6 +164,7 @@ function typeBootLine(){
   },14);
 }
 typeBootLine();
+fetch("https://api.countapi.xyz/hit/krokiet_news/home").then(function(r){return r.json()}).then(function(d){var e=document.getElementById("pageViews");if(e)e.textContent=d.value+" wizyt"}).catch(function(){});
 
 /* ── MENU ── */
 var menuOptions=["przeglądaj wszystko","nowe (dziś)","tematy / kategorie","archiwum","rss"];
