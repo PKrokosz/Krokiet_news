@@ -84,7 +84,7 @@ header.top .nav span.on{color:var(--cyan);text-decoration:underline}
 #articlePane .body{max-width:720px;color:#bfe9cf;line-height:1.65}
 #articlePane .body h2{color:var(--cyan);font-size:16px;margin:1.6rem 0 .6rem}
 #articlePane .body p{margin:0 0 1rem}
-@media(max-width:600px){#rail.open{width:160px}#rail .inner{width:160px}.row{grid-template-columns:18px 50px 60px 1fr;font-size:12px;gap:.4rem}}
+@media(max-width:600px){#rail.open{width:160px}#rail .inner{width:160px}.row{grid-template-columns:18px 44px 56px 1fr;font-size:11px;gap:.3rem}#articlePane{padding:.8rem .6rem 2rem}#articlePane h1{font-size:17px}#listPane{padding:.8rem .6rem 2rem}#railHandle{width:22px;font-size:14px}.row .tag{font-size:9px;padding:1px 3px}.row .title{font-size:11px}.row .date{font-size:10px}.feed-title{font-size:16px}.feed-meta{font-size:11px}header.top{font-size:10px;padding:.5rem .4rem .3rem}}
 </style>
 </head>
 <body>
@@ -97,7 +97,7 @@ header.top .nav span.on{color:var(--cyan);text-decoration:underline}
     <div class="wrap">
       <div class="brand">KROKIET NEWS</div>
       <div class="rule">////////////////////////////</div>
-      <div class="sub">system feedu aktywny — <span id="totalCount">39</span> sygnałów · <span id="pageViews">—</span> wizyt</div>
+      <div class="sub">system feedu aktywny — <span id="totalCount">40</span> sygnałów · <span id="pageViews">—</span> wizyt</div>
       <div id="menuItems"></div>
       <div class="hint-bar">
         <kbd>&uarr;</kbd><kbd>&darr;</kbd> nawigacja &nbsp; <kbd>enter</kbd> wybierz &nbsp; lub kliknij myszką
@@ -124,7 +124,7 @@ header.top .nav span.on{color:var(--cyan);text-decoration:underline}
       <div id="railHandle" title="rozwiń pasek">&rsaquo;</div>
       <div id="listPane">
         <div class="feed-title">wszystkie sygnały</div>
-        <div class="feed-meta">terminal news feed — AI-generated — <span id="countLabel">39</span> sygnałów</div>
+        <div class="feed-meta">terminal news feed — AI-generated — <span id="countLabel">40</span> sygnałów</div>
         <div id="rows"></div>
       </div>
       <div id="articlePane"></div>
@@ -302,8 +302,9 @@ function renderRail(){
 document.getElementById("backBtn").onclick=backToMenu;
 document.getElementById("backToMenuBtn").onclick=backToMenu;
 document.getElementById("collapseRail").onclick=function(){setRail(false);};
-document.getElementById("railHandle").onclick=function(){setRail(true);};
-function setRail(open){
+document.getElementById("railHandle").onclick=function(){setRail(true,true);};
+function setRail(open,force){
+  if(open&&!force&&window.innerWidth<=600)return;
   document.getElementById("rail").classList.toggle("open",open);
   document.getElementById("railHandle").classList.toggle("show",!open);
 }
