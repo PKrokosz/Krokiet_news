@@ -1,8 +1,25 @@
 import { readFileSync, readdirSync } from "fs";
-import { pushArticleToFirebase } from "./lib/shared.mjs";
+import { execSync } from "child_process";
+import { pushArticleToFirebase, loadGen } from "./lib/shared.mjs";
 
 const files = readdirSync("articles").filter(f => f.endsWith(".html") && f !== "index.html");
 console.log(`Migruję ${files.length} artykułów do Firebase...\n`);
+
+const gen = loadGen();
+const genDates = new Map();
+for (const [, info] of Object.entries(gen)) {
+  if (info.slug && info.date && !genDates.has(info.slug)) genDates.set(info.slug, info.date);
+}
+
+function getDate(slug) {
+  const iso = genDates.get(slug);
+  if (iso) return new Date(iso).toLocaleDateString("pl-PL");
+  try {
+    const gd = execSync(`git log --follow --diff-filter=A -1 --format=%aI "articles/${slug}.html"`, { encoding: "utf8", timeout: 3000 }).trim();
+    if (gd) return new Date(gd).toLocaleDateString("pl-PL");
+  } catch {}
+  return null;
+}
 
 let ok = 0, fail = 0;
 for (const f of files) {
@@ -16,15 +33,14 @@ for (const f of files) {
   const url = `https://pkrokosz.github.io/smartbuyers/articles/${slug}.html`;
   const sourceM = html.match(/source:\s*<a href="([^"]+)"/);
   const sourceUrl = sourceM ? sourceM[1] : null;
-  const dateM = html.match(/"datePublished"\s*:\s*"([^"]+)"/);
-  const date = dateM ? new Date(dateM[1]).toLocaleDateString("pl-PL") : null;
+  const date = getDate(slug);
 
   try {
     await pushArticleToFirebase(slug, title, bodyHtml, url, sourceUrl, date);
-    console.log(`  ✅ ${slug.slice(0, 60)}`);
+    console.log(`  ✅ ${slug.slice(0, 55)}  |  ${date}`);
     ok++;
   } catch (e) {
-    console.log(`  ❌ ${slug.slice(0, 60)}: ${e.message}`);
+    console.log(`  ❌ ${slug.slice(0, 55)}: ${e.message}`);
     fail++;
   }
 }
