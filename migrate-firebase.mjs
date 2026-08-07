@@ -16,9 +16,11 @@ for (const f of files) {
   const url = `https://pkrokosz.github.io/smartbuyers/articles/${slug}.html`;
   const sourceM = html.match(/source:\s*<a href="([^"]+)"/);
   const sourceUrl = sourceM ? sourceM[1] : null;
+  const dateM = html.match(/"datePublished"\s*:\s*"([^"]+)"/);
+  const date = dateM ? new Date(dateM[1]).toLocaleDateString("pl-PL") : null;
 
   try {
-    await pushArticleToFirebase(slug, title, bodyHtml, url, sourceUrl);
+    await pushArticleToFirebase(slug, title, bodyHtml, url, sourceUrl, date);
     console.log(`  ✅ ${slug.slice(0, 60)}`);
     ok++;
   } catch (e) {
