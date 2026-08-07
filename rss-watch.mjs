@@ -319,7 +319,7 @@ async function main() {
 
   if (totalGenerated > 0 && flagPush) {
     step("Git push", C.ylw, "publish");
-    if (gitPush("index.html articles/ feeds.json generated.json", `Auto: ${totalGenerated} artykuł(i) z RSS`)) {
+    if (gitPush("articles/sitemap.xml articles/feed.xml generated.json", `Auto: ${totalGenerated} artykuł(i) z RSS`)) {
       if (lastPageUrl) { googleIndexingPing(lastPageUrl); postToLinkedIn("KROKIET NEWS — Nowy artykuł", "", lastPageUrl); }
     }
     if (!jsonMode) console.log(`\n${C.cyn}🔗 https://pkrokosz.github.io/smartbuyers/${C.rst}\n`);
