@@ -3,7 +3,7 @@ import { createInterface } from "readline";
 import { execSync } from "child_process";
 import { fileURLToPath } from "url";
 import Parser from "rss-parser";
-import { C, ts, stepReset, step, log, loadGen, isGen, markGen, DEFAULT_MODEL, chatUrl, chatHeaders, providerStatus, parseFlag, FORMATS, PERSONAS, TONES, LANGS, buildPrompt, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, validate, streamResponse, buildHtml, gitPush, googleIndexingPing, generateIndex, generateSitemap, generateFeed, NB_SOURCES_ID, NB_NEWS_ID, setJsonMode, isJsonMode, emitJSON } from "./lib/shared.mjs";
+import { C, ts, stepReset, step, log, loadGen, isGen, markGen, DEFAULT_MODEL, chatUrl, chatHeaders, providerStatus, parseFlag, FORMATS, PERSONAS, TONES, LANGS, buildPrompt, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, validate, streamResponse, buildHtml, gitPush, googleIndexingPing, generateIndex, generateSitemap, generateFeed, pushArticleToFirebase, NB_SOURCES_ID, NB_NEWS_ID, setJsonMode, isJsonMode, emitJSON } from "./lib/shared.mjs";
 import { postToLinkedIn } from "./social.mjs";
 import { generateNewsletter } from "./newsletter.mjs";
 
@@ -85,6 +85,7 @@ function saveArticle(gen, title, link) {
   if (!existsSync("articles")) mkdirSync("articles");
   writeFileSync(fname, html, "utf8");
   if (link) markGen(link, slug, title);
+  pushArticleToFirebase(slug, artTitle, body, pageUrl, link);
   if (!isJsonMode()) {
     console.log(`  ${C.grn}→ ${fname}${C.rst}`);
     console.log(`  ${C.cyn}→ ${pageUrl}${C.rst}`);

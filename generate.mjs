@@ -4,7 +4,7 @@ import { createInterface } from "readline";
 import { setTimeout } from "timers/promises";
 import { fileURLToPath } from "url";
 import Parser from "rss-parser";
-import { C, esc, ts, stepReset, step, loadGen, markGen, NVIDIA_BASE, DEFAULT_MODEL, listModels, parseFlag, FORMATS, PERSONAS, TONES, LANGS, buildPrompt, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, validate, streamResponse, buildHtml, gitPush, googleIndexingPing, generateIndex, generateSitemap, generateFeed, NB_NEWS_ID, NB_SOURCES_ID, setJsonMode, isJsonMode, emitJSON } from "./lib/shared.mjs";
+import { C, esc, ts, stepReset, step, loadGen, markGen, NVIDIA_BASE, DEFAULT_MODEL, listModels, parseFlag, FORMATS, PERSONAS, TONES, LANGS, buildPrompt, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, validate, streamResponse, buildHtml, gitPush, googleIndexingPing, generateIndex, generateSitemap, generateFeed, pushArticleToFirebase, NB_NEWS_ID, NB_SOURCES_ID, setJsonMode, isJsonMode, emitJSON } from "./lib/shared.mjs";
 import { postToLinkedIn } from "./social.mjs";
 
 function nbPush(url, title) {
@@ -317,6 +317,10 @@ async function main() {
   step("Zapis pliku", C.cyn, "save_file");
   writeFileSync(fname, html, "utf8");
   if (!jsonMode) console.log(`  → ${C.grn}${fname}${C.rst} (${(html.length/1024).toFixed(1)} KB)`);
+
+  // Firebase index push
+  pushArticleToFirebase(slug, artTitle, body, pageUrl, rssSourceLink);
+  if (!jsonMode) console.log(`  ${C.dim}→ Firebase: indeks zaktualizowany${C.rst}`);
 
   // [9] generated.json
   if (rssSourceLink) {
