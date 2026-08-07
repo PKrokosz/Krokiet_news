@@ -13,71 +13,80 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Przegląd Tygodnia: OpenAI kontra Apple i Live Shopping na Shopify">
 <meta name="twitter:description" content="Podsumowanie najważniejszych newsów tygodnia: OpenAI argumentuje słabością bezpieczeństwa Apple w sprawie tajemnic handlowych oraz rozwój Live Shopping na platformie Shopify.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Przegląd Tygodnia: OpenAI kontra Apple i Live Shopping na Shopify","description":"Podsumowanie najważniejszych newsów tygodnia: OpenAI argumentuje słabością bezpieczeństwa Apple w sprawie tajemnic handlowych oraz rozwój Live Shopping na platformie Shopify.","datePublished":"2026-08-06T15:36:40.871Z","dateModified":"2026-08-06T15:36:40.871Z","author":{"@type":"Organization","name":"KROKIET NEWS"},"publisher":{"@type":"Organization","name":"KROKIET NEWS","url":"https://pkrokosz.github.io/smartbuyers"},"mainEntityOfPage":"https://pkrokosz.github.io/smartbuyers/articles/przegl-d-tygodnia-openai-kontra-apple-i-live-shopping-na-sho.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Przegląd Tygodnia: OpenAI kontra Apple i Live Shopping na Shopify","description":"Podsumowanie najważniejszych newsów tygodnia: OpenAI argumentuje słabością bezpieczeństwa Apple w sprawie tajemnic handlowych oraz rozwój Live Shopping na platformie Shopify.","datePublished":"2026-08-07T05:24:38.596Z","dateModified":"2026-08-07T05:24:38.596Z","author":{"@type":"Organization","name":"KROKIET NEWS"},"publisher":{"@type":"Organization","name":"KROKIET NEWS","url":"https://pkrokosz.github.io/smartbuyers"},"mainEntityOfPage":"https://pkrokosz.github.io/smartbuyers/articles/przegl-d-tygodnia-openai-kontra-apple-i-live-shopping-na-sho.html"}</script>
 <style>
-:root{--bg:#030706;--panel:#050a08;--fg:#22e07a;--fg-dim:#0e6b3c;--fg-bright:#7dffb0;--cyan:#29d4d4;--cyan-dim:#12615f;--border:#124a2e;--border-dim:#0a2c1c;--muted:#4a6b58;--tag-bg:#071510}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:"Courier New",ui-monospace,monospace;font-size:15px;line-height:1.55}
-#root{min-height:100vh;display:flex;flex-direction:column}
-::selection{background:var(--fg-dim);color:#000}
-
-.scanlines{pointer-events:none;position:fixed;inset:0;background:repeating-linear-gradient(to bottom,rgba(0,0,0,0) 0px,rgba(0,0,0,0) 1px,rgba(0,0,0,.10) 2px,rgba(0,0,0,0) 3px);z-index:999;opacity:.35;mix-blend-mode:overlay}
-
-.cursor{display:inline-block;width:.55em;height:1em;background:var(--fg-bright);vertical-align:-.15em;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-
-#boot{flex:1;display:flex;align-items:center;justify-content:center;padding:2rem}
-#boot pre{color:var(--fg-dim);font-size:14px;white-space:pre-wrap;margin:0;max-width:640px}
-#boot .line-done{color:var(--fg)}
-
-#menu{flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
-#menu .wrap{width:100%;max-width:520px}
-#menu .brand{text-align:center;margin-bottom:.25rem;font-size:30px;font-weight:bold;letter-spacing:.18em;color:var(--fg-bright);text-shadow:0 0 14px rgba(34,224,122,.35)}
-#menu .rule{text-align:center;color:var(--border);letter-spacing:.3em;margin-bottom:.4rem;font-size:13px}
-#menu .sub{text-align:center;color:var(--muted);font-size:13px;margin-bottom:2.2rem}
-.menu-item{display:flex;align-items:center;gap:.9rem;padding:.65rem 1rem;margin-bottom:.3rem;cursor:pointer;border:1px solid transparent;color:var(--fg-dim);font-size:16px;transition:none}
-.menu-item .idx{color:var(--muted);width:1.4em}
-.menu-item.active{color:var(--fg-bright);border:1px solid var(--border);background:rgba(34,224,122,.05)}
-.menu-item.active .idx{color:var(--fg-bright)}
-.menu-item.active::before{content:"›";margin-right:-.4rem;color:var(--fg-bright)}
-.menu-item:not(.active)::before{content:" ";margin-right:-.4rem}
-.hint-bar{margin-top:2rem;text-align:center;color:var(--muted);font-size:12px;border-top:1px solid var(--border-dim);padding-top:1rem}
-.hint-bar kbd{border:1px solid var(--border);padding:1px 6px;border-radius:3px;color:var(--fg-dim);font-family:inherit;margin:0 2px}
-
-#app{flex:1;display:none;flex-direction:column}
-header.top{text-align:center;padding:.9rem 1rem .7rem;color:var(--muted);font-size:13px;letter-spacing:.15em;border-bottom:1px solid var(--border-dim)}
-header.top .nav{margin-top:.5rem;font-size:13px}
-header.top .nav span{margin:0 .7rem;cursor:pointer;color:var(--fg-dim)}
-header.top .nav span.on{color:var(--cyan);text-decoration:underline}
-.app-body{flex:1;display:flex;min-height:0}
-
-#listPane{width:100%;max-width:900px;margin:0 auto;padding:1.2rem 1.5rem 3rem;transition:max-width .35s ease}
-.feed-title{color:var(--fg-bright);font-size:20px;margin:0 0 .15rem;letter-spacing:.04em}
-.feed-meta{color:var(--muted);font-size:12.5px;margin-bottom:1.1rem}
-.row{display:grid;grid-template-columns:20px 60px 74px 1fr;align-items:center;gap:.7rem;padding:.5rem .6rem;border:1px solid transparent;cursor:pointer;color:var(--fg-dim);font-size:14px}
-.row .car{color:var(--fg-bright);visibility:hidden}
-.row.active{background:rgba(41,212,212,.06);border-color:var(--cyan-dim);color:var(--fg-bright)}
-.row.active .car{visibility:visible}
-.row .tag{font-size:10.5px;border:1px solid var(--border);background:var(--tag-bg);padding:2px 5px;text-align:center;letter-spacing:.05em;color:var(--fg-dim)}
-.row.active .tag{color:var(--cyan);border-color:var(--cyan-dim)}
-.row .date{color:var(--muted);font-size:12px}
-.row .title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
-#rail{width:0;overflow:hidden;border-right:1px solid var(--border-dim);transition:width .35s ease;flex-shrink:0}
-#rail.open{width:230px}
-#rail .inner{width:230px;padding:1rem .8rem}
-#rail .back{color:var(--muted);font-size:12px;cursor:pointer;margin-bottom:1rem;display:block}
-#rail .back:hover{color:var(--fg)}
-#rail .r-row{padding:.4rem .5rem;font-size:12.5px;color:var(--fg-dim);cursor:pointer;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;border-left:2px solid transparent}
-#rail .r-row.active{color:var(--cyan);border-left-color:var(--cyan);background:rgba(41,212,212,.05)}
-
-#articlePane{flex:1;min-width:0;padding:1.6rem 2rem 4rem;overflow-y:auto;display:none}
-#articlePane .a-meta{color:var(--muted);font-size:12.5px;margin-bottom:.3rem}
-#articlePane h1{color:var(--fg-bright);font-size:22px;margin:.2rem 0 1.2rem;border-bottom:1px solid var(--border-dim);padding-bottom:.8rem}
-#articlePane .body{max-width:720px;color:#bfe9cf;line-height:1.65}
-#articlePane .body h2{color:var(--cyan);font-size:16px;margin:1.6rem 0 .6rem}
-#articlePane .body p{margin:0 0 1rem}
-@media(max-width:600px){#rail.open{width:160px}#rail .inner{width:160px}.row{grid-template-columns:18px 50px 60px 1fr;font-size:12px;gap:.4rem}}
+:root{--green:#0f0;--green-dim:#0a0;--cyan:#0ff;--bg:#050505;--panel:#0a0a0a;--border:#1a3a1a;--text:#0f0;--dim:#0a0;--font:'Courier New',Courier,monospace}
+*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;font-size:15px}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.65;min-height:100vh;position:relative}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;background:repeating-linear-gradient(0deg,rgba(0,0,0,.06) 0px,rgba(0,0,0,.06) 2px,transparent 2px,transparent 4px);animation:scan 1s linear infinite}
+@keyframes scan{0%{background-position:0 0}100%{background-position:0 4px}}
+@keyframes flicker{0%,100%{opacity:1}50%{opacity:.82}}
+@keyframes glitch{0%{transform:translate(0);text-shadow:none}20%{transform:translate(-1px,1px);text-shadow:-1px 0 var(--cyan)}40%{transform:translate(1px,-1px);text-shadow:1px 0 var(--green)}60%{transform:translate(-1px,1px)}80%{transform:translate(1px,-1px)}100%{transform:translate(0);text-shadow:none}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.term-header,.term-footer{animation:flicker 3s infinite;color:var(--green-dim);font-size:.82rem;text-align:center;padding:.75rem 1rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);letter-spacing:.04em}
+.term-header{margin-bottom:1.5rem}
+.term-footer{margin-top:2.5rem}
+.term-nav{display:flex;justify-content:center;gap:1.5rem;padding:.5rem 0;font-size:.8rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem}
+.term-nav a{color:var(--dim);text-decoration:none;transition:color .2s}
+.term-nav a:hover,.term-nav a.active{color:var(--green);text-shadow:0 0 6px rgba(0,255,0,.3)}
+.term-nav a::before{content:'['}
+.term-nav a::after{content:']'}
+.term-wrap{max-width:860px;margin:0 auto;padding:.5rem clamp(.8rem,2vw,1.5rem)}
+.glitch{display:inline-block;animation:glitch 3.5s infinite;text-shadow:0 0 8px rgba(0,255,0,.35)}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%}
+.glitch::before{animation:glitch 3.5s infinite;clip-path:polygon(0 0,100% 0,100% 35%,0 35%);transform:translate(-.03em,-.03em)}
+.glitch::after{animation:glitch 2.5s infinite;clip-path:polygon(0 65%,100% 65%,100% 100%,0 100%);transform:translate(.03em,.03em)}
+h1{font-size:1.45rem;line-height:1.25;margin-bottom:.6rem;color:var(--green);position:relative}
+h2{font-size:1.1rem;margin:2rem 0 .6rem;padding-bottom:.3rem;border-bottom:1px solid var(--border);color:var(--cyan)}
+h3{font-size:1rem;margin:1.5rem 0 .4rem;color:var(--green-dim)}
+p{margin:.7rem 0}
+ul,ol{margin:.7rem 0;padding-left:1.4rem}
+li{margin:.3rem 0}
+li::marker{color:var(--dim)}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline;text-shadow:0 0 6px rgba(0,255,255,.3)}
+img{max-width:100%;height:auto;border:1px solid var(--border);margin:1rem 0}
+blockquote{border-left:3px solid var(--green-dim);padding:.5rem 1rem;margin:1rem 0;color:var(--dim);font-style:italic}
+pre,code{background:var(--panel);border:1px solid var(--border);border-radius:3px;font-family:var(--font);font-size:.88em}
+code{padding:.1rem .35rem;color:var(--cyan)}
+pre{padding:.8rem;overflow-x:auto;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9em}
+th,td{padding:.4rem .7rem;border:1px solid var(--border);text-align:left}
+th{background:var(--panel);color:var(--cyan)}
+.meta-line{display:flex;align-items:center;gap:1.2rem;font-size:.78rem;color:var(--dim);margin-bottom:1.5rem;flex-wrap:wrap}
+.article-source{margin:2rem 0 1rem;padding-top:.8rem;border-top:1px solid var(--border);font-size:.78rem;color:var(--dim)}
+.article-source a{color:var(--cyan)}
+.related-section{margin-top:2rem;padding:1rem;border:1px solid var(--border);background:var(--panel)}
+.related-section h2{font-size:.95rem;margin-top:0;color:var(--green)}
+.related-section ul{padding-left:1rem;margin-bottom:0}
+.related-section li{margin:.3rem 0;font-size:.85rem}
+.article-footer{margin-top:2rem;padding-top:.8rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--dim);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.cursor::after{content:'_';animation:blink 1s step-end infinite}
+/* ── index feed ── */
+.feed-line{display:flex;align-items:baseline;gap:.5rem;padding:.35rem 0;border-bottom:1px solid rgba(0,255,0,.06);font-size:.85rem;flex-wrap:wrap}
+.feed-line:hover{background:rgba(0,255,0,.03)}
+.feed-num{color:var(--dim);font-size:.75rem;min-width:2.2rem}
+.feed-tag{font-size:.65rem;font-weight:700;text-transform:uppercase;padding:.08rem .4rem;border:1px solid;white-space:nowrap}
+.feed-tag-tech{border-color:var(--cyan);color:var(--cyan)}
+.feed-tag-reddit{border-color:#ff4500;color:#ff4500}
+.feed-tag-article{border-color:var(--green-dim);color:var(--green-dim)}
+.feed-date{color:var(--dim);font-size:.72rem;min-width:5rem}
+.feed-title{flex:1;min-width:200px}
+.feed-title a{color:var(--green)}
+.feed-title a:hover{color:var(--cyan);text-shadow:0 0 8px rgba(0,255,255,.25)}
+.feed-link{font-size:.75rem;color:var(--dim)}
+.hero-panel{border:1px solid var(--border);background:var(--panel);padding:1.5rem;margin-bottom:2rem;text-align:center}
+.hero-panel h1{font-size:1.6rem;margin-bottom:.3rem}
+.hero-panel .sub{font-size:.8rem;color:var(--dim)}
+.count-line{font-size:.75rem;color:var(--dim);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.empty-line{text-align:center;padding:2rem;color:var(--dim)}
+.newsletter-list{list-style:none;padding:0;margin:1.5rem 0}
+.newsletter-list li{padding:.6rem .8rem;border:1px solid var(--border);background:var(--panel);margin-bottom:.5rem}
+.newsletter-list li a{color:var(--green);font-size:.95rem}
+.newsletter-list li small{color:var(--dim);font-size:.75rem;float:right}
+@media(max-width:600px){h1{font-size:1.2rem}.meta-line{font-size:.7rem;gap:.6rem}.feed-line{font-size:.78rem}.term-header,.term-footer{font-size:.7rem}}
+@media print{body::before{display:none}body{color:#000;background:#fff}}
 </style>
 </head>
 <body>
@@ -88,7 +97,7 @@ header.top .nav span.on{color:var(--cyan);text-decoration:underline}
 </div>
 <div class="term-wrap">
 <h1 class="glitch" data-text="Przegląd Tygodnia: OpenAI kontra Apple i Live Shopping na Shopify">Przegląd Tygodnia: OpenAI kontra Apple i Live Shopping na Shopify</h1>
-<div class="meta-line"><span>[ 6.08.2026 ]</span><span>[ 2 min ]</span><span>[ nvidia/llama-3.3-nemotron-super-49b-v1 ]</span></div>
+<div class="meta-line"><span>[ 7.08.2026 ]</span><span>[ 2 min ]</span><span>[ unknown ]</span></div>
 <article><h2>1. OpenAI kontra Apple: Słaba Bezpieczeństwa jako Argument</h2><p>OpenAI przedstawiło nowe dowody w sprawie związkowej z Apple, twierdząc, że praktyki bezpieczeństwa i procedury po opuszczeniu firmy przez pracownika (w tym dostęp menedżera do konta iCloud byłego inżyniera) podważają twierdzenia Apple, że rzekomo ukradzione informacje były odpowiednio chronione. (<a href="https://www.theverge.com/2023/10/04/23452345/openai-apple-trade-secrets-lawsuit-security-practices">Źródło: The Verge</a>)</p><h2>2. Live Shopping na Shopify: Co to jest i Jak to Działa w 2026</h2><p>Shopify wyjaśnia, co to jest Live Shopping i przedstawia kroki do rozpoczęcia sprzedaży przez livestream. Ta tendencja w e-commerce umożliwia dynamiczną interakcję z klientami, zwiększając ich zaangażowanie. (<a href="https://help.shopify.com/en/manual/online-store/live-shopping">Źródło: Shopify</a>)</p><h2>3. Rozwój AI w Polsce: Nowe Inicjatywy Rządowe</h2><p>Rząd polski ogłosił nowe inicjatywy wspierające rozwój sztucznej inteligencji w kraju, w tym programy szkoleniowe dla przedsiębiorstw i fundusze na badania i rozwój w sektorze AI. (<a href="https://www.gov.pl/web/gospodarka/nowe-inicjatywy-wsparcia-ai">Źródło: Gov.pl</a>)</p><h2>4. Nowy Smartwatch Apple: Funkcje i Cena</h2><p>Apple przedstawiło swój najnowszy smartwatch, oferując zaawansowane funkcje zdrowotne, dłuższy czas pracy baterii i atrakcyjną cenę. Urządzenie jest już dostępne w polskich sklepach. (<a href="https://www.apple.com/pl/watch/">Źródło: Apple.pl</a>)</p><h2>5. Zabezpieczenia Danych w Chmurze: Nowe Wytyczne EU</h2><p>Unia Europejska wydała nowe wytyczne dotyczące zabezpieczeń danych w chmurze, naciszając na większą transparentność dostawców usług chmury i lepszą ochronę danych obywateli UE. (<a href="https://ec.europa.eu/info/publications/cloud-security-guidelines">Źródło: Komisja Europejska</a>)</p>
 
 <h2>Źródło</h2>
@@ -100,6 +109,15 @@ header.top .nav span.on{color:var(--cyan);text-decoration:underline}
   <li><a href="https://pkrokosz.github.io/smartbuyers/articles/digest.html">Digest</a></li>
   <li><a href="https://pkrokosz.github.io/smartbuyers/articles/digest.html">Digest</a></li>
   <li><a href="https://pkrokosz.github.io/smartbuyers/articles/przegl-d-tygodnia-wyzwania-w-e-commerce-i-zmiany-w-deepseek.html">Przegl D Tygodnia Wyzwania W E Commerce I Zmiany W Deepseek</a></li>
+</ul>
+</div>
+
+<div class="related-section">
+<h2>Powiązane artykuły</h2>
+<ul>
+  <li><a href="https://pkrokosz.github.io/smartbuyers/articles/digest.html">Digest</a></li>
+  <li><a href="https://pkrokosz.github.io/smartbuyers/articles/digest.html">Digest</a></li>
+  <li><a href="https://pkrokosz.github.io/smartbuyers/articles/tygodniowy-przegl-d-od-strategii-dropshipping-w-arabii-saudy.html">Tygodniowy Przegl D Od Strategii Dropshipping W Arabii Saudy</a></li>
 </ul>
 </div></article>
 <div class="article-source">&gt; source: <a href="https://techcrunch.com/2026/08/06/openai-says-apples-own-security-practices-undermine-its-trade-secrets-case/ | https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB2Z0Fvd1hJM0lqT1k4d3psM2ZIbDd3YUdrZ1c1aVQ2SU9ha3BVY2Z2bE9zM2xWNWZGN3ZQRks5eEJnZEVnNUIteWk4UGNMVEhwTUMtLTBEYVVQcU5abzk5M3ZfTGU2S3c?oc=5">Przegląd tygodnia: 6.08.2026</a></div>
