@@ -5,8 +5,36 @@
     <link>https://pkrokosz.pl/</link>
     <description>Automatycznie generowane artykuły SEO z RSS feedów. B2B dropshipping, e-commerce, AI.</description>
     <language>pl</language>
-    <lastBuildDate>Fri, 07 Aug 2026 17:37:05 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2026 18:38:23 GMT</lastBuildDate>
     <atom:link href="https://pkrokosz.pl/articles/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.pl/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
+      <pubDate>Fri, 07 Aug 2026 18:38:21 GMT</pubDate>
+      <source url="https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code">https://app.dealroom.co/news/feed/oracle-bans-ai-generated-c</source>
+    </item>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.pl/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
+      <pubDate>Fri, 07 Aug 2026 18:38:21 GMT</pubDate>
+      <source url="https://www.reddit.com/r/dropshipping/comments/1vi7rat/started_dropshipping_less_than_a_month_ago_and/">https://www.reddit.com/r/dropshipping/comments/1vi7rat/start</source>
+    </item>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.pl/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
+      <pubDate>Fri, 07 Aug 2026 18:38:21 GMT</pubDate>
+      <source url="https://techcrunch.com/podcast/jill-lepore-on-the-artificial-state-and-why-silicon-valleys-leaders-are-bad-sci-fi-readers/">https://techcrunch.com/podcast/jill-lepore-on-the-artificial</source>
+    </item>
+    <item>
+      <title>Tygodniowy Digest Tech Biznes I Ai</title>
+      <link>https://pkrokosz.pl/articles/tygodniowy-digest-tech-biznes-i-ai.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/tygodniowy-digest-tech-biznes-i-ai.html</guid>
+      <pubDate>Fri, 07 Aug 2026 18:38:20 GMT</pubDate>
+      <source url="https://techcrunch.com/podcast/jill-lepore-on-the-artificial-state-and-why-silicon-valleys-leaders-are-bad-sci-fi-readers/ | https://www.reddit.com/r/dropshipping/comments/1vi7rat/started_dropshipping_less_than_a_month_ago_and/ | https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code">https://techcrunch.com/podcast/jill-lepore-on-the-artificial</source>
+    </item>
     <item>
       <title>Digest</title>
       <link>https://pkrokosz.pl/articles/digest.html</link>
@@ -118,34 +146,6 @@
       <guid isPermaLink="true">https://pkrokosz.pl/articles/e-commerce-w-sieci-dwa-r-ne-podej-cia-do-start-up-w-online.html</guid>
       <pubDate>Fri, 07 Aug 2026 16:07:20 GMT</pubDate>
       <source url="https://www.reddit.com/r/dropshipping/comments/1vi4lb4/hello_guys_can_anyone_see_if_my_website_looks/ | https://www.reddit.com/r/dropshipping/comments/1vi47m1/would_this_be_a_good_shop_idea/">https://www.reddit.com/r/dropshipping/comments/1vi4lb4/hello</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Fri, 07 Aug 2026 15:37:38 GMT</pubDate>
-      <source url="https://github.com/Wyzer-Lang/wyzer">https://github.com/Wyzer-Lang/wyzer</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Fri, 07 Aug 2026 15:37:38 GMT</pubDate>
-      <source url="https://www.reddit.com/r/dropshipping/comments/1vi3aig/method_for_organic_marketing/">https://www.reddit.com/r/dropshipping/comments/1vi3aig/metho</source>
-    </item>
-    <item>
-      <title>Tygodniowy Digest 5 Najwa Niejszych News W Tech</title>
-      <link>https://pkrokosz.pl/articles/tygodniowy-digest-5-najwa-niejszych-news-w-tech.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/tygodniowy-digest-5-najwa-niejszych-news-w-tech.html</guid>
-      <pubDate>Fri, 07 Aug 2026 15:37:37 GMT</pubDate>
-      <source url="https://www.reddit.com/r/dropshipping/comments/1vi3aig/method_for_organic_marketing/ | https://github.com/Wyzer-Lang/wyzer">https://www.reddit.com/r/dropshipping/comments/1vi3aig/metho</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Fri, 07 Aug 2026 14:37:04 GMT</pubDate>
-      <source url="https://www.niemanlab.org/2026/08/americas-largest-newspaper-chain-usa-today-co-partners-with-palantir-to-analyze-audience-data/">https://www.niemanlab.org/2026/08/americas-largest-newspaper</source>
     </item>
   </channel>
 </rss>
