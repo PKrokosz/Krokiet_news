@@ -376,7 +376,7 @@ async function main() {
     });
   } else {
     console.log(`  → ${elapsed}s | Model: ${model} | Body: ${body.length} zn`);
-    console.log(`\n${C.cyn}🔗 https://pkrokosz.github.io/smartbuyers/${fname.replace(/\\/g, "/")}${C.rst}\n`);
+    console.log(`\n${C.cyn}🔗 https://pkrokosz.pl/${fname.replace(/\\/g, "/")}${C.rst}\n`);
   }
   cleanup();
 }

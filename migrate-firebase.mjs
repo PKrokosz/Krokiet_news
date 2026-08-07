@@ -30,7 +30,7 @@ for (const f of files) {
   const title = titleM ? titleM[1].replace(/ — KROKIET NEWS$/, "") : slug;
   const bodyM = html.match(/<article>([\s\S]*?)<\/article>/);
   const bodyHtml = bodyM ? bodyM[1] : "<p></p>";
-  const url = `https://pkrokosz.github.io/smartbuyers/articles/${slug}.html`;
+  const url = `https://pkrokosz.pl/articles/${slug}.html`;
   const sourceM = html.match(/source:\s*<a href="([^"]+)"/);
   const sourceUrl = sourceM ? sourceM[1] : null;
   const date = getDate(slug);

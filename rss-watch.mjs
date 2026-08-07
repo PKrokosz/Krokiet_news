@@ -322,7 +322,7 @@ async function main() {
     if (gitPush("articles/sitemap.xml articles/feed.xml generated.json", `Auto: ${totalGenerated} artykuł(i) z RSS`)) {
       if (lastPageUrl) { googleIndexingPing(lastPageUrl); postToLinkedIn("KROKIET NEWS — Nowy artykuł", "", lastPageUrl); }
     }
-    if (!jsonMode) console.log(`\n${C.cyn}🔗 https://pkrokosz.github.io/smartbuyers/${C.rst}\n`);
+    if (!jsonMode) console.log(`\n${C.cyn}🔗 https://pkrokosz.pl/${C.rst}\n`);
   } else if (totalGenerated > 0) {
     step("Brak nowych wpisów");
   }
