@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { createInterface } from "readline";
 import { execSync } from "child_process";
+import { fileURLToPath } from "url";
 import Parser from "rss-parser";
 import { C, ts, stepReset, step, log, loadGen, isGen, markGen, DEFAULT_MODEL, chatUrl, chatHeaders, providerStatus, parseFlag, FORMATS, PERSONAS, TONES, LANGS, buildPrompt, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, validate, streamResponse, buildHtml, gitPush, googleIndexingPing, generateIndex, generateSitemap, generateFeed, NB_SOURCES_ID, NB_NEWS_ID, setJsonMode, isJsonMode, emitJSON } from "./lib/shared.mjs";
 import { postToLinkedIn } from "./social.mjs";
@@ -8,14 +9,14 @@ import { generateNewsletter } from "./newsletter.mjs";
 
 function nbPushSource(url, title) {
   try {
-    const out = execSync(`python "${new URL('./engines/nb_runner.py', import.meta.url).pathname}" source-add "${NB_SOURCES_ID}" "${url}" --type url --title "${title.replace(/"/g,'\\"')}"`, { encoding:"utf8", timeout:60000 });
+    const out = execSync(`python "${fileURLToPath(new URL('./engines/nb_runner.py', import.meta.url))}" source-add "${NB_SOURCES_ID}" "${url}" --type url --title "${title.replace(/"/g,'\\"')}"`, { encoding:"utf8", timeout:60000 });
     console.log(`  ${C.dim}→ NB source: ${JSON.parse(out).id || 'OK'}${C.rst}`);
   } catch (e) { console.log(`  ${C.dim}→ NB skip: ${e.message.slice(0,60)}${C.rst}`); }
 }
 
 function nbPushArticle(url, title) {
   try {
-    execSync(`python "${new URL('./engines/nb_runner.py', import.meta.url).pathname}" source-add "${NB_NEWS_ID}" "${url}" --type url --title "${title.replace(/"/g,'\\"')}"`, { encoding:"utf8", timeout:60000 });
+    execSync(`python "${fileURLToPath(new URL('./engines/nb_runner.py', import.meta.url))}" source-add "${NB_NEWS_ID}" "${url}" --type url --title "${title.replace(/"/g,'\\"')}"`, { encoding:"utf8", timeout:60000 });
     console.log(`  ${C.dim}→ NB news: OK${C.rst}`);
   } catch (e) { console.log(`  ${C.dim}→ NB news skip: ${e.message.slice(0,60)}${C.rst}`); }
 }

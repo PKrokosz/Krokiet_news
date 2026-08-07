@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import { spawn, exec, execSync } from "child_process";
 import { randomBytes } from "crypto";
 import path from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 import RssParser from "rss-parser";
 
 const rssParser = new RssParser();
@@ -108,7 +108,7 @@ function spawnRun(run) {
     // Use dynamic import to call shared.mjs functions directly
     (async () => {
       try {
-        const shared = await import(path.join(ROOT, "lib", "shared.mjs"));
+        const shared = await import(pathToFileURL(path.join(ROOT, "lib", "shared.mjs")).href);
         await shared.generateIndex();
         await shared.generateSitemap();
         await shared.generateFeed();
@@ -183,19 +183,27 @@ function spawnRun(run) {
   run.proc = child;
 
   run.buf = "";
+  run._lineBuf = "";
   function emit(type, data) {
     run.buf += data;
+    run._lineBuf += data;
+    const lines = run._lineBuf.split("\n");
+    run._lineBuf = lines.pop();
     if (run.res) {
-      // Try to parse as JSON event from child process
-      try {
-        const evt = JSON.parse(data.trim());
-        if (evt && typeof evt === 'object' && evt.type) {
-          sendSSE(run.res, { type: "event", event: evt });
-          return;
-        }
-      } catch {}
-      // Fallback: raw text
-      sendSSE(run.res, { type, data, full: run.buf });
+      for (const line of lines) {
+        const trimmed = line.trim();
+        if (!trimmed) continue;
+        // Try to parse as JSON event from child process
+        try {
+          const evt = JSON.parse(trimmed);
+          if (evt && typeof evt === 'object' && evt.type) {
+            sendSSE(run.res, { type: "event", event: evt });
+            continue;
+          }
+        } catch {}
+        // Fallback: raw text
+        sendSSE(run.res, { type, data: trimmed + "\n", full: run.buf });
+      }
     }
   }
   child.stdout.on("data", d => emit("stdout", d.toString()));
@@ -418,6 +426,28 @@ const server = createServer((req, res) => {
     return;
   }
 
+  // POST /api/push — git commit + push (np. po wygenerowaniu artykułu)
+  if (m === "POST" && p === "/api/push") {
+    let body = "";
+    req.on("data", c => body += c);
+    req.on("end", () => {
+      let b = {};
+      try { b = JSON.parse(body); } catch {}
+      const files = (b.files || "articles/ generated.json").trim();
+      const msg = (b.message || "Update").replace(/"/g, "\\\"");
+      try {
+        execSync(`git add ${files}`, { cwd: ROOT, encoding: "utf8" });
+        execSync(`git commit -m "${msg}"`, { cwd: ROOT, encoding: "utf8" });
+        execSync(`git push`, { cwd: ROOT, encoding: "utf8" });
+        json(res, { ok: true, message: "Pushnięte" });
+      } catch (e) {
+        const err = e.stderr?.toString().slice(0, 300) || e.message;
+        json(res, { ok: false, error: err }, 500);
+      }
+    });
+    return;
+  }
+
   // GET /api/settings
   if (m === "GET" && p === "/api/settings") {
     const s = readJSON(path.join(ROOT, "settings.json")) || {};
@@ -443,7 +473,7 @@ const server = createServer((req, res) => {
   if (m === "GET" && p === "/api/models") {
     (async () => {
       try {
-        const shared = await import(path.join(ROOT, "lib", "shared.mjs"));
+        const shared = await import(pathToFileURL(path.join(ROOT, "lib", "shared.mjs")).href);
         json(res, await shared.listModels());
       } catch (e) { json(res, [], 500); }
     })();
@@ -454,7 +484,7 @@ const server = createServer((req, res) => {
   if (m === "GET" && p === "/api/status") {
     (async () => {
       try {
-        const shared = await import(path.join(ROOT, "lib", "shared.mjs"));
+        const shared = await import(pathToFileURL(path.join(ROOT, "lib", "shared.mjs")).href);
         const models = await shared.listModels();
         json(res, { provider: "nvidia", model: shared.DEFAULT_MODEL, models, configured: !!shared.nvidiaKey() });
       } catch (e) { json(res, { provider: "nvidia", models: [], configured: false }); }
@@ -841,7 +871,7 @@ const server = createServer((req, res) => {
   // GET /api/warmup — check NVIDIA API connectivity (SSE via EventSource)
   if (m === "GET" && p === "/api/warmup") {
     (async () => {
-      const shared = await import(path.join(ROOT, "lib", "shared.mjs"));
+      const shared = await import(pathToFileURL(path.join(ROOT, "lib", "shared.mjs")).href);
       const model = (() => { try { const s = readJSON(path.join(ROOT, "settings.json")); return s.model || shared.DEFAULT_MODEL; } catch { return shared.DEFAULT_MODEL; } })();
       sseHeaders(res);
       sendSSE(res, { type: "step", step: "warmup_start", data: `Sprawdzanie NVIDIA API (${model})...\n` });

@@ -2,12 +2,13 @@ import { writeFileSync, readFileSync, mkdirSync, existsSync } from "fs";
 import { execSync } from "child_process";
 import { createInterface } from "readline";
 import { setTimeout } from "timers/promises";
+import { fileURLToPath } from "url";
 import Parser from "rss-parser";
 import { C, esc, ts, stepReset, step, loadGen, markGen, NVIDIA_BASE, DEFAULT_MODEL, listModels, parseFlag, FORMATS, PERSONAS, TONES, LANGS, buildPrompt, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, validate, streamResponse, buildHtml, gitPush, googleIndexingPing, generateIndex, generateSitemap, generateFeed, NB_NEWS_ID, NB_SOURCES_ID, setJsonMode, isJsonMode, emitJSON } from "./lib/shared.mjs";
 import { postToLinkedIn } from "./social.mjs";
 
 function nbPush(url, title) {
-  const nbPy = new URL("./engines/nb_runner.py", import.meta.url).pathname;
+  const nbPy = fileURLToPath(new URL("./engines/nb_runner.py", import.meta.url));
   try {
     execSync(`python "${nbPy}" source-add "${NB_SOURCES_ID}" "${url}" --type url --title "${title.replace(/"/g,'\\"')}"`, { encoding:"utf8", timeout:60000 });
     console.log(`  ${C.dim}→ NB Sources: OK${C.rst}`);
@@ -17,6 +18,29 @@ function nbPush(url, title) {
 const rl = createInterface({ input: process.stdin, output: process.stdout });
 function ask(q) { return new Promise(r => rl.question(q, r)); }
 function cleanup() { try { rl.close(); } catch {} }
+
+async function fetchUrlText(url, maxLen = 8000) {
+  try {
+    const res = await fetch(url, { headers: { "User-Agent": "KROKIET-NEWS/3.0" }, signal: AbortSignal.timeout(20000) });
+    if (!res.ok) return "";
+    const html = await res.text();
+    return html
+      .replace(/<script[\s\S]*?<\/script>/gi, " ")
+      .replace(/<style[\s\S]*?<\/style>/gi, " ")
+      .replace(/<noscript[\s\S]*?<\/noscript>/gi, " ")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&nbsp;/gi, " ")
+      .replace(/&amp;/gi, "&")
+      .replace(/&lt;/gi, "<")
+      .replace(/&gt;/gi, ">")
+      .replace(/&quot;/gi, '"')
+      .replace(/&#x27;/gi, "'")
+      .replace(/&#0?39;/gi, "'")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, maxLen);
+  } catch { return ""; }
+}
 
 // --- generation ---
 async function generate(model, systemPrompt, userContent, minWords = 200, attempt = 0) {
@@ -76,6 +100,9 @@ async function main() {
   let rssUrl = null;
   const ri = raw.indexOf("--rss");
   if (ri >= 0 && ri + 1 < raw.length) rssUrl = raw[ri + 1];
+  let optUrl = null;
+  const ui = raw.indexOf("--url");
+  if (ui >= 0 && ui + 1 < raw.length) optUrl = raw[ui + 1];
 
   // content flags
   const optFormat  = parseFlag(raw, "--format",  FORMATS,  DEF_FORMAT);
@@ -83,10 +110,10 @@ async function main() {
   const optTone    = parseFlag(raw, "--tone",    TONES,    DEF_TONE);
   const optLang    = parseFlag(raw, "--lang",    LANGS,    DEF_LANG);
 
-  const skip = new Set(["--push", "--non-interactive", "--verbose", "-v", "--rss", "--format", "--persona", "--tone", "--lang"]);
+  const skip = new Set(["--push", "--non-interactive", "--verbose", "-v", "--rss", "--url", "--format", "--persona", "--tone", "--lang"]);
   const positional = [];
   for (let i = 0; i < raw.length; i++) {
-    if (skip.has(raw[i])) { if (raw[i] === "--rss" || raw[i] === "--format" || raw[i] === "--persona" || raw[i] === "--tone" || raw[i] === "--lang") i++; continue; }
+    if (skip.has(raw[i])) { if (raw[i] === "--rss" || raw[i] === "--url" || raw[i] === "--format" || raw[i] === "--persona" || raw[i] === "--tone" || raw[i] === "--lang") i++; continue; }
     positional.push(raw[i]);
   }
 
@@ -173,9 +200,27 @@ async function main() {
     if (!topic) topic = (await ask("  Temat artykułu: ")).trim();
     if (!topic) { topic = "Czym jest dropshipping B2B"; if (!jsonMode) console.log(`  → Domyślny: "${topic}"`); }
     else if (!jsonMode) console.log(`  → "${topic}" (${topic.length} znaków)`);
-    const bp = buildPrompt({ format: optFormat, persona: optPersona, tone: optTone, lang: optLang, topic });
-    userContent = bp.user;
-    systemPrompt = bp.system;
+    if (optUrl) {
+      rssSourceLink = optUrl;
+      rssSourceLabel = topic;
+      if (!jsonMode) console.log(`  ${C.cyn}→ Pobieranie treści źródła: ${optUrl}${C.rst}`);
+      const snippet = await fetchUrlText(optUrl);
+      if (snippet) {
+        if (!jsonMode) console.log(`  → Treść źródła: ${snippet.length} znaków`);
+        const bp = buildPrompt({ format: optFormat, persona: optPersona, tone: optTone, lang: optLang, rssTitle: topic, rssSnippet: snippet });
+        userContent = bp.user;
+        systemPrompt = bp.system;
+      } else {
+        if (!jsonMode) console.log(`  ${C.dim}→ Nie pobrano treści — piszę z samego tematu${C.rst}`);
+        const bp = buildPrompt({ format: optFormat, persona: optPersona, tone: optTone, lang: optLang, topic });
+        userContent = bp.user;
+        systemPrompt = bp.system;
+      }
+    } else {
+      const bp = buildPrompt({ format: optFormat, persona: optPersona, tone: optTone, lang: optLang, topic });
+      userContent = bp.user;
+      systemPrompt = bp.system;
+    }
   }
 
   // [2] Model

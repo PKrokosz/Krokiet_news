@@ -1818,6 +1818,7 @@
           '</div>' +
           '<div style="display:flex;gap:8px;justify-content:center;margin-top:1rem;flex-wrap:wrap">' +
             (grFile ? '<a class="result-link" href="/' + esc(grFile).replace(/\\/g,"/") + '" target="_blank">📎 Otwórz artykuł</a>' : '') +
+            (grFile ? '<button class="result-btn" id="resultPush" style="margin:0 4px">📤 Push do KROKIET NEWS</button>' : '') +
             '<button class="result-btn" id="resultBack">🔄 Generuj kolejny</button>' +
             '<button class="result-btn" id="resultBack2">↩ Powrót</button>' +
           '</div>' +
@@ -1829,6 +1830,8 @@
         else popLevel();
       });
       if (backBtn2) backBtn2.addEventListener('click', popLevel);
+      var pushBtn = document.getElementById('resultPush');
+      if (pushBtn) pushBtn.addEventListener('click', () => doPush(grFile, grSlug));
       return;
     }
 
@@ -1853,11 +1856,12 @@
     if (dateM) artDate = dateM[1];
     if (timeM) artTime = timeM[1];
 
-    const preview = output.replace(/\x1b\[[0-9;]*m/g, '').split('\n').filter(l => l.trim() && !l.includes('═══') && !l.includes('───')).slice(-6).join('\n').substring(0, 400);
+    const preview = output.replace(/\x1b\[[0-9;]*m/g, '').split('\n').filter(l => l.trim() && !l.startsWith('{') && !l.includes('═══') && !l.includes('───')).slice(-6).join('\n').substring(0, 400);
 
     let actionButtons = '';
     if (success) {
       if (hasFile) actionButtons += `<a class="result-link" href="/${data.file}" target="_blank">📎  Otwórz artykuł</a>`;
+      if (hasFile) actionButtons += `<button class="result-btn" id="resultPush" style="margin:0 4px">📤  Push do KROKIET NEWS</button>`;
       actionButtons += `<button class="result-btn primary" id="resultBack" style="margin:0 4px">🔄  Generuj kolejny</button>`;
     }
     actionButtons += `<button class="result-btn" id="resultBack2">↩  Powrót</button>`;
@@ -1874,7 +1878,7 @@
     const previewHtml = (success && (artTitle || artSlug))
       ? `<div class="article-preview">
           <div class="article-preview-title">${artTitle || artSlug.replace(/-/g, ' ')}</div>
-          <div class="article-preview-meta">${artDate ? '<span>📅 '+artDate+'</span>' : ''}${artTime ? '<span>📖 '+artTime+' min</span>' : ''}<span>🤖 gemma4:e4b</span></div>
+          <div class="article-preview-meta">${artDate ? '<span>📅 '+artDate+'</span>' : ''}${artTime ? '<span>📖 '+artTime+' min</span>' : ''}<span>🤖 ${esc(window._genModel || 'nvidia/llama-3.3-nemotron-super-49b-v1')}</span></div>
           <div class="article-preview-body">${preview.split('\n').filter(l=>l.length>20).slice(0,1)[0] || 'Treść wygenerowana pomyślnie...'}</div>
           ${artSlug ? `<div class="article-preview-slug">articles/${artSlug}.html</div>` : ''}
         </div>`
@@ -1900,6 +1904,8 @@
       else popLevel();
     });
     if (backBtn2) backBtn2.addEventListener('click', popLevel);
+    var pushBtn = document.getElementById('resultPush');
+    if (pushBtn) pushBtn.addEventListener('click', () => doPush(data.file, artSlug || (data.file || '').split(/[\\/]/).pop()));
   }
 
   function escapeHtml(s) {
@@ -1908,6 +1914,24 @@
     return d.innerHTML;
   }
 
+  function doPush(file, slug) {
+    const btn = document.getElementById('resultPush');
+    if (btn) { btn.disabled = true; btn.textContent = '📤  Pushowanie...'; }
+    fetch('/api/push', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ files: 'articles/ generated.json', message: 'Add: ' + (slug || file || '').slice(0, 60) }),
+    })
+      .then(r => r.json())
+      .then(res => {
+        if (btn) { btn.disabled = false; btn.textContent = res.ok ? '✅  Pushnięte' : '📤  Push do KROKIET NEWS'; }
+        showToast(res.ok ? '✅ Pushnięte na GitHub' : '❌ ' + (res.error || 'Błąd push'), res.ok ? '' : 'err');
+      })
+      .catch(e => {
+        if (btn) { btn.disabled = false; btn.textContent = '📤  Push do KROKIET NEWS'; }
+        showToast('❌ Błąd sieci: ' + e.message, 'err');
+      });
+  }
   // ===========================
   // Live Progress view (Penpot 8-step design)
   // ===========================
@@ -2026,9 +2050,10 @@
       var fmtEl = document.getElementById('genFormat');
       var perEl = document.getElementById('genPersona');
       var mdlEl = document.getElementById('genModel');
+      if (evt.model) window._genModel = evt.model;
       if (fmtEl) fmtEl.textContent = (FORMAT_OPTS[evt.format] || evt.format || '—').toUpperCase();
       if (perEl) perEl.textContent = (PERSONA_OPTS[evt.persona] || evt.persona || '—');
-      if (mdlEl) mdlEl.textContent = evt.model || '—';
+      if (mdlEl) mdlEl.textContent = evt.model || window._genModel || '—';
       return;
     }
 

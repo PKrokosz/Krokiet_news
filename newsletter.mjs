@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { execSync } from "child_process";
+import { fileURLToPath } from "url";
 import { ARTICLE_CSS, esc } from "./lib/shared.mjs";
 
 const C = { rst: "\x1b[0m", red: "\x1b[31m", grn: "\x1b[32m", ylw: "\x1b[33m", dim: "\x1b[2m", cyn: "\x1b[36m" };
@@ -14,7 +15,7 @@ const NB_AUDIO_ID = "992ecd72-3d82-4232-82e0-b5ecbd0a7755";
 
 function nbCli(...args) {
   try {
-    const out = execSync(`python "${new URL('./engines/nb_runner.py', import.meta.url).pathname}" ${args.map(a => `"${String(a).replace(/"/g,'\\"')}"`).join(" ")}`, { encoding:"utf8", timeout:300000 });
+    const out = execSync(`python "${fileURLToPath(new URL('./engines/nb_runner.py', import.meta.url))}" ${args.map(a => `"${String(a).replace(/"/g,'\\"')}"`).join(" ")}`, { encoding:"utf8", timeout:300000 });
     return JSON.parse(out.trim());
   } catch (e) { return { error: e.message }; }
 }

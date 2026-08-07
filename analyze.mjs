@@ -1,9 +1,10 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { execSync } from "child_process";
+import { fileURLToPath } from "url";
 import { loadGen, C, NB_SOURCES_ID, NB_RESEARCH_ID } from "./lib/shared.mjs";
 
 function nbCli(...args) {
-  const nbPy = new URL("./engines/nb_runner.py", import.meta.url).pathname;
+  const nbPy = fileURLToPath(new URL("./engines/nb_runner.py", import.meta.url));
   try {
     const out = execSync(`python "${nbPy}" ${args.map(a => `"${String(a).replace(/"/g,'\\"')}"`).join(" ")}`, { encoding:"utf8", timeout:300000 });
     return JSON.parse(out.trim());
