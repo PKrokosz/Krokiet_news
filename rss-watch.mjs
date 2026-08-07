@@ -59,7 +59,8 @@ async function generate(itemTitle, snippet, attempt = 0) {
 
 // --- generate digest ---
 async function generateDigest(items) {
-  const bp = buildPrompt({ format: "digest", persona: optPersona, tone: optTone, lang: optLang, rssTitle: "Przegląd tygodnia", rssSnippet: items.map((it, i) => `${i + 1}. ${it.title}\n${it.snippet.slice(0, 500)}`).join("\n---\n") });
+  const digLabel = `${new Date().toLocaleDateString("pl-PL")}, ${new Date().toLocaleTimeString("pl-PL", {hour:"2-digit",minute:"2-digit"})}`;
+  const bp = buildPrompt({ format: "digest", persona: optPersona, tone: optTone, lang: optLang, rssTitle: digLabel, rssSnippet: items.map((it, i) => `${i + 1}. ${it.title}\n${it.snippet.slice(0, 500)}`).join("\n---\n") });
   const body = { model: MODEL, messages: [{ role: "system", content: bp.system }, { role: "user", content: bp.user }], temperature: 0.3, max_tokens: 8192, stream: true, response_format: { type: "json_object" } };
   console.log(`    → Digest: ${items.length} wpisów, ${bp.user.length} zn prompta`);
 
@@ -290,8 +291,9 @@ async function main() {
         if (dig && dig.data) {
           totalGenerated++;
             const sources = digestItems.map(it => it.link).filter(Boolean).join(" | ");
-          const sa = saveArticle(dig, `Przegląd tygodnia: ${new Date().toLocaleDateString("pl-PL")}`, sources);
-          if (sa) nbPushSource(sa.pageUrl, `Digest: ${new Date().toLocaleDateString("pl-PL")}`);
+          const digestLabel = `${new Date().toLocaleDateString("pl-PL")}, ${new Date().toLocaleTimeString("pl-PL", {hour:"2-digit",minute:"2-digit"})}`;
+          const sa = saveArticle(dig, digestLabel, sources);
+          if (sa) nbPushSource(sa.pageUrl, digestLabel);
           if (sa) lastPageUrl = sa.pageUrl;
           for (const it of digestItems) if (it.link) markGen(it.link, "digest", it.title);
         }
