@@ -1,8 +1,8 @@
 <div align="center">
 
-# SmartBuyers
+# KROKIET NEWS
 
-**AI-powered SEO content engine** — RSS → AI → HTML → GitHub Pages.
+**Terminal news feed engine** — RSS → AI → HTML → GitHub Pages.
 
 [![Node version](https://img.shields.io/badge/Node.js-%3E%3D18-3c873a?style=flat-square)](https://nodejs.org)
 [![NVIDIA API](https://img.shields.io/badge/NVIDIA-API-76b900?style=flat-square)](https://build.nvidia.com)
@@ -10,13 +10,12 @@
 [![License](https://img.shields.io/badge/License-ISC-blue?style=flat-square)](LICENSE)
 <br>
 [![site](https://img.shields.io/badge/site-pkrokosz.github.io/smartbuyers-159957?style=flat-square)](https://pkrokosz.github.io/smartbuyers)
-[![articles](https://img.shields.io/badge/articles-articles/index.html-159957?style=flat-square)](https://pkrokosz.github.io/smartbuyers/articles/)
 
 [Features](#features) • [Getting Started](#getting-started) • [Usage](#usage) • [Architecture](#architecture) • [Project Structure](#project-structure)
 
 </div>
 
-SmartBuyers monitors RSS feeds, generates structured SEO articles using NVIDIA NIM API (LLM inference), and publishes them to GitHub Pages — fully automated. It uses NVIDIA's hosted models with streaming support for fast, high-quality content generation.
+KROKIET NEWS monitors RSS feeds, generates structured SEO articles using NVIDIA NIM API (LLM inference), and publishes them to GitHub Pages as a terminal-styled news feed — fully automated. It uses NVIDIA's hosted models with streaming support for fast, high-quality content generation.
 
 ## Features
 
@@ -25,6 +24,7 @@ SmartBuyers monitors RSS feeds, generates structured SEO articles using NVIDIA N
 - **SEO-ready HTML** — Schema.org JSON-LD, Open Graph, Twitter Cards, meta tags, sitemap.xml, RSS feed.xml
 - **Competitor Tracking** — Track competitor feeds in a separate log (`mode: "track"`), analyzed in gap reports
 - **Content Gap Analysis** — TF-IDF keyword extraction from article HTML, identifies sparse topics, produces structured `gap-report.json`
+- **Terminal feed homepage** — boot screen, keyboard-driven menu, tag filtering and full article reading in a CRTs-styled UI
 - **Distribution Pipeline** — Auto git push to GitHub Pages, Google Indexing API ping, LinkedIn auto-post, weekly newsletter digest
 - **Cloud-powered** — Runs on NVIDIA NIM API. Optional OpenRouter for cloud models
 - **Menu-driven** — `node menu.mjs` provides access to all features without remembering CLI flags
@@ -53,7 +53,7 @@ setx NVIDIA_API_KEY "nvapi-..."
 
 ## Usage
 
-The easiest way to use SmartBuyers is through the interactive menu:
+The easiest way to use KROKIET NEWS is through the interactive menu:
 
 ```bash
 node menu.mjs
@@ -149,7 +149,7 @@ RSS feed / topic → prompt builder (format+persona+tone+lang)
                 → JSON validation + retry
                 → HTML builder (Schema.org, OG, Twitter)
                 → save to articles/ + mark in generated.json
-                → regenerate index.html, sitemap.xml, feed.xml
+                → regenerate index.html (terminal feed), sitemap.xml, feed.xml
                 → git push → Google Indexing ping → LinkedIn post
 ```
 
@@ -174,16 +174,16 @@ smartbuyers/
 ├── newsletter.mjs        # Weekly newsletter builder
 ├── social.mjs            # LinkedIn auto-poster
 ├── lib/
-│   └── shared.mjs        # Shared module (34 exports, 485 lines)
+│   └── shared.mjs        # Shared module (CSS, HTML builder, git, providers)
 ├── feeds.json            # RSS feed configuration
-├── queries.json          # Google News query pool (68 queries)
+├── queries.json          # Google News query pool
 ├── generated.json        # Deduplication state
 ├── competitors.json      # Competitor tracking data
 ├── settings.json         # Persisted user settings
 ├── gap-report.json       # Latest analysis report
-├── articles/             # Generated HTML + index + sitemap + feed
-├── _posts/               # Jekyll blog posts
-└── _config.yml           # GitHub Pages configuration
+├── index.html            # Terminal news feed homepage
+├── articles/             # Generated HTML + sitemap + feed + newsletter
+└── menu-server/          # Tile UI dashboard (article generation control)
 ```
 
 ## Automation (Windows Task Scheduler)
@@ -192,6 +192,6 @@ smartbuyers/
 # Create a scheduled task running every 30 minutes
 $action = New-ScheduledTaskAction -Execute "node.exe" -Argument "D:\smartbuyers\rss-watch.mjs" -WorkingDirectory "D:\smartbuyers"
 $trigger = New-ScheduledTaskTrigger -RepetitionInterval (New-TimeSpan -Minutes 30) -AtStartup
-Register-ScheduledTask -TaskName "SmartBuyers RSS" -Action $action -Trigger $trigger -RunLevel Highest
+Register-ScheduledTask -TaskName "KROKIET NEWS RSS" -Action $action -Trigger $trigger -RunLevel Highest
 ```
 

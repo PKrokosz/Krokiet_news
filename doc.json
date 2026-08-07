@@ -6,7 +6,7 @@
   "packages": [
     {
       "path": "./",
-      "title": "SmartBuyers — AI Content Engine",
+      "title": "KROKIET NEWS — AI Content Engine",
       "include_in_root": true,
       "sections": ["overview", "installation", "usage"]
     }

@@ -1,8 +1,13 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { execSync } from "child_process";
+import { ARTICLE_CSS, esc } from "./lib/shared.mjs";
 
 const C = { rst: "\x1b[0m", red: "\x1b[31m", grn: "\x1b[32m", ylw: "\x1b[33m", dim: "\x1b[2m", cyn: "\x1b[36m" };
 const BASE = "https://pkrokosz.github.io/smartbuyers";
+const TERM_NAV = `<div class="term-nav">
+  <a href="${BASE}/">home</a>
+  <a href="${BASE}/articles/feed.xml">rss</a>
+</div>`;
 
 const NB_NEWS_ID = "5dd3bcd8-fc51-481e-bffa-fab231a378c3";
 const NB_AUDIO_ID = "992ecd72-3d82-4232-82e0-b5ecbd0a7755";
@@ -42,9 +47,13 @@ export async function generateNewsletter() {
   const weekAgo = Date.now() - 7 * 86400000;
   const recent = Object.entries(gen).filter(([, info]) => new Date(info.date).getTime() > weekAgo).sort((a, b) => (b[1].date || "").localeCompare(a[1].date || "")).slice(0, 5);
   if (recent.length === 0) { console.log(`  ${C.dim}→ Newsletter: brak artykułów z ostatniego tygodnia${C.rst}`); return; }
-  const items = recent.map(([url, info]) => `<li><a href="${BASE}/articles/${info.slug}.html">${info.slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase()).slice(0, 80)}</a> <small>(${new Date(info.date).toLocaleDateString("pl-PL")})</small></li>`).join("\n");
+  const items = recent.map(([url, info]) => {
+    const t = esc(info.slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase()).slice(0, 80));
+    const d = new Date(info.date).toLocaleDateString("pl-PL");
+    return `  <li><a href="${BASE}/articles/${info.slug}.html">${t}</a> <small>[ ${d} ]</small></li>`;
+  }).join("\n");
   const today = new Date().toLocaleDateString("pl-PL");
-  const html = `<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Newsletter SmartBuyers — ${today}</title><style>body{font-family:system-ui,sans-serif;max-width:600px;margin:0 auto;padding:2rem;line-height:1.6;color:#222}h1{color:#159957;font-size:1.5rem;border-bottom:2px solid #159957;padding-bottom:.5rem}ul{padding-left:1.2rem}li{margin:.8rem 0}a{color:#159957}.footer{margin-top:2rem;padding-top:1rem;border-top:1px solid #ddd;font-size:.8rem;color:#999}</style></head><body><h1>📬 SmartBuyers — Przegląd tygodnia</h1><p>Najciekawsze artykuły z ostatnich 7 dni:</p><ul>${items}</ul><p class="footer">Wygenerowano automatycznie · ${today} · <a href="${BASE}/">SmartBuyers</a></p></body></html>`;
+  const html = `<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>KROKIET NEWS — Przegląd tygodnia — ${today}</title><meta name="description" content="Digest najciekawszych artykułów KROKIET NEWS z ostatnich 7 dni."><style>${ARTICLE_CSS}</style></head><body><header class="term-header">//====[ KROKIET NEWS ]====\\\\</header>${TERM_NAV}<div class="term-wrap"><h1 class="glitch" data-text="Przegląd tygodnia — ${today}">Przegląd tygodnia — ${today}</h1><div class="meta-line"><span>[ ${today} ]</span><span>[ 7 dni ]</span><span>[ digest ]</span></div><p>Najciekawsze artykuły z ostatnich 7 dni:</p><ul class="newsletter-list">${items}</ul></div><footer class="term-footer">[STATUS] NET-LINK ACTIVE &mdash; newsletter-latest &mdash; KROKIET NEWS</footer></body></html>`;
   writeFileSync("articles/newsletter-latest.html", html, "utf8");
   console.log(`  ${C.grn}→ Newsletter: articles/newsletter-latest.html (${recent.length} artykułów)${C.rst}`);
   // NB integration: push sources then optionally generate report/audio

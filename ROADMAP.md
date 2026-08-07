@@ -1,4 +1,4 @@
-# SmartBuyers — Direction & Roadmap
+# KROKIET NEWS — Direction & Roadmap
 
 ## Stan obecny
 
@@ -44,8 +44,8 @@ lib/shared.mjs:
   "headline": "Tytuł artykułu",
   "description": "Meta description",
   "datePublished": "2026-06-24",
-  "author": { "@type": "Organization", "name": "SmartBuyers" },
-  "publisher": { "@type": "Organization", "name": "SmartBuyers" }
+  "author": { "@type": "Organization", "name": "KROKIET NEWS" },
+  "publisher": { "@type": "Organization", "name": "KROKIET NEWS" }
 }
 </script>
 ```

@@ -1,7 +1,7 @@
 {
   "name": "smartbuyers",
   "version": "1.0.0",
-  "description": "Strona publikowana na GitHub Pages: [https://pkrokosz.github.io/smartbuyers/](https://pkrokosz.github.io/smartbuyers/)",
+  "description": "KROKIET NEWS - terminal news feed engine (RSS -> AI -> HTML -> GitHub Pages).",
   "main": "index.js",
   "scripts": {
     "generate": "node rss-watch.mjs",
@@ -14,8 +14,8 @@
     "type": "git",
     "url": "git+https://github.com/PKrokosz/smartbuyers.git"
   },
-  "keywords": ["dropshipping", "ecommerce", "seo", "blog", "ai"],
-  "author": "SmartBuyers",
+  "keywords": ["news", "rss", "ai", "seo", "terminal", "feed"],
+  "author": "KROKIET NEWS",
   "license": "ISC",
   "type": "module",
   "bugs": {

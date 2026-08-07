@@ -70,7 +70,7 @@ async function showConfigAndRun(mode) {
   const s = loadSettings();
   while (true) {
     console.log();
-    showHeader(`SmartBuyers v3 — ${mode === "auto" ? "Auto-watch RSS" : mode === "review" ? "Review RSS" : mode}`);
+    showHeader(`KROKIET NEWS — ${mode === "auto" ? "Auto-watch RSS" : mode === "review" ? "Review RSS" : mode}`);
     showSettingsSummary(s);
     console.log();
     if (mode === "auto") {
@@ -185,7 +185,7 @@ async function main() {
     const s = loadSettings();
     console.log();
     console.log(`${C.cyn}╔══════════════════════════════════════════╗${C.rst}`);
-    console.log(`${C.cyn}║${C.rst}          SmartBuyers v3                  ${C.cyn}║${C.rst}`);
+    console.log(`${C.cyn}║${C.rst}          KROKIET NEWS v3                  ${C.cyn}║${C.rst}`);
     console.log(`${C.cyn}║${C.rst}  Model: ${(s.model + "                    ").slice(0, 16)} ${C.cyn}║${C.rst}`);
     console.log(`${C.cyn}║${C.rst}  ${(fmtLabel(s.format) + " | " + perLabel(s.persona) + "                    ").slice(0, 32)} ${C.cyn}║${C.rst}`);
     console.log(`${C.cyn}╚══════════════════════════════════════════╝${C.rst}`);

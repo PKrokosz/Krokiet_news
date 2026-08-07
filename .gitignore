@@ -1,10 +1,3 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-vendor/
-.bundle/
-Gemfile.lock
 node_modules/
 backup/
 
@@ -15,3 +8,6 @@ __pycache__/
 # Local state
 telemetry.json
 nb-auth-refresh.log
+
+# Debug artifacts from generate.mjs (raw JSON dumps on parse failure)
+articles/.raw-*.txt

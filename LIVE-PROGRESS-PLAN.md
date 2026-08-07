@@ -1,4 +1,4 @@
-# SmartBuyers v3 — Plan: Live Progress Everywhere
+# KROKIET NEWS — Plan: Live Progress Everywhere
 
 Audyt wykonany 2026-06-25. Znaleziono 20+ "suchych miejsc" gdzie użytkownik czeka bez wizualnego feedbacku.
 

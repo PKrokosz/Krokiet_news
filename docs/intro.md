@@ -1,9 +1,10 @@
-# SmartBuyers — AI Content Engine
+# KROKIET NEWS — Terminal Feed Engine
 
-**Autonomiczny generator artykułów SEO** dla bloga B2B. Pobiera angielskie newsy przez RSS, tłumaczy i przetwarza na polskie artykuły przez lokalną Ollamę, publikuje automatycznie na GitHub Pages.
+**Autonomiczny generator artykułów SEO** w stylu terminala. Pobiera angielskie newsy przez RSS, przetwarza na polskie artykuły przez NVIDIA API, publikuje automatycznie na GitHub Pages jako terminalowy feed.
 
 - 📡 **RSS → AI → HTML → GitHub Pages** — pełny pipeline bez ręcznej pracy
-- 🧠 **Lokalna AI** przez Ollamę (`qwen2.5`, `qwen3.5`) — zero kosztów API
+- 🧠 **NVIDIA API** — model `nvidia/llama-3.3-nemotron-super-49b-v1` (z fallbackiem OpenRouter)
+- 💻 **Terminalowy feed** — boot screen, menu klawiaturą, tagi, czytanie artykułów w stylu CRT
 - 🔍 **SEO-ready** — Schema.org JSON-LD, Open Graph, sitemap.xml, meta tags
 - 🛡️ **Deduplikacja** — `generated.json` pilnuje, żeby żaden news nie powstał dwa razy
 - ⏰ **Auto-harmonogram** — Windows Task Scheduler co 30 minut

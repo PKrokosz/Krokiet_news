@@ -1,4 +1,4 @@
-# SmartBuyers Article Wizard — Plan Wdrożenia
+# KROKIET NEWS Article Wizard — Plan Wdrożenia
 
 ## 1. Streszczenie
 
@@ -150,7 +150,7 @@ tile('wizard', '✦', 'Nowy Artykuł',
 
 ```
 ╔══════════════════════════════════════════════════════╗
-║     SmartBuyers Wizard — Krok 1/8: Źródło danych    ║
+║     KROKIET NEWS Wizard — Krok 1/8: Źródło danych    ║
 ╠══════════════════════════════════════════════════════╣
 ║                                                      ║
 ║  Skąd wziąć temat artykułu?                          ║
