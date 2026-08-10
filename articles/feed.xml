@@ -5,8 +5,29 @@
     <link>https://pkrokosz.pl/</link>
     <description>Automatycznie generowane artykuły SEO z RSS feedów. B2B dropshipping, e-commerce, AI.</description>
     <language>pl</language>
-    <lastBuildDate>Mon, 10 Aug 2026 09:37:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 11:06:37 GMT</lastBuildDate>
     <atom:link href="https://pkrokosz.pl/articles/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.pl/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
+      <pubDate>Mon, 10 Aug 2026 11:06:35 GMT</pubDate>
+      <source url="https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model">https://research.meta.ai/blog/introducing-muse-glimmer-open-</source>
+    </item>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.pl/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
+      <pubDate>Mon, 10 Aug 2026 11:06:35 GMT</pubDate>
+      <source url="https://www.reddit.com/r/dropshipping/comments/1vkghhi/sales_completely_dried_up_despite_much_better/">https://www.reddit.com/r/dropshipping/comments/1vkghhi/sales</source>
+    </item>
+    <item>
+      <title>Tygodniowy Digest 5 Najwa Niejszych News W Tech</title>
+      <link>https://pkrokosz.pl/articles/tygodniowy-digest-5-najwa-niejszych-news-w-tech.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/tygodniowy-digest-5-najwa-niejszych-news-w-tech.html</guid>
+      <pubDate>Mon, 10 Aug 2026 11:06:34 GMT</pubDate>
+      <source url="https://www.reddit.com/r/dropshipping/comments/1vkghhi/sales_completely_dried_up_despite_much_better/ | https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model">https://www.reddit.com/r/dropshipping/comments/1vkghhi/sales</source>
+    </item>
     <item>
       <title>Digest</title>
       <link>https://pkrokosz.pl/articles/digest.html</link>
@@ -125,27 +146,6 @@
       <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
       <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
       <source url="https://www.docker.com/products/docker-sandboxes/">https://www.docker.com/products/docker-sandboxes/</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
-      <source url="https://www.reddit.com/r/dropshipping/comments/1vjz3du/what_niche_would_you_pick_if_you_were_starting/">https://www.reddit.com/r/dropshipping/comments/1vjz3du/what_</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
-      <source url="https://www.reddit.com/r/dropshipping/comments/1vjzail/is_hiring_a_dedicated_growth_team_on_a/">https://www.reddit.com/r/dropshipping/comments/1vjzail/is_hi</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
-      <source url="https://www.reddit.com/r/dropshipping/comments/1vjvdkg/how_to_reorder_so_best_sellers_dont_sell_out_and/">https://www.reddit.com/r/dropshipping/comments/1vjvdkg/how_t</source>
     </item>
   </channel>
 </rss>
