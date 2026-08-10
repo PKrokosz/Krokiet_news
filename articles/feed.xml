@@ -5,8 +5,36 @@
     <link>https://pkrokosz.pl/</link>
     <description>Automatycznie generowane artykuły SEO z RSS feedów. B2B dropshipping, e-commerce, AI.</description>
     <language>pl</language>
-    <lastBuildDate>Mon, 10 Aug 2026 11:37:19 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 12:06:42 GMT</lastBuildDate>
     <atom:link href="https://pkrokosz.pl/articles/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.pl/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
+      <pubDate>Mon, 10 Aug 2026 12:06:41 GMT</pubDate>
+      <source url="https://lwn.net/Articles/1034703/">https://lwn.net/Articles/1034703/</source>
+    </item>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.pl/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
+      <pubDate>Mon, 10 Aug 2026 12:06:41 GMT</pubDate>
+      <source url="https://www.reddit.com/r/dropshipping/comments/1vkih06/product_designer_for_custom_perfume_bottle/">https://www.reddit.com/r/dropshipping/comments/1vkih06/produ</source>
+    </item>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.pl/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
+      <pubDate>Mon, 10 Aug 2026 12:06:41 GMT</pubDate>
+      <source url="https://techcrunch.com/2026/08/10/discovered-materials-is-playing-ai-whack-a-mole-to-hunt-cooler-chips/">https://techcrunch.com/2026/08/10/discovered-materials-is-pl</source>
+    </item>
+    <item>
+      <title>Tygodniowy Digest Technologiczny Ai Projektowanie I Optymali</title>
+      <link>https://pkrokosz.pl/articles/tygodniowy-digest-technologiczny-ai-projektowanie-i-optymali.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/tygodniowy-digest-technologiczny-ai-projektowanie-i-optymali.html</guid>
+      <pubDate>Mon, 10 Aug 2026 12:06:39 GMT</pubDate>
+      <source url="https://techcrunch.com/2026/08/10/discovered-materials-is-playing-ai-whack-a-mole-to-hunt-cooler-chips/ | https://www.reddit.com/r/dropshipping/comments/1vkih06/product_designer_for_custom_perfume_bottle/ | https://lwn.net/Articles/1034703/">https://techcrunch.com/2026/08/10/discovered-materials-is-pl</source>
+    </item>
     <item>
       <title>Digest</title>
       <link>https://pkrokosz.pl/articles/digest.html</link>
@@ -118,34 +146,6 @@
       <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
       <pubDate>Mon, 10 Aug 2026 08:37:33 GMT</pubDate>
       <source url="https://www.reddit.com/r/dropshipping/comments/1vkewkv/where_to_find_such_2000s_watches_for_resell/">https://www.reddit.com/r/dropshipping/comments/1vkewkv/where</source>
-    </item>
-    <item>
-      <title>5 Najwa Niejsze Newsy Tygodnia Dropshipping E Commerce I Nar</title>
-      <link>https://pkrokosz.pl/articles/5-najwa-niejsze-newsy-tygodnia-dropshipping-e-commerce-i-nar.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/5-najwa-niejsze-newsy-tygodnia-dropshipping-e-commerce-i-nar.html</guid>
-      <pubDate>Mon, 10 Aug 2026 08:37:31 GMT</pubDate>
-      <source url="https://www.reddit.com/r/dropshipping/comments/1vkewkv/where_to_find_such_2000s_watches_for_resell/ | https://www.reddit.com/r/dropshipping/comments/1vkeqv3/how_can_i_learn_everything_about_marketing_your/ | https://www.reddit.com/r/dropshipping/comments/1vkemoi/is_sellthetrend_tool_really_worth_it_for_product/">https://www.reddit.com/r/dropshipping/comments/1vkewkv/where</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
-      <source url="https://theconversation.com/taxi-drivers-rarely-die-of-alzheimers-how-complex-mental-maps-and-spatial-reasoning-protect-your-brain-286650">https://theconversation.com/taxi-drivers-rarely-die-of-alzhe</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
-      <source url="https://www.economist.com/britain/2026/08/06/the-tragedy-of-the-commons-ai-edition">https://www.economist.com/britain/2026/08/06/the-tragedy-of-</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
-      <source url="https://tuxedono2.com">https://tuxedono2.com</source>
     </item>
   </channel>
 </rss>

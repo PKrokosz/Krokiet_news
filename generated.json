@@ -1313,5 +1313,25 @@
     "slug": "digest",
     "title": "One Email, Three Identities: SPF, DKIM and DMARC Explained",
     "date": "2026-08-10T11:37:17.972Z"
+  },
+  "https://techcrunch.com/2026/08/10/discovered-materials-is-playing-ai-whack-a-mole-to-hunt-cooler-chips/ | https://www.reddit.com/r/dropshipping/comments/1vkih06/product_designer_for_custom_perfume_bottle/ | https://lwn.net/Articles/1034703/": {
+    "slug": "tygodniowy-digest-technologiczny-ai-projektowanie-i-optymali",
+    "title": "10.08.2026, 14:06",
+    "date": "2026-08-10T12:06:39.551Z"
+  },
+  "https://techcrunch.com/2026/08/10/discovered-materials-is-playing-ai-whack-a-mole-to-hunt-cooler-chips/": {
+    "slug": "digest",
+    "title": "Discovered Materials is playing AI whack-a-mole to hunt cooler chips",
+    "date": "2026-08-10T12:06:41.059Z"
+  },
+  "https://www.reddit.com/r/dropshipping/comments/1vkih06/product_designer_for_custom_perfume_bottle/": {
+    "slug": "digest",
+    "title": "Product Designer for custom perfume bottle",
+    "date": "2026-08-10T12:06:41.061Z"
+  },
+  "https://lwn.net/Articles/1034703/": {
+    "slug": "digest",
+    "title": "Tail-call optimization in C is relatively recent",
+    "date": "2026-08-10T12:06:41.067Z"
   }
 }
