@@ -5,8 +5,36 @@
     <link>https://pkrokosz.pl/</link>
     <description>Automatycznie generowane artykuły SEO z RSS feedów. B2B dropshipping, e-commerce, AI.</description>
     <language>pl</language>
-    <lastBuildDate>Mon, 10 Aug 2026 11:06:37 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 11:37:19 GMT</lastBuildDate>
     <atom:link href="https://pkrokosz.pl/articles/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.pl/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
+      <pubDate>Mon, 10 Aug 2026 11:37:17 GMT</pubDate>
+      <source url="https://senderledger.com/articles/one-email-three-identities-spf-dkim-dmarc">https://senderledger.com/articles/one-email-three-identities</source>
+    </item>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.pl/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
+      <pubDate>Mon, 10 Aug 2026 11:37:17 GMT</pubDate>
+      <source url="https://twitter.com/finkd/status/2086754845218726027">https://twitter.com/finkd/status/2086754845218726027</source>
+    </item>
+    <item>
+      <title>Digest</title>
+      <link>https://pkrokosz.pl/articles/digest.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
+      <pubDate>Mon, 10 Aug 2026 11:37:17 GMT</pubDate>
+      <source url="https://www.reddit.com/r/dropshipping/comments/1vki1qk/looking_for_a_dropshipping_partner_in_the_usa/">https://www.reddit.com/r/dropshipping/comments/1vki1qk/looki</source>
+    </item>
+    <item>
+      <title>Digest Tygodnia Technologia I Biznes</title>
+      <link>https://pkrokosz.pl/articles/digest-tygodnia-technologia-i-biznes.html</link>
+      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest-tygodnia-technologia-i-biznes.html</guid>
+      <pubDate>Mon, 10 Aug 2026 11:37:16 GMT</pubDate>
+      <source url="https://www.reddit.com/r/dropshipping/comments/1vki1qk/looking_for_a_dropshipping_partner_in_the_usa/ | https://twitter.com/finkd/status/2086754845218726027 | https://senderledger.com/articles/one-email-three-identities-spf-dkim-dmarc">https://www.reddit.com/r/dropshipping/comments/1vki1qk/looki</source>
+    </item>
     <item>
       <title>Digest</title>
       <link>https://pkrokosz.pl/articles/digest.html</link>
@@ -118,34 +146,6 @@
       <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
       <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
       <source url="https://tuxedono2.com">https://tuxedono2.com</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
-      <source url="https://www.betonit.ai/p/the-ambition-project">https://www.betonit.ai/p/the-ambition-project</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
-      <source url="https://www.whodunnitai.com/">https://www.whodunnitai.com/</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
-      <source url="https://www.economist.com/asia/2026/08/06/the-philippines-big-offshoring-industry-is-growing-despite-ai">https://www.economist.com/asia/2026/08/06/the-philippines-bi</source>
-    </item>
-    <item>
-      <title>Digest</title>
-      <link>https://pkrokosz.pl/articles/digest.html</link>
-      <guid isPermaLink="true">https://pkrokosz.pl/articles/digest.html</guid>
-      <pubDate>Mon, 10 Aug 2026 07:06:38 GMT</pubDate>
-      <source url="https://www.docker.com/products/docker-sandboxes/">https://www.docker.com/products/docker-sandboxes/</source>
     </item>
   </channel>
 </rss>
