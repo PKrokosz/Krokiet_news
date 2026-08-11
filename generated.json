@@ -49,565 +49,50 @@
     "title": "Przegląd tygodnia: 6.08.2026",
     "date": "2026-08-06T12:37:10.299Z"
   },
-  "https://techcrunch.com/2026/08/06/google-maps-adds-agentic-features-including-food-ordering-and-hotel-bookings/": {
-    "slug": "digest",
-    "title": "Google Maps adds agentic features, including food ordering and hotel bookings",
-    "date": "2026-08-06T12:37:10.428Z"
-  },
-  "https://techcrunch.com/2026/08/06/omilia-raises-67m-to-scale-its-customer-support-platform/": {
-    "slug": "digest",
-    "title": "Omilia raises $67M to scale its customer support platform",
-    "date": "2026-08-06T12:37:10.430Z"
-  },
-  "https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/": {
-    "slug": "digest",
-    "title": "Meta launches Muse Code, an AI agent for large code bases",
-    "date": "2026-08-06T12:37:10.431Z"
-  },
-  "https://techcrunch.com/2026/08/05/klaviyo-acquires-elias-torres-agency-in-full-circle-reunion-for-tech-founders/": {
-    "slug": "digest",
-    "title": "Klaviyo acquires Elias Torres’ Agency in full-circle reunion for tech founders",
-    "date": "2026-08-06T12:37:10.440Z"
-  },
-  "https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/": {
-    "slug": "digest",
-    "title": "Jeff Dean and other top AI researchers are leaving Google to launch their own startup",
-    "date": "2026-08-06T12:37:10.441Z"
-  },
-  "https://techcrunch.com/2026/08/05/shopify-says-ai-search-is-driving-more-traffic-and-sales-not-replacing-google/": {
-    "slug": "digest",
-    "title": "Shopify says AI search is driving more traffic and sales, not replacing Google",
-    "date": "2026-08-06T12:37:10.443Z"
-  },
-  "https://techcrunch.com/2026/08/05/hark-previews-its-browser-use-agent-for-completing-tasks/": {
-    "slug": "digest",
-    "title": "Hark previews its browser use agent for completing tasks",
-    "date": "2026-08-06T12:37:10.444Z"
-  },
-  "https://techcrunch.com/2026/08/05/techcrunch-disrupt-2026s-real-world-ai-stage-features-robots-automated-factories-and-extinct-animals/": {
-    "slug": "digest",
-    "title": "TechCrunch Disrupt 2026’s Real World AI Stage features robots, automated factories, and extinct animals ",
-    "date": "2026-08-06T12:37:10.445Z"
-  },
-  "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/": {
-    "slug": "digest",
-    "title": "Anthropic is hiring an AI chip design team",
-    "date": "2026-08-06T12:37:10.446Z"
-  },
-  "https://techcrunch.com/2026/08/05/macpaw-taps-liquid-ai-to-offer-on-device-inference-to-devs-building-for-its-app-store/": {
-    "slug": "digest",
-    "title": "MacPaw taps Liquid AI to offer on-device inference to devs building for its app store",
-    "date": "2026-08-06T12:37:10.447Z"
-  },
-  "https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/": {
-    "slug": "digest",
-    "title": "AI makes weather prediction better. Can WindBorne make it lucrative?",
-    "date": "2026-08-06T12:37:10.455Z"
-  },
-  "https://techcrunch.com/2026/08/04/spacex-has-bought-329m-worth-of-tesla-megapacks-so-far-this-year/": {
-    "slug": "digest",
-    "title": "SpaceX has bought $329M worth of Tesla Megapacks so far this year",
-    "date": "2026-08-06T12:37:10.456Z"
-  },
-  "https://techcrunch.com/2026/08/04/open-weight-ai-models-are-catching-up-to-the-frontier-the-safety-gap-remains/": {
-    "slug": "digest",
-    "title": "Open-weight AI models are catching up to the frontier. The safety gap remains. ",
-    "date": "2026-08-06T12:37:10.458Z"
-  },
-  "https://techcrunch.com/2026/08/04/anthropic-signs-10-billion-deal-with-ai-cloud-startup-volta/": {
-    "slug": "digest",
-    "title": "Anthropic signs $10B deal with AI cloud startup Volta",
-    "date": "2026-08-06T12:37:10.459Z"
-  },
-  "https://techcrunch.com/2026/08/04/meet-wrinkles-an-ai-app-that-uncovers-the-hidden-stories-of-the-places-around-you/": {
-    "slug": "digest",
-    "title": "Meet Wrinkles, an app that uncovers the hidden stories of the places around you",
-    "date": "2026-08-06T12:37:10.461Z"
-  },
-  "https://techcrunch.com/2026/08/04/nvidia-doesnt-mess-around-a-week-after-open-ai-industry-group-formed-its-already-showing-progress/": {
-    "slug": "digest",
-    "title": "Nvidia doesn’t mess around: A week after open AI industry group formed, it’s already showing progress",
-    "date": "2026-08-06T12:37:10.462Z"
-  },
-  "https://techcrunch.com/2026/08/04/spotify-adds-merlin-to-its-ai-music-remix-and-covers-effort/": {
-    "slug": "digest",
-    "title": "Spotify expands AI remix and covers project with Merlin partnership",
-    "date": "2026-08-06T12:37:10.463Z"
-  },
-  "https://techcrunch.com/2026/08/04/texas-halts-new-data-centers-as-governor-calls-for-audits/": {
-    "slug": "digest",
-    "title": "Texas halts new data centers as governor calls for audits",
-    "date": "2026-08-06T12:37:10.464Z"
-  },
-  "https://techcrunch.com/2026/08/04/elon-musk-spends-half-his-time-talking-robots-and-ai-on-tesla-earnings-calls/": {
-    "slug": "digest",
-    "title": "Elon Musk spends half his time talking robots and AI on Tesla earnings calls",
-    "date": "2026-08-06T12:37:10.465Z"
-  },
-  "https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai/": {
-    "slug": "digest",
-    "title": "Apple says more ex-employees may have taken confidential data to OpenAI",
-    "date": "2026-08-06T12:37:10.472Z"
-  },
-  "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/issues/1426": {
-    "slug": "digest",
-    "title": "On non-rooted Android 17, ADB uninstall of system apps fails",
-    "date": "2026-08-06T12:37:10.474Z"
-  },
-  "https://www.costar.com/article/970809918/nashville-council-approves-eminent-domain-action-to-halt-data-center-project": {
-    "slug": "digest",
-    "title": "Nashville uses eminent domain to block data center near zoo",
-    "date": "2026-08-06T12:37:10.475Z"
-  },
-  "https://www.primeintellect.ai/blog/prime-agent": {
-    "slug": "digest",
-    "title": "Prime Agent: A self-improving RLM agent",
-    "date": "2026-08-06T12:37:10.476Z"
-  },
-  "https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2": {
-    "slug": "digest",
-    "title": "Muse Code and Muse Spark 1.2",
-    "date": "2026-08-06T12:37:10.477Z"
-  },
-  "https://blog.fogus.me/llm/born-against.html": {
-    "slug": "digest",
-    "title": "Born Against, or why hobby programming communities are against LLM usage",
-    "date": "2026-08-06T12:37:10.478Z"
-  },
-  "https://arxiv.org/abs/2510.01395": {
-    "slug": "digest",
-    "title": "Sycophantic AI Decreases Prosocial Intentions and Promotes Dependence (2025)",
-    "date": "2026-08-06T12:37:10.480Z"
-  },
-  "https://www.hyperprobe.co": {
-    "slug": "digest",
-    "title": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
-    "date": "2026-08-06T12:37:10.481Z"
-  },
-  "https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/": {
-    "slug": "digest",
-    "title": "Changes at Google DeepMind: Demis Hassabis from CEO to Chair, Jeff Dean departs",
-    "date": "2026-08-06T12:37:10.486Z"
-  },
   "https://techcrunch.com/2026/08/06/ex-spotify-employees-raise-10m-to-bring-the-ai-behind-its-recommendations-to-e-commerce/ | https://techcrunch.com/2026/08/06/exclusive-mirendil-inks-100m-google-cloud-deal-to-scale-self-improving-ai/ | https://www.reddit.com/r/dropshipping/comments/1vgy3a7/whats_the_biggest_red_flag_when_hiring_an/ | https://www.reddit.com/r/dropshipping/comments/1vgvtay/i_forget_to_post_this_yesterday/ | https://www.reddit.com/r/dropshipping/comments/1vh3e9x/how_brands_grow_by_byron_sharp_what_did_you_take/ | https://www.reddit.com/r/dropshipping/comments/1vh1l7w/does_running_paid_ads_actually_make_sense_when/ | https://www.reddit.com/r/dropshipping/comments/1vglrvo/i_noticed_something_about_the_ecommerce_stores/ | https://www.reddit.com/r/dropshipping/comments/1vgqm87/looking_to_start/ | https://www.reddit.com/r/dropshipping/comments/1vgwpfb/esto_es_bueno_o_malo/ | https://www.reddit.com/r/dropshipping/comments/1vgyxcg/newbie_questions/ | https://www.reddit.com/r/dropshipping/comments/1vgyiml/traditional_dropshipping_vs_printondemand_which/ | https://www.reddit.com/r/dropshipping/comments/1vgyf8e/drop_your_b2b_startup_link_and_ill_give_feedback/ | https://www.reddit.com/r/dropshipping/comments/1vga83p/yes_yes_yes_first_sale/ | https://www.reddit.com/r/dropshipping/comments/1vgtfxw/what_is_your_product_research_process_for_finding/ | https://www.reddit.com/r/dropshipping/comments/1vgsrob/fullfiment/ | https://www.reddit.com/r/dropshipping/comments/1vgnrb5/how_realistically_fast_can_you_scale_a_store_to/ | https://www.reddit.com/r/dropshipping/comments/1vgwpcx/shopping_platforms/ | https://www.reddit.com/r/dropshipping/comments/1vgwm21/ecommerce_story_simmilar_to_another_good_selling/ | https://www.reddit.com/r/dropshipping/comments/1vgw8qq/filipino_dropshippers/ | https://www.reddit.com/r/dropshipping/comments/1vgvvw3/looking_for_some_advice_for_first_timer/ | https://www.reddit.com/r/dropshipping/comments/1vgv0ng/episode_2_i_switched_from_looking_for_an_equity/ | https://www.reddit.com/r/dropshipping/comments/1vg9cqs/need_some_honest_advice/ | https://www.reddit.com/r/dropshipping/comments/1vgmwge/agency_or_run_ads_myself/ | https://www.reddit.com/r/dropshipping/comments/1vgtqku/how_to_become_a_dropshippers_best_ally/ | https://www.reddit.com/r/dropshipping/comments/1vgsfbz/ebay_order_processing/ | https://www.reddit.com/r/dropshipping/comments/1vgrhha/for_hire_ads_video_editor/ | https://intergalacticrobots.app/skyline-coop/": {
     "slug": "ecommerce-tygodniu-ai-wsp-praca-z-google-cloud-i-porady-dla-",
     "title": "Przegląd tygodnia: 6.08.2026",
     "date": "2026-08-06T13:06:35.136Z"
-  },
-  "https://techcrunch.com/2026/08/06/ex-spotify-employees-raise-10m-to-bring-the-ai-behind-its-recommendations-to-e-commerce/": {
-    "slug": "digest",
-    "title": "Ex-Spotify employees raise $10M to bring the AI behind its recommendations to e-commerce",
-    "date": "2026-08-06T13:06:35.250Z"
-  },
-  "https://techcrunch.com/2026/08/06/exclusive-mirendil-inks-100m-google-cloud-deal-to-scale-self-improving-ai/": {
-    "slug": "digest",
-    "title": "Exclusive: Mirendil inks $100M+ Google Cloud deal to scale self-improving AI",
-    "date": "2026-08-06T13:06:35.252Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgy3a7/whats_the_biggest_red_flag_when_hiring_an/": {
-    "slug": "digest",
-    "title": "what's the biggest red flag when hiring an ecommerce agency?",
-    "date": "2026-08-06T13:06:35.254Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgvtay/i_forget_to_post_this_yesterday/": {
-    "slug": "digest",
-    "title": "I forget to post this yesterday 😁🔥",
-    "date": "2026-08-06T13:06:35.255Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vh3e9x/how_brands_grow_by_byron_sharp_what_did_you_take/": {
-    "slug": "digest",
-    "title": "How Brands Grow by Byron Sharp, what did you take from it and did you actually act on it?",
-    "date": "2026-08-06T13:06:35.257Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vh1l7w/does_running_paid_ads_actually_make_sense_when/": {
-    "slug": "digest",
-    "title": "Does running paid ads actually make sense when you're capped on hours or is organic the only realistic option",
-    "date": "2026-08-06T13:06:35.258Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vglrvo/i_noticed_something_about_the_ecommerce_stores/": {
-    "slug": "digest",
-    "title": "I noticed something about the ecommerce stores that quietly keep growing",
-    "date": "2026-08-06T13:06:35.259Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgqm87/looking_to_start/": {
-    "slug": "digest",
-    "title": "Looking to start",
-    "date": "2026-08-06T13:06:35.264Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgwpfb/esto_es_bueno_o_malo/": {
-    "slug": "digest",
-    "title": "Esto es bueno o malo?",
-    "date": "2026-08-06T13:06:35.265Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgyxcg/newbie_questions/": {
-    "slug": "digest",
-    "title": "Newbie questions",
-    "date": "2026-08-06T13:06:35.266Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgyiml/traditional_dropshipping_vs_printondemand_which/": {
-    "slug": "digest",
-    "title": "Traditional Dropshipping vs. Print-on-Demand: Which Should You Start With?",
-    "date": "2026-08-06T13:06:35.268Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgyf8e/drop_your_b2b_startup_link_and_ill_give_feedback/": {
-    "slug": "digest",
-    "title": "Drop your b2b startup link and I’ll give feedback and improvements.",
-    "date": "2026-08-06T13:06:35.269Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vga83p/yes_yes_yes_first_sale/": {
-    "slug": "digest",
-    "title": "Yes yes yes. First sale!",
-    "date": "2026-08-06T13:06:35.270Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgtfxw/what_is_your_product_research_process_for_finding/": {
-    "slug": "digest",
-    "title": "What is your product research process for finding winning products in the Saudi Arabian market?",
-    "date": "2026-08-06T13:06:35.272Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgsrob/fullfiment/": {
-    "slug": "digest",
-    "title": "Fullfiment",
-    "date": "2026-08-06T13:06:35.273Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgnrb5/how_realistically_fast_can_you_scale_a_store_to/": {
-    "slug": "digest",
-    "title": "How realistically fast can you scale a store to $10k/m",
-    "date": "2026-08-06T13:06:35.274Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgwpcx/shopping_platforms/": {
-    "slug": "digest",
-    "title": "Shopping platforms",
-    "date": "2026-08-06T13:06:35.275Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgwm21/ecommerce_story_simmilar_to_another_good_selling/": {
-    "slug": "digest",
-    "title": "Ecommerce story simmilar to another good selling brands but not to much converson on own . Help me!",
-    "date": "2026-08-06T13:06:35.277Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgw8qq/filipino_dropshippers/": {
-    "slug": "digest",
-    "title": "Filipino dropshippers?",
-    "date": "2026-08-06T13:06:35.280Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgvvw3/looking_for_some_advice_for_first_timer/": {
-    "slug": "digest",
-    "title": "Looking for some advice for first timer",
-    "date": "2026-08-06T13:06:35.281Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgv0ng/episode_2_i_switched_from_looking_for_an_equity/": {
-    "slug": "digest",
-    "title": "[Episode 2] I switched from looking for an equity partner to offering a straight sourcing service",
-    "date": "2026-08-06T13:06:35.282Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vg9cqs/need_some_honest_advice/": {
-    "slug": "digest",
-    "title": "Need some honest advice",
-    "date": "2026-08-06T13:06:35.284Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgmwge/agency_or_run_ads_myself/": {
-    "slug": "digest",
-    "title": "Agency or run ads myself?",
-    "date": "2026-08-06T13:06:35.285Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgtqku/how_to_become_a_dropshippers_best_ally/": {
-    "slug": "digest",
-    "title": "How to become a dropshipper's best ally?",
-    "date": "2026-08-06T13:06:35.286Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgsfbz/ebay_order_processing/": {
-    "slug": "digest",
-    "title": "Ebay order processing",
-    "date": "2026-08-06T13:06:35.288Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vgrhha/for_hire_ads_video_editor/": {
-    "slug": "digest",
-    "title": "(For Hire) Ads Video Editor",
-    "date": "2026-08-06T13:06:35.289Z"
-  },
-  "https://intergalacticrobots.app/skyline-coop/": {
-    "slug": "digest",
-    "title": "Show HN: Skyline Co-op is like SimTower, but built around democratic socialism",
-    "date": "2026-08-06T13:06:35.290Z"
   },
   "https://techcrunch.com/2026/08/06/amid-legal-battles-suno-says-it-will-start-watermarking-songs/ | https://www.reddit.com/r/dropshipping/comments/1vh3zuz/building_a_discovery_layer_for_commerce_no/ | https://www.reddit.com/r/dropshipping/comments/1vh3wns/looking_for_5_beta_testers_for_my_new/ | https://scalex.dev/blog/ai-agent-permissions-stats/": {
     "slug": "przegl-d-tygodnia-innowacje-i-wyzwania-w-technologiach",
     "title": "Przegląd tygodnia: 6.08.2026",
     "date": "2026-08-06T13:36:59.065Z"
   },
-  "https://techcrunch.com/2026/08/06/amid-legal-battles-suno-says-it-will-start-watermarking-songs/": {
-    "slug": "digest",
-    "title": "Amid legal battles, Suno says it will start watermarking songs",
-    "date": "2026-08-06T13:36:59.318Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vh3zuz/building_a_discovery_layer_for_commerce_no/": {
-    "slug": "digest",
-    "title": "Building a discovery layer for commerce. No commissions, just traffic.",
-    "date": "2026-08-06T13:36:59.320Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vh3wns/looking_for_5_beta_testers_for_my_new/": {
-    "slug": "digest",
-    "title": "Looking for 5 beta testers for my new AliExpress/Amazon review importer app (Offering Lifetime Pro plan)",
-    "date": "2026-08-06T13:36:59.322Z"
-  },
-  "https://scalex.dev/blog/ai-agent-permissions-stats/": {
-    "slug": "digest",
-    "title": "Humans missed 1 in 3 threats approving AI agent commands across 40k game runs",
-    "date": "2026-08-06T13:36:59.330Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vh54rl/lip_sync_ads_and_animated_ads/ | https://geosona.com/demake/": {
     "slug": "przegl-d-tygodnia-animowane-reklamy-i-retrogryki",
     "title": "Przegląd tygodnia: 6.08.2026",
     "date": "2026-08-06T14:07:14.335Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vh54rl/lip_sync_ads_and_animated_ads/": {
-    "slug": "digest",
-    "title": "Lip Sync ads and animated ads",
-    "date": "2026-08-06T14:07:14.557Z"
-  },
-  "https://geosona.com/demake/": {
-    "slug": "digest",
-    "title": "Show HN: demake – one source project compiles to any retro game console ROM",
-    "date": "2026-08-06T14:07:14.560Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vh5bsd/can_yall_help_me_out_with_my_store/ | https://platform.deepseek.com/usage": {
     "slug": "przegl-d-tygodnia-wyzwania-w-e-commerce-i-zmiany-w-deepseek",
     "title": "Przegląd tygodnia: 6.08.2026",
     "date": "2026-08-06T15:06:47.786Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vh5bsd/can_yall_help_me_out_with_my_store/": {
-    "slug": "digest",
-    "title": "Can yall help me out with my store?",
-    "date": "2026-08-06T15:06:47.972Z"
-  },
-  "https://platform.deepseek.com/usage": {
-    "slug": "digest",
-    "title": "DeepSeek planning to significantly raise prices",
-    "date": "2026-08-06T15:06:47.974Z"
-  },
   "https://techcrunch.com/2026/08/06/openai-says-apples-own-security-practices-undermine-its-trade-secrets-case/ | https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB2Z0Fvd1hJM0lqT1k4d3psM2ZIbDd3YUdrZ1c1aVQ2SU9ha3BVY2Z2bE9zM2xWNWZGN3ZQRks5eEJnZEVnNUIteWk4UGNMVEhwTUMtLTBEYVVQcU5abzk5M3ZfTGU2S3c?oc=5": {
     "slug": "przegl-d-tygodnia-openai-kontra-apple-i-live-shopping-na-sho",
     "title": "Przegląd tygodnia: 6.08.2026",
     "date": "2026-08-06T15:36:40.879Z"
-  },
-  "https://techcrunch.com/2026/08/06/openai-says-apples-own-security-practices-undermine-its-trade-secrets-case/": {
-    "slug": "digest",
-    "title": "OpenAI says Apple’s own security practices undermine its trade secrets case",
-    "date": "2026-08-06T15:36:41.122Z"
-  },
-  "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB2Z0Fvd1hJM0lqT1k4d3psM2ZIbDd3YUdrZ1c1aVQ2SU9ha3BVY2Z2bE9zM2xWNWZGN3ZQRks5eEJnZEVnNUIteWk4UGNMVEhwTUMtLTBEYVVQcU5abzk5M3ZfTGU2S3c?oc=5": {
-    "slug": "digest",
-    "title": "Live Shopping: What It Is and Livestream Selling Steps (2026) - Shopify",
-    "date": "2026-08-06T15:36:41.124Z"
   },
   "https://techcrunch.com/2026/08/06/gen-z-dating-apps-like-ditto-ditch-swiping-in-favor-of-ai-matchmaking/ | https://www.reddit.com/r/dropshipping/comments/1vh7nvs/the_only_2026_testing_structure_that_worked_for_me/ | https://electronicmaterialsoffice.com/": {
     "slug": "przegl-d-tygodnia-innowacje-w-dating-apps-testowaniu-i-sprz-",
     "title": "Przegląd tygodnia: 6.08.2026",
     "date": "2026-08-06T16:07:46.563Z"
   },
-  "https://techcrunch.com/2026/08/06/gen-z-dating-apps-like-ditto-ditch-swiping-in-favor-of-ai-matchmaking/": {
-    "slug": "digest",
-    "title": "Gen Z dating apps like Ditto ditch swiping in favor of AI matchmaking",
-    "date": "2026-08-06T16:07:47.296Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vh7nvs/the_only_2026_testing_structure_that_worked_for_me/": {
-    "slug": "digest",
-    "title": "The only 2026 testing structure that worked for me",
-    "date": "2026-08-06T16:07:47.298Z"
-  },
-  "https://electronicmaterialsoffice.com/": {
-    "slug": "digest",
-    "title": "Show HN: I spent 2 years designing a mechanical Magic Keyboard",
-    "date": "2026-08-06T16:07:47.306Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vh8st9/for_hire_i_build_shopify_stores_that_actually/ | https://www.reddit.com/r/dropshipping/comments/1vh8m75/you_know_the_dropshipping_page_look_fake/ | https://provenmetal.com | https://www.cnn.com/2026/08/06/business/ai-data-center-construction": {
     "slug": "przegl-d-tygodnia-innowacje-i-wyzwania-w-technologiach",
     "title": "Przegląd tygodnia: 6.08.2026",
     "date": "2026-08-06T16:36:41.540Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vh8st9/for_hire_i_build_shopify_stores_that_actually/": {
-    "slug": "digest",
-    "title": "[For Hire] I build Shopify stores that actually convert",
-    "date": "2026-08-06T16:36:42.093Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vh8m75/you_know_the_dropshipping_page_look_fake/": {
-    "slug": "digest",
-    "title": "You know the dropshipping page look, fake countdown, 3 suspicious reviews, \"premium quality\" x9. I built a way out.",
-    "date": "2026-08-06T16:36:42.097Z"
-  },
-  "https://provenmetal.com": {
-    "slug": "digest",
-    "title": "Launch HN: ProvenMetal (YC S26) delivers circuit boards in days instead of weeks",
-    "date": "2026-08-06T16:36:42.099Z"
-  },
-  "https://www.cnn.com/2026/08/06/business/ai-data-center-construction": {
-    "slug": "digest",
-    "title": "Americans are rallying against data centers. Surprisingly few are getting built",
-    "date": "2026-08-06T16:36:42.104Z"
   },
   "https://techcrunch.com/2026/08/06/openais-new-ai-smart-speaker-will-reportedly-sell-for-between-300-and-400/ | https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/ | https://techcrunch.com/2026/08/06/naive-raises-28-5m-to-automate-the-grunt-work-of-setting-up-and-running-a-company/ | https://news.google.com/rss/articles/CBMi0gFBVV95cUxOcXNqaHRnVjllTDBOdl9oQ0pBUGZsMTFpVFpOSDl1aFBFYm51d0dWYU1hRXVCc2t1YjZzV0k0TXNhVlBodHpBQ0x1SkdUUUt5RGNqU2N0V2lkUXpBMGI3NkkwUjM2Y2g0NEE3ZTBtampDbkZWd0NqSHdpM1ZrOW16dkdNcG9rQVFYRlpHdS1TUWFZLWo2UDFKdE5BMWJjcmtobzgxQ0lMY2hPU0NGV3JuUU5RWUtVcU52MjBCZDVTSW85TTJUeTNqOVNhZ2ZvNmp4OXfSAdIBQVVfeXFMTnFzamh0Z1Y5ZUwwTnZfaENKQVBmbDExaVRaTkg5dWhQRWJudXdHVmFNYUV1QnNrdWI2c1dJNE1zYVZQaHR6QUNMdUpHVFFLeURjalNjdFdpZFF6QTBiNzZJMFIzNmNoNDRBN2UwbWpqQ25GVndDakh3aTNWazltenZHTXBva0FRWEZaR3UtU1FhWS1qNlAxSnROQTFiY3JraG84MUNJTGNoT1NDRldyblFOUVlLVXFOdjIwQmQ1U0lvOU0yVHkzajlTYWdmbzZqeDl3?oc=5 | https://www.reddit.com/r/dropshipping/comments/1vhivc5/202k_in_90_days_google_ads_ama/ | https://www.reddit.com/r/dropshipping/comments/1vhg9cz/switching_suppliers/ | https://www.reddit.com/r/dropshipping/comments/1vhk67m/6438_today_if_youre_struggling_with_sales_read/ | https://www.reddit.com/r/dropshipping/comments/1vhq99n/looking_for_a_partner_whos_serious_about_building/ | https://www.reddit.com/r/dropshipping/comments/1vhotbk/offering_aftersales_customer_support_for/ | https://www.reddit.com/r/dropshipping/comments/1vhd0gu/be_careful_over_here/ | https://www.reddit.com/r/dropshipping/comments/1vhfe4j/first_big_day/ | https://www.reddit.com/r/dropshipping/comments/1vhm4kj/my_dream_is_having_a_shop_but_every_niche_is/ | https://www.reddit.com/r/dropshipping/comments/1vhf1tm/how_are_people_on_shopify_tracking_real_life/ | https://www.reddit.com/r/dropshipping/comments/1vhf1c0/how_are_people_on_shopify_tracking_real_life/ | https://www.reddit.com/r/dropshipping/comments/1vhkb3s/removed_by_reddit/ | https://www.reddit.com/r/dropshipping/comments/1vhk094/anyone_else_feel_completely_alone_doing_this/ | https://www.reddit.com/r/dropshipping/comments/1vhdvqu/dont_know_what_to_do/ | https://www.reddit.com/r/dropshipping/comments/1vhhuvz/generating_img_ads/ | https://www.reddit.com/r/dropshipping/comments/1vhbfgi/lets_network/ | https://www.reddit.com/r/dropshipping/comments/1vhbamj/meta_ads_test_traffic_not_working/ | https://www.reddit.com/r/dropshipping/comments/1vhcqex/my_first_attempt_at_a_homepage_in_a_nail_polish/ | https://www.reddit.com/r/dropshipping/comments/1vhcf70/fasionreps_boonbuy_spreadsheet_2026/ | https://www.reddit.com/r/dropshipping/comments/1vhb7wi/etsy_closed_my_shop_looking_for_alternatives/ | https://www.reddit.com/r/dropshipping/comments/1vhb6rw/mr_gee_general_store/ | https://www.reddit.com/r/dropshipping/comments/1vha37f/for_hire_i_build_shopify_stores_that_actually/ | https://www.sciencedaily.com/releases/2026/08/260803080917.htm | https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344 | https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/ | https://www.githubstatus.com/incidents/qcvjkzcs7j74": {
     "slug": "tygodniowy-digest-technologia-e-commerce-i-sukcesy-online",
     "title": "7.08.2026, 07:24",
     "date": "2026-08-07T04:38:20.391Z"
   },
-  "https://techcrunch.com/2026/08/06/openais-new-ai-smart-speaker-will-reportedly-sell-for-between-300-and-400/": {
-    "slug": "digest",
-    "title": "OpenAI’s new AI smart speaker will reportedly sell for between $300 and $400",
-    "date": "2026-08-07T04:38:20.541Z"
-  },
-  "https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/": {
-    "slug": "digest",
-    "title": "ChatGPT brings unlimited text chats to free users",
-    "date": "2026-08-07T04:38:20.544Z"
-  },
-  "https://techcrunch.com/2026/08/06/naive-raises-28-5m-to-automate-the-grunt-work-of-setting-up-and-running-a-company/": {
-    "slug": "digest",
-    "title": "Naïve raises $28.5M to automate the grunt work of setting up and running a company",
-    "date": "2026-08-07T04:38:20.546Z"
-  },
-  "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOcXNqaHRnVjllTDBOdl9oQ0pBUGZsMTFpVFpOSDl1aFBFYm51d0dWYU1hRXVCc2t1YjZzV0k0TXNhVlBodHpBQ0x1SkdUUUt5RGNqU2N0V2lkUXpBMGI3NkkwUjM2Y2g0NEE3ZTBtampDbkZWd0NqSHdpM1ZrOW16dkdNcG9rQVFYRlpHdS1TUWFZLWo2UDFKdE5BMWJjcmtobzgxQ0lMY2hPU0NGV3JuUU5RWUtVcU52MjBCZDVTSW85TTJUeTNqOVNhZ2ZvNmp4OXfSAdIBQVVfeXFMTnFzamh0Z1Y5ZUwwTnZfaENKQVBmbDExaVRaTkg5dWhQRWJudXdHVmFNYUV1QnNrdWI2c1dJNE1zYVZQaHR6QUNMdUpHVFFLeURjalNjdFdpZFF6QTBiNzZJMFIzNmNoNDRBN2UwbWpqQ25GVndDakh3aTNWazltenZHTXBva0FRWEZaR3UtU1FhWS1qNlAxSnROQTFiY3JraG84MUNJTGNoT1NDRldyblFOUVlLVXFOdjIwQmQ1U0lvOU0yVHkzajlTYWdmbzZqeDl3?oc=5": {
-    "slug": "digest",
-    "title": "Ecommerce Trends: What online shoppers said will matter in 2026 holiday survey results - Digital Commerce 360",
-    "date": "2026-08-07T04:38:20.547Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhivc5/202k_in_90_days_google_ads_ama/": {
-    "slug": "digest",
-    "title": "$202k in 90 Days | GOOGLE ADS | AMA",
-    "date": "2026-08-07T04:38:20.555Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhg9cz/switching_suppliers/": {
-    "slug": "digest",
-    "title": "Switching suppliers",
-    "date": "2026-08-07T04:38:20.557Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhk67m/6438_today_if_youre_struggling_with_sales_read/": {
-    "slug": "digest",
-    "title": "$6,438 today if you're struggling with sales read this before you spend another dollar on ads",
-    "date": "2026-08-07T04:38:20.559Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhq99n/looking_for_a_partner_whos_serious_about_building/": {
-    "slug": "digest",
-    "title": "Looking for a partner who’s serious about building a digital product business (starting from $0)",
-    "date": "2026-08-07T04:38:20.560Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhotbk/offering_aftersales_customer_support_for/": {
-    "slug": "digest",
-    "title": "Offering After-Sales Customer Support for Dropshipping Stores",
-    "date": "2026-08-07T04:38:20.562Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhd0gu/be_careful_over_here/": {
-    "slug": "digest",
-    "title": "Be careful over here .",
-    "date": "2026-08-07T04:38:20.563Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhfe4j/first_big_day/": {
-    "slug": "digest",
-    "title": "First big day",
-    "date": "2026-08-07T04:38:20.564Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhm4kj/my_dream_is_having_a_shop_but_every_niche_is/": {
-    "slug": "digest",
-    "title": "My dream is having a shop but every niche is saturated, what do you guys think?",
-    "date": "2026-08-07T04:38:20.570Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhf1tm/how_are_people_on_shopify_tracking_real_life/": {
-    "slug": "digest",
-    "title": "How are people on shopify tracking real life profits ??",
-    "date": "2026-08-07T04:38:20.573Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhf1c0/how_are_people_on_shopify_tracking_real_life/": {
-    "slug": "digest",
-    "title": "How are people on shopify tracking real life profits ??",
-    "date": "2026-08-07T04:38:20.575Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhkb3s/removed_by_reddit/": {
-    "slug": "digest",
-    "title": "[ Removed by Reddit ]",
-    "date": "2026-08-07T04:38:20.577Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhk094/anyone_else_feel_completely_alone_doing_this/": {
-    "slug": "digest",
-    "title": "Anyone else feel completely alone doing this?",
-    "date": "2026-08-07T04:38:20.579Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhdvqu/dont_know_what_to_do/": {
-    "slug": "digest",
-    "title": "Don’t know what to do",
-    "date": "2026-08-07T04:38:20.584Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhhuvz/generating_img_ads/": {
-    "slug": "digest",
-    "title": "Generating img ads",
-    "date": "2026-08-07T04:38:20.587Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhbfgi/lets_network/": {
-    "slug": "digest",
-    "title": "Let’s Network",
-    "date": "2026-08-07T04:38:20.589Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhbamj/meta_ads_test_traffic_not_working/": {
-    "slug": "digest",
-    "title": "Meta ads test traffic not working",
-    "date": "2026-08-07T04:38:20.590Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhcqex/my_first_attempt_at_a_homepage_in_a_nail_polish/": {
-    "slug": "digest",
-    "title": "My first attempt at a homepage in a nail polish market",
-    "date": "2026-08-07T04:38:20.592Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhcf70/fasionreps_boonbuy_spreadsheet_2026/": {
-    "slug": "digest",
-    "title": "FasionReps Boonbuy Spreadsheet 2026",
-    "date": "2026-08-07T04:38:20.593Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhb7wi/etsy_closed_my_shop_looking_for_alternatives/": {
-    "slug": "digest",
-    "title": "Etsy closed my shop, looking for alternatives.",
-    "date": "2026-08-07T04:38:20.594Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhb6rw/mr_gee_general_store/": {
-    "slug": "digest",
-    "title": "Mr Gee General Store",
-    "date": "2026-08-07T04:38:20.596Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vha37f/for_hire_i_build_shopify_stores_that_actually/": {
-    "slug": "digest",
-    "title": "[For Hire] I build Shopify stores that actually convert",
-    "date": "2026-08-07T04:38:20.601Z"
-  },
-  "https://www.sciencedaily.com/releases/2026/08/260803080917.htm": {
-    "slug": "digest",
-    "title": "Bioengineered chewing gum may offer a way to fight HPV and other microbes",
-    "date": "2026-08-07T04:38:20.603Z"
-  },
-  "https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344": {
-    "slug": "digest",
-    "title": "AMD acquires Taalas to boost inference performance by etching models in silicon",
-    "date": "2026-08-07T04:38:20.605Z"
-  },
-  "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/": {
-    "slug": "digest",
-    "title": "Improving GPT‑5.6 Sol in ChatGPT, expanding GPT‑5.6 Luna access for free users",
-    "date": "2026-08-07T04:38:20.607Z"
-  },
-  "https://www.githubstatus.com/incidents/qcvjkzcs7j74": {
-    "slug": "digest",
-    "title": "GitHub Actions and Pages are experiencing degraded availability",
-    "date": "2026-08-07T04:38:20.608Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vhqz4u/what_is_your_product_research_process_for_finding/ | https://socket.dev/blog/ai-agent-open-source-malware": {
     "slug": "tygodniowy-przegl-d-od-strategii-dropshipping-w-arabii-saudy",
     "title": "7.08.2026, 07:24",
     "date": "2026-08-07T05:06:39.130Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhqz4u/what_is_your_product_research_process_for_finding/": {
-    "slug": "digest",
-    "title": "What is your product research process for finding winning products in the Saudi Arabian market?",
-    "date": "2026-08-07T05:06:39.329Z"
-  },
-  "https://socket.dev/blog/ai-agent-open-source-malware": {
-    "slug": "digest",
-    "title": "Mythos Attempted to Social Engineer Open Source Maintainer to Merge Malware",
-    "date": "2026-08-07T05:06:39.331Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1ufy68l/lock_in_or_clock_in_guys/": {
     "slug": "top-5-strategii-lock-in-vs-clock-in-co-wybra-dla-twojej-kari",
@@ -624,55 +109,15 @@
     "title": "7.08.2026, 09:06",
     "date": "2026-08-07T07:06:50.888Z"
   },
-  "https://www.shreveporttimes.com/story/news/local/louisiana/2026/07/28/is-new-orleans-using-ai-to-answer-911-calls-instead-of-human-dispatchers-impacts-emergencies-crime/91065014007/": {
-    "slug": "digest",
-    "title": "New Orleans is testing Carbyne’s AI-powered Emergency Call Triage software",
-    "date": "2026-08-07T07:06:52.156Z"
-  },
-  "https://blog.sydorets.com/en/posts/almost-no-skill-required-to-cook-a-steak/": {
-    "slug": "digest",
-    "title": "Software development with AI is starting to feel like cooking steak",
-    "date": "2026-08-07T07:06:52.159Z"
-  },
   "https://news.google.com/rss/articles/CBMizAFBVV95cUxOcHVfcGl1SlhhalJaVWhueTh0NU9xY1hPejNla0hWYlNMX1EzQ0prZldkWDViMkpYb1hBRTdKM3JBLUF0YjlVZXdFbzVucDh4dVk1ZG1QREQ3SDFDWVR6cEc5Sk5uSEdDYWxzdFhXc043RkhYS2xmTGprZnlELUF5UzM4U1lXY0ZyUThkX1FDQ21jS2pjQnkta1VqalcxZXp5SGgtWFhpQ2lmY3BmSWd6T1VPU0JfRlBKc1lTLTZjLXpXaElILUphQnhWMG3SAdIBQVVfeXFMTnFzamh0Z1Y5ZUwwTnZfaENKQVBmbDExaVRaTkg5dWhQRWJudXdHVmFNYUV1QnNrdWI2c1dJNE1zYVZQaHR6QUNMdUpHVFFLeURjalNjdFdpZFF6QTBiNzZJMFIzNmNoNDRBN2UwbWpqQ25GVndDakh3aTNWazltenZHTXBva0FRWEZaR3UtU1FhWS1qNlAxSnROQTFiY3JraG84MUNJTGNoT1NDRldyblFOUVlLVXFOdjIwQmQ1U0lvOU0yVHkzajlTYWdmbzZqeDl3?oc=5 | https://www.reddit.com/r/dropshipping/comments/1vhtpii/as_a_sellerbrand_how_has_been_your_experience/ | https://zenodo.org/records/21359923": {
     "slug": "tygodniowy-przegl-d-technologiczny-e-commerce-ai-i-kwantowa-",
     "title": "7.08.2026, 09:36",
     "date": "2026-08-07T07:36:41.361Z"
   },
-  "https://news.google.com/rss/articles/CBMizAFBVV95cUxOcHVfcGl1SlhhalJaVWhueTh0NU9xY1hPejNla0hWYlNMX1EzQ0prZldkWDViMkpYb1hBRTdKM3JBLUF0YjlVZXdFbzVucDh4dVk1ZG1QREQ3SDFDWVR6cEc5Sk5uSEdDYWxzdFhXc043RkhYS2xmTGprZnlELUF5UzM4U1lXY0ZyUThkX1FDQ21jS2pjQnkta1VqalcxZXp5SGgtWFhpQ2lmY3BmSWd6T1VPU0JfRlBKc1lTLTZjLXpXaElILUphQnhWMG3SAdIBQVVfeXFMTnFzamh0Z1Y5ZUwwTnZfaENKQVBmbDExaVRaTkg5dWhQRWJudXdHVmFNYUV1QnNrdWI2c1dJNE1zYVZQaHR6QUNMdUpHVFFLeURjalNjdFdpZFF6QTBiNzZJMFIzNmNoNDRBN2UwbWpqQ25GVndDakh3aTNWazltenZHTXBva0FRWEZaR3UtU1FhWS1qNlAxSnROQTFiY3JraG84MUNJTGNoT1NDRldyblFOUVlLVXFOdjIwQmQ1U0lvOU0yVHkzajlTYWdmbzZqeDl3?oc=5": {
-    "slug": "digest",
-    "title": "Ecommerce Trends: What online shoppers said will matter in 2026 holiday survey results - Digital Commerce 360",
-    "date": "2026-08-07T07:36:42.391Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhtpii/as_a_sellerbrand_how_has_been_your_experience/": {
-    "slug": "digest",
-    "title": "As a seller/brand how has been your experience using generative AI? Do customers like it or hate it?",
-    "date": "2026-08-07T07:36:42.393Z"
-  },
-  "https://zenodo.org/records/21359923": {
-    "slug": "digest",
-    "title": "Spin audit of SQD/QSCI quantum-chemistry benchmarks on iron–sulfur clusters",
-    "date": "2026-08-07T07:36:42.395Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vhuxiv/best_month_ever/ | https://www.reddit.com/r/dropshipping/comments/1vhvl4f/travelsized_disposable_hand_sanitizer_sheets/ | https://www.reddit.com/r/dropshipping/comments/1vhvkmi/orders_have_dropped_from_10_a_day_to_0/": {
     "slug": "dropshipping-digest-rekordowy-miesi-c-innowacyjne-produkty-i",
     "title": "7.08.2026, 11:37",
     "date": "2026-08-07T09:37:25.161Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhuxiv/best_month_ever/": {
-    "slug": "digest",
-    "title": "Best month ever",
-    "date": "2026-08-07T09:37:26.922Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhvl4f/travelsized_disposable_hand_sanitizer_sheets/": {
-    "slug": "digest",
-    "title": "Travel-sized disposable hand sanitizer sheets, small soap sheets/dropshipping /wholesales /sourcing agent",
-    "date": "2026-08-07T09:37:26.925Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhvkmi/orders_have_dropped_from_10_a_day_to_0/": {
-    "slug": "digest",
-    "title": "Orders have dropped from 10 a day to 0 !",
-    "date": "2026-08-07T09:37:26.928Z"
   },
   "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQOTFFN1hTRkFMWUtySVh4NHd2MHhvVV81SE9Db0ZwT0ZIYy1jWWtfY3piNm5XQndTQlYyM2FScERndWR1aWNUN3g5VXFuc3luT3BfdU42elhNYS11T3FFekhWQk9kckRMMWxxbExrWVpkblpsTkQ2eGY0RjZETW94SGVtVXduYmF2dkJBeGpjOHdlVjhMWXVBU2ljSGM2b05WOGJBRndtYnZqeWV0b0lOaFU2WUREczg3SlBkMEo2d1ZQLU5wVjhVczBhNHNlLVpMWDU2bA?oc=5": {
     "slug": "top-5-trend-w-e-commerce-2026-wed-ug-dhl-era-ai-zmienia-regu",
@@ -689,1069 +134,229 @@
     "title": "7.08.2026, 13:06",
     "date": "2026-08-07T11:06:31.877Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vhx695/ive_collected_80_most_trending_ads_on_meta_from/": {
-    "slug": "digest",
-    "title": "I've collected 80 most trending ads on Meta from this week (ads that were the most-saved by media buyers)",
-    "date": "2026-08-07T11:06:32.780Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhw8q6/removed_by_reddit/": {
-    "slug": "digest",
-    "title": "[ Removed by Reddit ]",
-    "date": "2026-08-07T11:06:32.784Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vhy56h/best_way_to_do_ads/ | https://www.reddit.com/r/dropshipping/comments/1vhy4tj/just_starting_whats_next/ | https://www.currentaffairs.org/news/the-massive-climate-lie-that-will-destroy-human-civilization": {
     "slug": "tygodniowy-digest-marketing-startupy-i-klimat",
     "title": "7.08.2026, 13:37",
     "date": "2026-08-07T11:37:02.958Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhy56h/best_way_to_do_ads/": {
-    "slug": "digest",
-    "title": "Best way to do ads",
-    "date": "2026-08-07T11:37:04.347Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhy4tj/just_starting_whats_next/": {
-    "slug": "digest",
-    "title": "Just starting, what's next?",
-    "date": "2026-08-07T11:37:04.349Z"
-  },
-  "https://www.currentaffairs.org/news/the-massive-climate-lie-that-will-destroy-human-civilization": {
-    "slug": "digest",
-    "title": "The Gargantuan Lie That Is Collapsing the Climate",
-    "date": "2026-08-07T11:37:04.355Z"
   },
   "https://techcrunch.com/2026/08/07/new-mexico-court-orders-meta-to-pay-additional-567m-in-child-safety-case/ | https://github.com/schroedinger-Hat/certo": {
     "slug": "tygodniowy-digest-technologia-i-prawo-nowe-rozwini-cia",
     "title": "7.08.2026, 14:07",
     "date": "2026-08-07T12:07:21.554Z"
   },
-  "https://techcrunch.com/2026/08/07/new-mexico-court-orders-meta-to-pay-additional-567m-in-child-safety-case/": {
-    "slug": "digest",
-    "title": "New Mexico court orders Meta to pay additional $567M in child safety case",
-    "date": "2026-08-07T12:07:23.126Z"
-  },
-  "https://github.com/schroedinger-Hat/certo": {
-    "slug": "digest",
-    "title": "Show HN: Certo – An open source platform to deliver Open Badges",
-    "date": "2026-08-07T12:07:23.128Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vi07mm/launching_a_new_skin_care_brand_looking_for/ | https://www.reddit.com/r/dropshipping/comments/1vhzk98/your_ads_arent_the_problem_at_breakeven_your/": {
     "slug": "tygodniowy-digest-5-news-w-z-wiata-biznesu-i-marketingu",
     "title": "7.08.2026, 15:37",
     "date": "2026-08-07T13:37:20.427Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vi07mm/launching_a_new_skin_care_brand_looking_for/": {
-    "slug": "digest",
-    "title": "Launching a new skin care brand, looking for sourcing agent!",
-    "date": "2026-08-07T13:37:21.347Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vhzk98/your_ads_arent_the_problem_at_breakeven_your/": {
-    "slug": "digest",
-    "title": "Your ads aren't the problem at breakeven. Your order size is.",
-    "date": "2026-08-07T13:37:21.349Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vi0ysm/best_builder_for_ecomm_sites_in_2026/ | https://www.fastcompany.com/91576086/ai-psychosis-is-the-new-leadership-blind-spot-ai-leadership-blind-spots": {
     "slug": "tygodniowy-digest-e-commerce-ai-i-nowe-wyzwania",
     "title": "7.08.2026, 16:07",
     "date": "2026-08-07T14:07:03.119Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vi0ysm/best_builder_for_ecomm_sites_in_2026/": {
-    "slug": "digest",
-    "title": "Best builder for ecomm sites in 2026?",
-    "date": "2026-08-07T14:07:03.993Z"
-  },
-  "https://www.fastcompany.com/91576086/ai-psychosis-is-the-new-leadership-blind-spot-ai-leadership-blind-spots": {
-    "slug": "digest",
-    "title": "AI psychosis is the new leadership blind spot",
-    "date": "2026-08-07T14:07:03.995Z"
-  },
   "https://techcrunch.com/2026/08/07/airbnb-says-ai-is-helping-it-ship-features-faster-as-it-tests-a-new-search-function/ | https://www.reddit.com/r/dropshipping/comments/1vi1yex/rate_the_impression_and_catalog_of_my_store/ | https://www.niemanlab.org/2026/08/americas-largest-newspaper-chain-usa-today-co-partners-with-palantir-to-analyze-audience-data/": {
     "slug": "tygodniowy-digest-ai-e-commerce-i-analiza-danych",
     "title": "7.08.2026, 16:37",
     "date": "2026-08-07T14:37:03.402Z"
-  },
-  "https://techcrunch.com/2026/08/07/airbnb-says-ai-is-helping-it-ship-features-faster-as-it-tests-a-new-search-function/": {
-    "slug": "digest",
-    "title": "Airbnb says AI is helping it ship features faster as it tests a new search function",
-    "date": "2026-08-07T14:37:04.290Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vi1yex/rate_the_impression_and_catalog_of_my_store/": {
-    "slug": "digest",
-    "title": "Rate the impression and catalog of my store",
-    "date": "2026-08-07T14:37:04.292Z"
-  },
-  "https://www.niemanlab.org/2026/08/americas-largest-newspaper-chain-usa-today-co-partners-with-palantir-to-analyze-audience-data/": {
-    "slug": "digest",
-    "title": "US's largest newspaper chain partners with Palantir to analyze audience data",
-    "date": "2026-08-07T14:37:04.294Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vi3aig/method_for_organic_marketing/ | https://github.com/Wyzer-Lang/wyzer": {
     "slug": "tygodniowy-digest-5-najwa-niejszych-news-w-tech",
     "title": "7.08.2026, 17:37",
     "date": "2026-08-07T15:37:37.313Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vi3aig/method_for_organic_marketing/": {
-    "slug": "digest",
-    "title": "Method for organic marketing",
-    "date": "2026-08-07T15:37:38.305Z"
-  },
-  "https://github.com/Wyzer-Lang/wyzer": {
-    "slug": "digest",
-    "title": "Show HN: Wyzer Programming Language",
-    "date": "2026-08-07T15:37:38.308Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vi4lb4/hello_guys_can_anyone_see_if_my_website_looks/ | https://www.reddit.com/r/dropshipping/comments/1vi47m1/would_this_be_a_good_shop_idea/": {
     "slug": "e-commerce-w-sieci-dwa-r-ne-podej-cia-do-start-up-w-online",
     "title": "7.08.2026, 18:07",
     "date": "2026-08-07T16:07:20.886Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vi4lb4/hello_guys_can_anyone_see_if_my_website_looks/": {
-    "slug": "digest",
-    "title": "Hello guys can anyone see if my website looks appealing.",
-    "date": "2026-08-07T16:07:21.759Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vi47m1/would_this_be_a_good_shop_idea/": {
-    "slug": "digest",
-    "title": "Would this be a good shop idea?",
-    "date": "2026-08-07T16:07:21.761Z"
   },
   "https://techcrunch.com/2026/08/07/cloudflare-launches-kitesurf-a-browser-built-for-ai-agents/ | https://www.reddit.com/r/dropshipping/comments/1vi5amh/20132018_acura_rdx_sunvisor_replacement_for_25/ | https://www.reddit.com/r/dropshipping/comments/1vi4z4p/removed_by_reddit/ | https://www.reddit.com/r/dropshipping/comments/1vi4y99/removed_by_reddit/": {
     "slug": "tygodniowy-digest-nowo-ci-z-technologii-7-08-2026",
     "title": "7.08.2026, 18:37",
     "date": "2026-08-07T16:37:55.057Z"
   },
-  "https://techcrunch.com/2026/08/07/cloudflare-launches-kitesurf-a-browser-built-for-ai-agents/": {
-    "slug": "digest",
-    "title": "Cloudflare launches Kitesurf, a browser built for AI agents",
-    "date": "2026-08-07T16:37:55.949Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vi5amh/20132018_acura_rdx_sunvisor_replacement_for_25/": {
-    "slug": "digest",
-    "title": "2013-2018 Acura RDX sunvisor replacement for $25",
-    "date": "2026-08-07T16:37:55.951Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vi4z4p/removed_by_reddit/": {
-    "slug": "digest",
-    "title": "[ Removed by Reddit ]",
-    "date": "2026-08-07T16:37:55.953Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vi4y99/removed_by_reddit/": {
-    "slug": "digest",
-    "title": "[ Removed by Reddit ]",
-    "date": "2026-08-07T16:37:55.955Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vi5pr9/microsoft_clarity_is_a_gamechanger/ | https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/ | https://sfstandard.com/pacific-standard-time/2026/08/07/sf-ai-billboards-dystopian-not-funny/": {
     "slug": "tygodniowy-digest-rewolucja-ai-i-cyberbezpiecze-stwo",
     "title": "7.08.2026, 19:07",
     "date": "2026-08-07T17:07:26.316Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vi5pr9/microsoft_clarity_is_a_gamechanger/": {
-    "slug": "digest",
-    "title": "Microsoft Clarity is a game-changer.",
-    "date": "2026-08-07T17:07:27.214Z"
-  },
-  "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/": {
-    "slug": "digest",
-    "title": "Responding to the next frontier of critical cyber capabilities",
-    "date": "2026-08-07T17:07:27.231Z"
-  },
-  "https://sfstandard.com/pacific-standard-time/2026/08/07/sf-ai-billboards-dystopian-not-funny/": {
-    "slug": "digest",
-    "title": "The AI Billboards Are Killing SF",
-    "date": "2026-08-07T17:07:27.233Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vi701l/feedback_on_our_products/ | https://www.reddit.com/r/dropshipping/comments/1vi6qsu/seeking_advice/ | https://www.bloomberg.com/graphics/2026-opinion-australia-tungsten-mine-us-war-defense-china/": {
     "slug": "tygodniowy-digest-e-commerce-drop-shipping-i-geopolityka",
     "title": "7.08.2026, 19:37",
     "date": "2026-08-07T17:37:03.278Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vi701l/feedback_on_our_products/": {
-    "slug": "digest",
-    "title": "Feedback on our products",
-    "date": "2026-08-07T17:37:04.332Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vi6qsu/seeking_advice/": {
-    "slug": "digest",
-    "title": "Seeking Advice",
-    "date": "2026-08-07T17:37:04.336Z"
-  },
-  "https://www.bloomberg.com/graphics/2026-opinion-australia-tungsten-mine-us-war-defense-china/": {
-    "slug": "digest",
-    "title": "This Mine Predicts Major Wars. It's Opening Again",
-    "date": "2026-08-07T17:37:04.341Z"
-  },
   "https://techcrunch.com/podcast/jill-lepore-on-the-artificial-state-and-why-silicon-valleys-leaders-are-bad-sci-fi-readers/ | https://www.reddit.com/r/dropshipping/comments/1vi7rat/started_dropshipping_less_than_a_month_ago_and/ | https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code": {
     "slug": "tygodniowy-digest-tech-biznes-i-ai",
     "title": "7.08.2026, 20:38",
     "date": "2026-08-07T18:38:20.288Z"
-  },
-  "https://techcrunch.com/podcast/jill-lepore-on-the-artificial-state-and-why-silicon-valleys-leaders-are-bad-sci-fi-readers/": {
-    "slug": "digest",
-    "title": "Jill Lepore on the ‘Artificial State’ and why Silicon Valley’s leaders are bad sci-fi readers",
-    "date": "2026-08-07T18:38:21.422Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vi7rat/started_dropshipping_less_than_a_month_ago_and/": {
-    "slug": "digest",
-    "title": "Started dropshipping less than a month ago, and struggling with sales.",
-    "date": "2026-08-07T18:38:21.424Z"
-  },
-  "https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code": {
-    "slug": "digest",
-    "title": "Oracle bans AI-generated code from OpenJDK",
-    "date": "2026-08-07T18:38:21.427Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vi9hwf/how_do_you_structure_your_angle_testing_for/ | https://www.databricks.com/blog/managing-ai-coding-costs-scale": {
     "slug": "tygodniowy-digest-5-najwa-niejszych-news-w-tech",
     "title": "7.08.2026, 21:36",
     "date": "2026-08-07T19:36:53.091Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vi9hwf/how_do_you_structure_your_angle_testing_for/": {
-    "slug": "digest",
-    "title": "How do you structure your \"Angle\" testing for static Meta ads? Is my setup solid?",
-    "date": "2026-08-07T19:36:53.963Z"
-  },
-  "https://www.databricks.com/blog/managing-ai-coding-costs-scale": {
-    "slug": "digest",
-    "title": "Databricks drove down AI coding spend 70%",
-    "date": "2026-08-07T19:36:53.965Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vib253/what_can_be_done_with_new_shopify_dropshipping/ | https://www.reddit.com/r/dropshipping/comments/1viamkp/vertical_textile_manufacturer_yarn_to_apparel/": {
     "slug": "5-newsy-tygodnia-e-commerce-technologie-i-wsp-praca-biznesow",
     "title": "7.08.2026, 22:09",
     "date": "2026-08-07T20:09:13.094Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vib253/what_can_be_done_with_new_shopify_dropshipping/": {
-    "slug": "digest",
-    "title": "What can be done with new shopify dropshipping store to increase traffic?",
-    "date": "2026-08-07T20:09:13.959Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1viamkp/vertical_textile_manufacturer_yarn_to_apparel/": {
-    "slug": "digest",
-    "title": "Vertical Textile Manufacturer (Yarn to Apparel) Technical Fabrics & Low MOQ Private Label Sourcing.",
-    "date": "2026-08-07T20:09:13.961Z"
   },
   "https://techcrunch.com/2026/08/07/after-rippling-blew-millions-on-ai-in-months-it-built-an-employee-roi-tool/ | https://www.reddit.com/r/dropshipping/comments/1vik2xn/finding_suppliers/ | https://www.reddit.com/r/dropshipping/comments/1vin90y/what_is_your_competitor_research_method_for_the/ | https://www.reddit.com/r/dropshipping/comments/1vik7s1/aliexpress_ai_product_importer_for_wordpress/ | https://www.reddit.com/r/dropshipping/comments/1vilpn0/payment_gateway/ | https://www.reddit.com/r/dropshipping/comments/1vikpdu/branded_dropshipping/ | https://www.reddit.com/r/dropshipping/comments/1viopo1/hi_guys_wonder_if_any_of_you_has_used_ai_tools_to/ | https://www.reddit.com/r/dropshipping/comments/1vinms2/how_are_you_guys_doing_bookkeepingaccounting/ | https://www.reddit.com/r/dropshipping/comments/1vie3kz/would_you_guys_use_daybot_ai_dropshipping_tool/ | https://www.reddit.com/r/dropshipping/comments/1vilf75/free_cro_audit_reviewed_over_700_shopify_stores/ | https://www.reddit.com/r/dropshipping/comments/1vig3j4/best_method_to_create_ebay_listing_from_an_amazon/ | https://www.reddit.com/r/dropshipping/comments/1vijkbq/how_do_people_do_customer_service/ | https://www.reddit.com/r/dropshipping/comments/1vihhzm/tariffs_and_customs_paperwork_with_aliexpress/ | https://www.reddit.com/r/dropshipping/comments/1vih4x9/what_are_you_guys_doing_after_the_first_order/ | https://www.reddit.com/r/dropshipping/comments/1vifhmj/payment_gateway_help/ | https://www.reddit.com/r/dropshipping/comments/1viexqs/established_brand_sales_channels_trying_to_make/ | https://www.reddit.com/r/dropshipping/comments/1vic7ln/i_built_a_free_digital_business_card_website_what/ | https://web.archive.org/web/20260731053721/http://github.com/ancaferro/myNetwork/pull/3 | https://genesisopenmodels.anl.gov/ | https://www.noemamag.com/why-is-everyone-in-tech-so-sad/": {
     "slug": "tygodniowy-digest-e-commerce-ai-i-dropshipping",
     "title": "8.08.2026, 08:43",
     "date": "2026-08-08T06:43:57.861Z"
   },
-  "https://techcrunch.com/2026/08/07/after-rippling-blew-millions-on-ai-in-months-it-built-an-employee-roi-tool/": {
-    "slug": "digest",
-    "title": "After Rippling blew millions on AI in months, it built an employee ROI tool",
-    "date": "2026-08-08T06:44:00.188Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vik2xn/finding_suppliers/": {
-    "slug": "digest",
-    "title": "Finding suppliers",
-    "date": "2026-08-08T06:44:00.191Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vin90y/what_is_your_competitor_research_method_for_the/": {
-    "slug": "digest",
-    "title": "What is your competitor research method for the Saudi market?",
-    "date": "2026-08-08T06:44:00.193Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vik7s1/aliexpress_ai_product_importer_for_wordpress/": {
-    "slug": "digest",
-    "title": "AliExpress AI Product Importer for WordPress (Shopify coming soon)",
-    "date": "2026-08-08T06:44:00.196Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vilpn0/payment_gateway/": {
-    "slug": "digest",
-    "title": "Payment gateway",
-    "date": "2026-08-08T06:44:00.198Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vikpdu/branded_dropshipping/": {
-    "slug": "digest",
-    "title": "Branded dropshipping",
-    "date": "2026-08-08T06:44:00.200Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1viopo1/hi_guys_wonder_if_any_of_you_has_used_ai_tools_to/": {
-    "slug": "digest",
-    "title": "Hi guys wonder if any of you has used AI tools to help with your business",
-    "date": "2026-08-08T06:44:00.203Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vinms2/how_are_you_guys_doing_bookkeepingaccounting/": {
-    "slug": "digest",
-    "title": "How are you guys doing bookkeeping/accounting?",
-    "date": "2026-08-08T06:44:00.205Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vie3kz/would_you_guys_use_daybot_ai_dropshipping_tool/": {
-    "slug": "digest",
-    "title": "Would you guys use Daybot? AI dropshipping tool",
-    "date": "2026-08-08T06:44:00.207Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vilf75/free_cro_audit_reviewed_over_700_shopify_stores/": {
-    "slug": "digest",
-    "title": "Free CRO audit (reviewed over 700 shopify stores)",
-    "date": "2026-08-08T06:44:00.210Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vig3j4/best_method_to_create_ebay_listing_from_an_amazon/": {
-    "slug": "digest",
-    "title": "Best method to create EBay listing from an Amazon page?",
-    "date": "2026-08-08T06:44:00.212Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vijkbq/how_do_people_do_customer_service/": {
-    "slug": "digest",
-    "title": "How do people do customer service?",
-    "date": "2026-08-08T06:44:00.214Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vihhzm/tariffs_and_customs_paperwork_with_aliexpress/": {
-    "slug": "digest",
-    "title": "Tariffs and customs paperwork with Aliexpress Choice?",
-    "date": "2026-08-08T06:44:00.216Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vih4x9/what_are_you_guys_doing_after_the_first_order/": {
-    "slug": "digest",
-    "title": "What are you guys doing after the first order?",
-    "date": "2026-08-08T06:44:00.218Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vifhmj/payment_gateway_help/": {
-    "slug": "digest",
-    "title": "payment gateway help",
-    "date": "2026-08-08T06:44:00.221Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1viexqs/established_brand_sales_channels_trying_to_make/": {
-    "slug": "digest",
-    "title": "Established brand & sales channels trying to make the switch to dropshipping",
-    "date": "2026-08-08T06:44:00.224Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vic7ln/i_built_a_free_digital_business_card_website_what/": {
-    "slug": "digest",
-    "title": "I built a free digital business card website. What am I missing?",
-    "date": "2026-08-08T06:44:00.226Z"
-  },
-  "https://web.archive.org/web/20260731053721/http://github.com/ancaferro/myNetwork/pull/3": {
-    "slug": "digest",
-    "title": "Mythos social engineering AISI INC-2026-07-28-01",
-    "date": "2026-08-08T06:44:00.228Z"
-  },
-  "https://genesisopenmodels.anl.gov/": {
-    "slug": "digest",
-    "title": "U.S. Department of Energy Launches the Genesis Open Models Initiative",
-    "date": "2026-08-08T06:44:00.230Z"
-  },
-  "https://www.noemamag.com/why-is-everyone-in-tech-so-sad/": {
-    "slug": "digest",
-    "title": "What happens if an entire class of workers loses faith in their careers",
-    "date": "2026-08-08T06:44:00.233Z"
-  },
   "https://techcrunch.com/2026/08/09/embattled-hedge-fund-situational-awareness-invests-400m-in-chip-startup-source-foundry/ | https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/ | https://techcrunch.com/2026/08/09/historian-jill-lepore-says-the-tech-industry-is-led-by-bad-readers-who-are-undermining-democracy/ | https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/ | https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/ | https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/ | https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/ | https://www.reddit.com/r/dropshipping/comments/1vk2sw6/from_factory_shifts_to_consistent_7k_days_still/ | https://www.reddit.com/r/dropshipping/comments/1vk2aaz/is_this_what_ive_been_missing_just_detach_and_my/ | https://www.reddit.com/r/dropshipping/comments/1vkcq51/built_a_turnkey_metal_wall_art_shopify_store_0/ | https://www.reddit.com/r/dropshipping/comments/1vkclrx/highvolume_store_drowning_in_returns_because_of/ | https://www.reddit.com/r/dropshipping/comments/1vk73m3/buy_a_cash_flowing_affiliate_business_instead_of/ | https://www.reddit.com/r/dropshipping/comments/1vkdiil/looking_for_initial_test_partners_for/ | https://www.reddit.com/r/dropshipping/comments/1vkcq03/spofify_1_eurmo_for_3_months/ | https://www.reddit.com/r/dropshipping/comments/1vk7cv8/can_anyone_review_my_store_new_to_dropshipping/ | https://www.reddit.com/r/dropshipping/comments/1vkbmtt/what_would_your_complete_decisionmaking_process/ | https://www.reddit.com/r/dropshipping/comments/1vkapsn/how_to_learn_how_to_dropship_from_scratch/ | https://www.reddit.com/r/dropshipping/comments/1vka4n1/i_started_my_first_store_yesterday_and_would/ | https://www.reddit.com/r/dropshipping/comments/1vk9fqe/google_merchant_centre_suspension/ | https://www.reddit.com/r/dropshipping/comments/1vjwiac/aubased_shopify_dropshipper_looking_to_expand/ | https://www.reddit.com/r/dropshipping/comments/1vk7sgc/i_built_a_resume_optimizer_and_im_looking_for/ | https://www.reddit.com/r/dropshipping/comments/1vk1qur/am_new_to_dropshipping_on_shopify/ | https://www.reddit.com/r/dropshipping/comments/1vk0ec9/made_this_whole_banner_with_ai_does_it_pass_as_a/ | https://www.reddit.com/r/dropshipping/comments/1vk0c1z/how_can_i_create_a_good_customer_experience_when/ | https://www.reddit.com/r/dropshipping/comments/1vk55ko/where_to_find_niche_products/ | https://www.reddit.com/r/dropshipping/comments/1vjzd98/i_have_30_units_of_mini_fans_sitting_in_a/ | https://www.reddit.com/r/dropshipping/comments/1vk41y7/i_developed_a_depop_trend_scraper_based_on_likes/ | https://www.reddit.com/r/dropshipping/comments/1vk1poh/seeking_a_mentor_interested_in_the_nutrition_space/ | https://www.reddit.com/r/dropshipping/comments/1vjvdkg/how_to_reorder_so_best_sellers_dont_sell_out_and/ | https://www.reddit.com/r/dropshipping/comments/1vjzail/is_hiring_a_dedicated_growth_team_on_a/ | https://www.reddit.com/r/dropshipping/comments/1vjz3du/what_niche_would_you_pick_if_you_were_starting/ | https://www.docker.com/products/docker-sandboxes/ | https://www.economist.com/asia/2026/08/06/the-philippines-big-offshoring-industry-is-growing-despite-ai | https://www.whodunnitai.com/ | https://www.betonit.ai/p/the-ambition-project | https://tuxedono2.com | https://www.economist.com/britain/2026/08/06/the-tragedy-of-the-commons-ai-edition | https://theconversation.com/taxi-drivers-rarely-die-of-alzheimers-how-complex-mental-maps-and-spatial-reasoning-protect-your-brain-286650": {
     "slug": "technologiczny-digest-tygodnia-ai-bezpiecze-stwo-i-e-commerc",
     "title": "10.08.2026, 09:06",
     "date": "2026-08-10T07:06:36.511Z"
-  },
-  "https://techcrunch.com/2026/08/09/embattled-hedge-fund-situational-awareness-invests-400m-in-chip-startup-source-foundry/": {
-    "slug": "digest",
-    "title": "Embattled hedge fund Situational Awareness invests $400M in chip startup Source Foundry",
-    "date": "2026-08-10T07:06:38.772Z"
-  },
-  "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/": {
-    "slug": "digest",
-    "title": "Anthropic is turning Claude Code’s auto mode on by default",
-    "date": "2026-08-10T07:06:38.774Z"
-  },
-  "https://techcrunch.com/2026/08/09/historian-jill-lepore-says-the-tech-industry-is-led-by-bad-readers-who-are-undermining-democracy/": {
-    "slug": "digest",
-    "title": "Historian Jill Lepore says Silicon Valley misreads science fiction and undermines democracy",
-    "date": "2026-08-10T07:06:38.776Z"
-  },
-  "https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/": {
-    "slug": "digest",
-    "title": "The AI safety test is becoming a safety risk",
-    "date": "2026-08-10T07:06:38.778Z"
-  },
-  "https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/": {
-    "slug": "digest",
-    "title": "Planned Amazon data center could become the biggest climate polluter in the U.S.",
-    "date": "2026-08-10T07:06:38.780Z"
-  },
-  "https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/": {
-    "slug": "digest",
-    "title": "OpenAI acquires presentation startup NextSlide",
-    "date": "2026-08-10T07:06:38.783Z"
-  },
-  "https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/": {
-    "slug": "digest",
-    "title": "OpenAI says it slowed Astra model development over security concerns",
-    "date": "2026-08-10T07:06:38.786Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk2sw6/from_factory_shifts_to_consistent_7k_days_still/": {
-    "slug": "digest",
-    "title": "From factory shifts to consistent €7K days. Still feels unreal.",
-    "date": "2026-08-10T07:06:38.788Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk2aaz/is_this_what_ive_been_missing_just_detach_and_my/": {
-    "slug": "digest",
-    "title": "Is This What I’ve Been Missing? Just “Detach” and My Store(s) Will Print Like No Other?",
-    "date": "2026-08-10T07:06:38.791Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkcq51/built_a_turnkey_metal_wall_art_shopify_store_0/": {
-    "slug": "digest",
-    "title": "Built a turnkey metal wall art Shopify store (0 inventory, ~52% margins), but Christmas rush leaves me no time—should I sell it or hold?",
-    "date": "2026-08-10T07:06:38.793Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkclrx/highvolume_store_drowning_in_returns_because_of/": {
-    "slug": "digest",
-    "title": "High-volume store drowning in returns because of factory unstable material",
-    "date": "2026-08-10T07:06:38.795Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk73m3/buy_a_cash_flowing_affiliate_business_instead_of/": {
-    "slug": "digest",
-    "title": "Buy A Cash Flowing Affiliate Business Instead of Starting a Dropshipping Store",
-    "date": "2026-08-10T07:06:38.798Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkdiil/looking_for_initial_test_partners_for/": {
-    "slug": "digest",
-    "title": "Looking for Initial Test Partners for Dropshipping Service",
-    "date": "2026-08-10T07:06:38.801Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkcq03/spofify_1_eurmo_for_3_months/": {
-    "slug": "digest",
-    "title": "Spofify 1 eur/mo for 3 months",
-    "date": "2026-08-10T07:06:38.804Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk7cv8/can_anyone_review_my_store_new_to_dropshipping/": {
-    "slug": "digest",
-    "title": "Can anyone review my store? New to dropshipping need tips!",
-    "date": "2026-08-10T07:06:38.807Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkbmtt/what_would_your_complete_decisionmaking_process/": {
-    "slug": "digest",
-    "title": "What would your complete decision-making process look like before launching a Shopify product in Saudi Arabia?",
-    "date": "2026-08-10T07:06:38.809Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkapsn/how_to_learn_how_to_dropship_from_scratch/": {
-    "slug": "digest",
-    "title": "How to learn how to drop-ship from scratch?",
-    "date": "2026-08-10T07:06:38.812Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vka4n1/i_started_my_first_store_yesterday_and_would/": {
-    "slug": "digest",
-    "title": "I started my first store yesterday and would really appreciate some honest feedback",
-    "date": "2026-08-10T07:06:38.815Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk9fqe/google_merchant_centre_suspension/": {
-    "slug": "digest",
-    "title": "Google Merchant Centre Suspension",
-    "date": "2026-08-10T07:06:38.819Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vjwiac/aubased_shopify_dropshipper_looking_to_expand/": {
-    "slug": "digest",
-    "title": "AU-based Shopify dropshipper looking to expand into UK/US/CA/NZ — what legal/tax/compliance stuff am I missing?",
-    "date": "2026-08-10T07:06:38.821Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk7sgc/i_built_a_resume_optimizer_and_im_looking_for/": {
-    "slug": "digest",
-    "title": "I built a resume optimizer and I'm looking for people to actually break it",
-    "date": "2026-08-10T07:06:38.824Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk1qur/am_new_to_dropshipping_on_shopify/": {
-    "slug": "digest",
-    "title": "Am new to dropshipping on Shopify",
-    "date": "2026-08-10T07:06:38.826Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk0ec9/made_this_whole_banner_with_ai_does_it_pass_as_a/": {
-    "slug": "digest",
-    "title": "Made this whole banner with AI. Does it pass as a real photo?",
-    "date": "2026-08-10T07:06:38.829Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk0c1z/how_can_i_create_a_good_customer_experience_when/": {
-    "slug": "digest",
-    "title": "How can I create a good customer experience when shipping directly from China?",
-    "date": "2026-08-10T07:06:38.831Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk55ko/where_to_find_niche_products/": {
-    "slug": "digest",
-    "title": "Where to find niche products?",
-    "date": "2026-08-10T07:06:38.833Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vjzd98/i_have_30_units_of_mini_fans_sitting_in_a/": {
-    "slug": "digest",
-    "title": "i have 30 units of mini fans sitting in a warehouse in china and need to sell them",
-    "date": "2026-08-10T07:06:38.835Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk41y7/i_developed_a_depop_trend_scraper_based_on_likes/": {
-    "slug": "digest",
-    "title": "I developed a depop trend scraper based on likes and bags",
-    "date": "2026-08-10T07:06:38.837Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vk1poh/seeking_a_mentor_interested_in_the_nutrition_space/": {
-    "slug": "digest",
-    "title": "Seeking a Mentor interested in the nutrition space.",
-    "date": "2026-08-10T07:06:38.839Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vjvdkg/how_to_reorder_so_best_sellers_dont_sell_out_and/": {
-    "slug": "digest",
-    "title": "How to reorder so best sellers don't sell out and slow movers don't pile up?",
-    "date": "2026-08-10T07:06:38.842Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vjzail/is_hiring_a_dedicated_growth_team_on_a/": {
-    "slug": "digest",
-    "title": "Is hiring a dedicated growth team on a performance/guarantee model worth it for e-commerce?",
-    "date": "2026-08-10T07:06:38.844Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vjz3du/what_niche_would_you_pick_if_you_were_starting/": {
-    "slug": "digest",
-    "title": "What niche would you pick if you were starting dropshipping today from scratch and why?",
-    "date": "2026-08-10T07:06:38.846Z"
-  },
-  "https://www.docker.com/products/docker-sandboxes/": {
-    "slug": "digest",
-    "title": "Docker Sandboxes – Disposable, isolated sandboxes for AI agents",
-    "date": "2026-08-10T07:06:38.848Z"
-  },
-  "https://www.economist.com/asia/2026/08/06/the-philippines-big-offshoring-industry-is-growing-despite-ai": {
-    "slug": "digest",
-    "title": "The Philippines' big offshoring industry is growing despite AI",
-    "date": "2026-08-10T07:06:38.850Z"
-  },
-  "https://www.whodunnitai.com/": {
-    "slug": "digest",
-    "title": "Show HN: Voice driven murder mystery, Interview AI suspects with your voice",
-    "date": "2026-08-10T07:06:38.852Z"
-  },
-  "https://www.betonit.ai/p/the-ambition-project": {
-    "slug": "digest",
-    "title": "The Ambition Project",
-    "date": "2026-08-10T07:06:38.855Z"
-  },
-  "https://tuxedono2.com": {
-    "slug": "digest",
-    "title": "Tuxedo No. 2 – Cocktail recipes",
-    "date": "2026-08-10T07:06:38.857Z"
-  },
-  "https://www.economist.com/britain/2026/08/06/the-tragedy-of-the-commons-ai-edition": {
-    "slug": "digest",
-    "title": "The tragedy of the commons, AI edition",
-    "date": "2026-08-10T07:06:38.860Z"
-  },
-  "https://theconversation.com/taxi-drivers-rarely-die-of-alzheimers-how-complex-mental-maps-and-spatial-reasoning-protect-your-brain-286650": {
-    "slug": "digest",
-    "title": "Taxi drivers rarely die of Alzheimer's",
-    "date": "2026-08-10T07:06:38.862Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vkewkv/where_to_find_such_2000s_watches_for_resell/ | https://www.reddit.com/r/dropshipping/comments/1vkeqv3/how_can_i_learn_everything_about_marketing_your/ | https://www.reddit.com/r/dropshipping/comments/1vkemoi/is_sellthetrend_tool_really_worth_it_for_product/": {
     "slug": "5-najwa-niejsze-newsy-tygodnia-dropshipping-e-commerce-i-nar",
     "title": "10.08.2026, 10:37",
     "date": "2026-08-10T08:37:31.448Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vkewkv/where_to_find_such_2000s_watches_for_resell/": {
-    "slug": "digest",
-    "title": "Where to find such 2000s watches ? (For resell)",
-    "date": "2026-08-10T08:37:33.639Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkeqv3/how_can_i_learn_everything_about_marketing_your/": {
-    "slug": "digest",
-    "title": "How can i learn everything about marketing your products?",
-    "date": "2026-08-10T08:37:33.642Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkemoi/is_sellthetrend_tool_really_worth_it_for_product/": {
-    "slug": "digest",
-    "title": "is sellthetrend tool really worth it for product hunting? any help would be really appreciated",
-    "date": "2026-08-10T08:37:33.644Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vkfee6/how_can_i_source_products_without_being/ | https://www.reddit.com/r/dropshipping/comments/1vkfczk/ive_managed_1mmonth_in_ad_spend_happy_to_review_a/": {
     "slug": "e-commerce-bez-shopify-r-d-a-produkt-w-i-porady-na-1m-w-rekl",
     "title": "10.08.2026, 11:07",
     "date": "2026-08-10T09:07:22.882Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkfee6/how_can_i_source_products_without_being/": {
-    "slug": "digest",
-    "title": "how can i source products without being affiliated with shopify",
-    "date": "2026-08-10T09:07:24.060Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkfczk/ive_managed_1mmonth_in_ad_spend_happy_to_review_a/": {
-    "slug": "digest",
-    "title": "I’ve managed $1M+/month in ad spend, happy to review a few accounts",
-    "date": "2026-08-10T09:07:24.064Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vkg32h/would_you_sell_a_3monthold_dropshipping_store/ | https://www.reddit.com/r/dropshipping/comments/1vkfqoh/semana_2_intentando_hacer_dropshipping/": {
     "slug": "dropshipping-kiedy-sprzeda-kiedy-skalowa-porady-dla-pocz-tku",
     "title": "10.08.2026, 11:36",
     "date": "2026-08-10T09:36:58.137Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vkg32h/would_you_sell_a_3monthold_dropshipping_store/": {
-    "slug": "digest",
-    "title": "Would you sell a 3-month-old dropshipping store already doing consistent profitable sales?",
-    "date": "2026-08-10T09:36:59.194Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkfqoh/semana_2_intentando_hacer_dropshipping/": {
-    "slug": "digest",
-    "title": "Semana 2 Intentando hacer dropshipping",
-    "date": "2026-08-10T09:36:59.197Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vkghhi/sales_completely_dried_up_despite_much_better/ | https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model": {
     "slug": "tygodniowy-digest-5-najwa-niejszych-news-w-tech",
     "title": "10.08.2026, 13:06",
     "date": "2026-08-10T11:06:34.540Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkghhi/sales_completely_dried_up_despite_much_better/": {
-    "slug": "digest",
-    "title": "Sales completely dried up despite much better site plus more content than when I started, what am I missing?",
-    "date": "2026-08-10T11:06:35.883Z"
-  },
-  "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model": {
-    "slug": "digest",
-    "title": "Meta Muse Glimmer – open weights 30B local coding model",
-    "date": "2026-08-10T11:06:35.886Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vki1qk/looking_for_a_dropshipping_partner_in_the_usa/ | https://twitter.com/finkd/status/2086754845218726027 | https://senderledger.com/articles/one-email-three-identities-spf-dkim-dmarc": {
     "slug": "digest-tygodnia-technologia-i-biznes",
     "title": "10.08.2026, 13:37",
     "date": "2026-08-10T11:37:16.452Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vki1qk/looking_for_a_dropshipping_partner_in_the_usa/": {
-    "slug": "digest",
-    "title": "🇺🇸 Looking for a Dropshipping Partner in the USA",
-    "date": "2026-08-10T11:37:17.965Z"
-  },
-  "https://twitter.com/finkd/status/2086754845218726027": {
-    "slug": "digest",
-    "title": "Meta's new open-weight model targets local agentic AI",
-    "date": "2026-08-10T11:37:17.969Z"
-  },
-  "https://senderledger.com/articles/one-email-three-identities-spf-dkim-dmarc": {
-    "slug": "digest",
-    "title": "One Email, Three Identities: SPF, DKIM and DMARC Explained",
-    "date": "2026-08-10T11:37:17.972Z"
-  },
   "https://techcrunch.com/2026/08/10/discovered-materials-is-playing-ai-whack-a-mole-to-hunt-cooler-chips/ | https://www.reddit.com/r/dropshipping/comments/1vkih06/product_designer_for_custom_perfume_bottle/ | https://lwn.net/Articles/1034703/": {
     "slug": "tygodniowy-digest-technologiczny-ai-projektowanie-i-optymali",
     "title": "10.08.2026, 14:06",
     "date": "2026-08-10T12:06:39.551Z"
-  },
-  "https://techcrunch.com/2026/08/10/discovered-materials-is-playing-ai-whack-a-mole-to-hunt-cooler-chips/": {
-    "slug": "digest",
-    "title": "Discovered Materials is playing AI whack-a-mole to hunt cooler chips",
-    "date": "2026-08-10T12:06:41.059Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkih06/product_designer_for_custom_perfume_bottle/": {
-    "slug": "digest",
-    "title": "Product Designer for custom perfume bottle",
-    "date": "2026-08-10T12:06:41.061Z"
-  },
-  "https://lwn.net/Articles/1034703/": {
-    "slug": "digest",
-    "title": "Tail-call optimization in C is relatively recent",
-    "date": "2026-08-10T12:06:41.067Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vkkpbm/im_14_and_want_to_start_an_ecommerce_brand_is/ | https://bobdahacker.com/blog/tldv-hack | https://bytecode.news/posts/2026/08/because-it-s-not-fun-enough": {
     "slug": "tygodniowy-digest-e-commerce-ai-bezpiecze-stwo-i-wi-cej",
     "title": "10.08.2026, 15:37",
     "date": "2026-08-10T13:37:21.572Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vkkpbm/im_14_and_want_to_start_an_ecommerce_brand_is/": {
-    "slug": "digest",
-    "title": "I’m 14 and want to start an e-commerce brand, is dropshipping worth trying?",
-    "date": "2026-08-10T13:37:22.746Z"
-  },
-  "https://bobdahacker.com/blog/tldv-hack": {
-    "slug": "digest",
-    "title": "Over 181,000 AI meeting recordings left wide open in note taking app",
-    "date": "2026-08-10T13:37:22.748Z"
-  },
-  "https://bytecode.news/posts/2026/08/because-it-s-not-fun-enough": {
-    "slug": "digest",
-    "title": "Because It's Not Fun Enough: why languages fail",
-    "date": "2026-08-10T13:37:22.752Z"
-  },
   "https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878 | https://mrmarket.lol/how-i-feel-calmin-control-of-my-life-in-the-time-of-enshittification/": {
     "slug": "tygodniowy-digest-ai-technologia-i-spo-ecze-stwo",
     "title": "10.08.2026, 16:37",
     "date": "2026-08-10T14:37:04.972Z"
-  },
-  "https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878": {
-    "slug": "digest",
-    "title": "Mark Zuckerberg attacks 'closed' AI rivals as Meta returns to open models",
-    "date": "2026-08-10T14:37:07.789Z"
-  },
-  "https://mrmarket.lol/how-i-feel-calmin-control-of-my-life-in-the-time-of-enshittification/": {
-    "slug": "digest",
-    "title": "Defending my own brain against enshittification",
-    "date": "2026-08-10T14:37:07.801Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vkowq1/adding_bnpl_systems_to_shopify/ | https://www.bloomberg.com/news/articles/2026-08-06/what-is-openai-s-device-a-doughnut-shaped-speaker-that-costs-over-300 | https://www.theguardian.com/games/2026/aug/10/ai-psychological-horror-game-prove-youre-human-sunset-visitor-studio | https://www.seattletimes.com/business/technology/pervert-glasses-backlash-against-metas-smart-glasses-grows/ | https://openai.com/index/responsible-ai-infrastructure-texas/": {
     "slug": "tech-digest-tygodnia-ai-metaverse-i-kontrowersje",
     "title": "10.08.2026, 18:06",
     "date": "2026-08-10T16:06:53.280Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vkowq1/adding_bnpl_systems_to_shopify/": {
-    "slug": "digest",
-    "title": "Adding BNPL systems to Shopify?",
-    "date": "2026-08-10T16:06:54.278Z"
-  },
-  "https://www.bloomberg.com/news/articles/2026-08-06/what-is-openai-s-device-a-doughnut-shaped-speaker-that-costs-over-300": {
-    "slug": "digest",
-    "title": "OpenAI's New Device Will Be Hockey Puck-Sized and Cost over $300",
-    "date": "2026-08-10T16:06:54.281Z"
-  },
-  "https://www.theguardian.com/games/2026/aug/10/ai-psychological-horror-game-prove-youre-human-sunset-visitor-studio": {
-    "slug": "digest",
-    "title": "Convince an AI it's not alive in psychological horror game Prove You're Human",
-    "date": "2026-08-10T16:06:54.283Z"
-  },
-  "https://www.seattletimes.com/business/technology/pervert-glasses-backlash-against-metas-smart-glasses-grows/": {
-    "slug": "digest",
-    "title": "'Pervert glasses': Backlash against Meta's smart glasses grows",
-    "date": "2026-08-10T16:06:54.287Z"
-  },
-  "https://openai.com/index/responsible-ai-infrastructure-texas/": {
-    "slug": "digest",
-    "title": "OpenAI's letter to Governor Abbott on responsible AI infrastructure in Texas",
-    "date": "2026-08-10T16:06:54.290Z"
-  },
   "https://techcrunch.com/2026/08/10/metas-new-glimmer-ai-model-offers-a-hint-at-zuckerbergs-personal-intelligence-vision/ | https://www.reddit.com/r/dropshipping/comments/1vkpjtb/45_visitors_2_addtocarts_1_sale_is_my_product/ | https://www.reddit.com/r/dropshipping/comments/1vkp7fv/best_fulfillment_vendors_for_uk_market_in_your/ | https://www.reddit.com/r/dropshipping/comments/1vkp4ru/45_visitors_2_addtocarts_1_sale_is_my_product/ | https://www.wcax.com/2026/08/07/kinney-drugs-pulls-back-ai-phone-assistant-after-hundreds-customer-complaints/ | https://sunilpai.dev/posts/every-company-needs-a-cassandra/ | https://thetrek.co/appalachian-trail/there-is-no-done-reflections-on-a-completed-at-thru-hike/ | https://blog.sshh.io/p/exploring-claudegpt-knowledge-cutoffs | https://github.com/Juror-AI/juror | https://ai-updates.net/ai-fortunes-philanthropy-private-power/": {
     "slug": "tygodniowy-digest-ai-e-commerce-i-rozw-j-technologiczny",
     "title": "10.08.2026, 18:37",
     "date": "2026-08-10T16:37:16.709Z"
-  },
-  "https://techcrunch.com/2026/08/10/metas-new-glimmer-ai-model-offers-a-hint-at-zuckerbergs-personal-intelligence-vision/": {
-    "slug": "digest",
-    "title": "Meta’s new Glimmer AI model offers a hint at Zuckerberg’s personal intelligence vision",
-    "date": "2026-08-10T16:37:17.432Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkpjtb/45_visitors_2_addtocarts_1_sale_is_my_product/": {
-    "slug": "digest",
-    "title": "45 visitors, 2 add-to-carts, 1 sale — is my product dead or worth continuing?",
-    "date": "2026-08-10T16:37:17.434Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkp7fv/best_fulfillment_vendors_for_uk_market_in_your/": {
-    "slug": "digest",
-    "title": "Best fulfillment vendors for UK market in your opinion? New to DS and trying out a few products, ideas and vendors. Thank you!",
-    "date": "2026-08-10T16:37:17.437Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkp4ru/45_visitors_2_addtocarts_1_sale_is_my_product/": {
-    "slug": "digest",
-    "title": "45 visitors, 2 add-to-carts, 1 sale — is my product dead or worth continuing?",
-    "date": "2026-08-10T16:37:17.440Z"
-  },
-  "https://www.wcax.com/2026/08/07/kinney-drugs-pulls-back-ai-phone-assistant-after-hundreds-customer-complaints/": {
-    "slug": "digest",
-    "title": "Kinney Drugs pulls back AI phone assistant after hundreds of customer complaints",
-    "date": "2026-08-10T16:37:17.442Z"
-  },
-  "https://sunilpai.dev/posts/every-company-needs-a-cassandra/": {
-    "slug": "digest",
-    "title": "Every Company Needs a Cassandra",
-    "date": "2026-08-10T16:37:17.446Z"
-  },
-  "https://thetrek.co/appalachian-trail/there-is-no-done-reflections-on-a-completed-at-thru-hike/": {
-    "slug": "digest",
-    "title": "There Is No \"Done\": Reflections on a Completed at Thru-Hike (2022)",
-    "date": "2026-08-10T16:37:17.448Z"
-  },
-  "https://blog.sshh.io/p/exploring-claudegpt-knowledge-cutoffs": {
-    "slug": "digest",
-    "title": "Exploring Claude/GPT Knowledge Cutoffs and Pre-Training Timelines",
-    "date": "2026-08-10T16:37:17.450Z"
-  },
-  "https://github.com/Juror-AI/juror": {
-    "slug": "digest",
-    "title": "Show HN: Open-Source Greptile Alternative",
-    "date": "2026-08-10T16:37:17.453Z"
-  },
-  "https://ai-updates.net/ai-fortunes-philanthropy-private-power/": {
-    "slug": "digest",
-    "title": "AI Fortunes Are Reviving an Old Debate About Private Power",
-    "date": "2026-08-10T16:37:17.455Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vkqupj/what_would_you_do_if_you_saw_such_a_situation/ | https://www.stoaexchange.com": {
     "slug": "stoa-markets-nowy-rynek-dla-gpu-i-serwer-w-ai-rewolucja-fina",
     "title": "10.08.2026, 19:37",
     "date": "2026-08-10T17:37:31.461Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vkqupj/what_would_you_do_if_you_saw_such_a_situation/": {
-    "slug": "digest",
-    "title": "What would you do if you saw such a situation?",
-    "date": "2026-08-10T17:37:33.595Z"
-  },
-  "https://www.stoaexchange.com": {
-    "slug": "digest",
-    "title": "Launch HN: Stoa Markets (YC S26) – A Marketplace for GPUs and AI Servers",
-    "date": "2026-08-10T17:37:33.599Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vksfbw/how_i_got_profitable_with_organic_dropshipping/ | https://www.reddit.com/r/dropshipping/comments/1vks1y6/looking_for_a_partner_in_ecom/": {
     "slug": "sukces-w-organic-dropshipping-11k-mo-net-i-poszukiwania-part",
     "title": "10.08.2026, 20:06",
     "date": "2026-08-10T18:06:36.944Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vksfbw/how_i_got_profitable_with_organic_dropshipping/": {
-    "slug": "digest",
-    "title": "How I got profitable with organic dropshipping (11k/mo net)",
-    "date": "2026-08-10T18:06:37.943Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vks1y6/looking_for_a_partner_in_ecom/": {
-    "slug": "digest",
-    "title": "Looking for a partner in ecom!",
-    "date": "2026-08-10T18:06:37.946Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vktt28/ecommerce_owners_how_do_you_actually_track_your/ | https://www.reddit.com/r/dropshipping/comments/1vksfbw/removed_by_reddit/": {
     "slug": "ledzenie-rzeczywistego-zysku-w-e-commerce-czy-w-a-ciciele-sk",
     "title": "10.08.2026, 21:06",
     "date": "2026-08-10T19:06:45.383Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vktt28/ecommerce_owners_how_do_you_actually_track_your/": {
-    "slug": "digest",
-    "title": "E-commerce owners: how do you actually track your real profit?",
-    "date": "2026-08-10T19:06:46.708Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vksfbw/removed_by_reddit/": {
-    "slug": "digest",
-    "title": "[ Removed by Reddit ]",
-    "date": "2026-08-10T19:06:46.711Z"
-  },
   "https://techcrunch.com/2026/08/10/openai-reportedly-completed-a-7-billion-employee-tender-offer/ | https://techcrunch.com/2026/08/10/as-ai-led-attacks-multiply-openai-launches-a-new-cyber-model/ | https://techcrunch.com/2026/08/10/mark-zuckerbergs-ai-manifesto-is-exactly-why-people-dont-like-ai/ | https://techcrunch.com/2026/08/10/tech-industry-is-buzzing-after-a-claude-agent-hacked-into-a-gym/ | https://www.reddit.com/r/dropshipping/comments/1vl0vi5/5567_today_i_talk_about_ads_a_lot_but_if_you_just/ | https://www.reddit.com/r/dropshipping/comments/1vkui4o/when_did_you_decide_it_was_time_for_a_private/ | https://www.reddit.com/r/dropshipping/comments/1vl6un3/0_knowledge_and_wants_to_start/ | https://www.reddit.com/r/dropshipping/comments/1vla5vs/i_own_150_olive_trees_in_montenegro_looking_for/ | https://www.reddit.com/r/dropshipping/comments/1vl8rkg/saudi_dropshippers_how_do_you_find_a_profitable/ | https://www.reddit.com/r/dropshipping/comments/1vl8q8g/the_quality_of_suppliers_from_sea_vs_china_which/ | https://www.reddit.com/r/dropshipping/comments/1vkx9bp/common_reasons_shopify_dropshipping_stores_get/ | https://www.reddit.com/r/dropshipping/comments/1vkzeq5/selling_amazing_theme_because_i_moved_to_custom/ | https://www.reddit.com/r/dropshipping/comments/1vl1v61/wanna_run_tiktok_ads_but_afraid_of_being_banned/ | https://www.reddit.com/r/dropshipping/comments/1vl1qmm/canada_dropshipping/ | https://www.reddit.com/r/dropshipping/comments/1vkw0yk/networking_with_people_who_have_huge_egos/ | https://www.reddit.com/r/dropshipping/comments/1vkzkpk/mi_primera_tienda/ | https://www.reddit.com/r/dropshipping/comments/1vky5l1/random_probing_questions/ | https://www.reddit.com/r/dropshipping/comments/1vkwd8t/i_would_like_to_start_with_ads_what_tips_would/ | https://worldtrainmap.com/ | https://thewalrus.ca/google-search-is-dying/ | https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content | https://arachnoid.com/lutusp/sailbook.html | https://cactuscompute.com/needle": {
     "slug": "tygodniowy-digest-ai-dropshipping-i-technologia",
     "title": "11.08.2026, 09:08",
     "date": "2026-08-11T07:08:12.505Z"
-  },
-  "https://techcrunch.com/2026/08/10/openai-reportedly-completed-a-7-billion-employee-tender-offer/": {
-    "slug": "digest",
-    "title": "OpenAI reportedly completed a $7 billion employee tender offer",
-    "date": "2026-08-11T07:08:13.843Z"
-  },
-  "https://techcrunch.com/2026/08/10/as-ai-led-attacks-multiply-openai-launches-a-new-cyber-model/": {
-    "slug": "digest",
-    "title": "As AI-led attacks multiply, OpenAI launches a new cyber model",
-    "date": "2026-08-11T07:08:13.845Z"
-  },
-  "https://techcrunch.com/2026/08/10/mark-zuckerbergs-ai-manifesto-is-exactly-why-people-dont-like-ai/": {
-    "slug": "digest",
-    "title": "Mark Zuckerberg’s AI manifesto is exactly why people don’t like AI",
-    "date": "2026-08-11T07:08:13.848Z"
-  },
-  "https://techcrunch.com/2026/08/10/tech-industry-is-buzzing-after-a-claude-agent-hacked-into-a-gym/": {
-    "slug": "digest",
-    "title": "Tech industry is buzzing after a Claude agent hacked into a gym",
-    "date": "2026-08-11T07:08:13.851Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vl0vi5/5567_today_i_talk_about_ads_a_lot_but_if_you_just/": {
-    "slug": "digest",
-    "title": "$5,567 today I talk about ads a lot but if you just started dropshipping this is what you actually need to hear first",
-    "date": "2026-08-11T07:08:13.853Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkui4o/when_did_you_decide_it_was_time_for_a_private/": {
-    "slug": "digest",
-    "title": "When did you decide it was time for a private supplier?",
-    "date": "2026-08-11T07:08:13.855Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vl6un3/0_knowledge_and_wants_to_start/": {
-    "slug": "digest",
-    "title": "0 knowledge and wants to start",
-    "date": "2026-08-11T07:08:13.859Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vla5vs/i_own_150_olive_trees_in_montenegro_looking_for/": {
-    "slug": "digest",
-    "title": "I own 150+ olive trees in Montenegro — looking for advice on selling the olive oil internationally",
-    "date": "2026-08-11T07:08:13.861Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vl8rkg/saudi_dropshippers_how_do_you_find_a_profitable/": {
-    "slug": "digest",
-    "title": "Saudi Dropshippers: How do you find a profitable niche in KSA? 🇸🇦",
-    "date": "2026-08-11T07:08:13.864Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vl8q8g/the_quality_of_suppliers_from_sea_vs_china_which/": {
-    "slug": "digest",
-    "title": "The quality of suppliers from SEA vs China, which one to choose?",
-    "date": "2026-08-11T07:08:13.866Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkx9bp/common_reasons_shopify_dropshipping_stores_get/": {
-    "slug": "digest",
-    "title": "Common reasons Shopify dropshipping stores get Google Merchant Center misrepresentation suspensions",
-    "date": "2026-08-11T07:08:13.869Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkzeq5/selling_amazing_theme_because_i_moved_to_custom/": {
-    "slug": "digest",
-    "title": "selling amazing theme because i moved to custom .liquid",
-    "date": "2026-08-11T07:08:13.871Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vl1v61/wanna_run_tiktok_ads_but_afraid_of_being_banned/": {
-    "slug": "digest",
-    "title": "Wanna run TikTok ads but afraid of being banned",
-    "date": "2026-08-11T07:08:13.873Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vl1qmm/canada_dropshipping/": {
-    "slug": "digest",
-    "title": "Canada Dropshipping",
-    "date": "2026-08-11T07:08:13.876Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkw0yk/networking_with_people_who_have_huge_egos/": {
-    "slug": "digest",
-    "title": "Networking with people who have huge egos",
-    "date": "2026-08-11T07:08:13.878Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkzkpk/mi_primera_tienda/": {
-    "slug": "digest",
-    "title": "Mi primera tienda",
-    "date": "2026-08-11T07:08:13.880Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vky5l1/random_probing_questions/": {
-    "slug": "digest",
-    "title": "Random probing questions",
-    "date": "2026-08-11T07:08:13.882Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vkwd8t/i_would_like_to_start_with_ads_what_tips_would/": {
-    "slug": "digest",
-    "title": "I would like to start with ads. What tips would you give to a person that is starting start?",
-    "date": "2026-08-11T07:08:13.884Z"
-  },
-  "https://worldtrainmap.com/": {
-    "slug": "digest",
-    "title": "World Train Map – 1247 train routes around the world",
-    "date": "2026-08-11T07:08:13.886Z"
-  },
-  "https://thewalrus.ca/google-search-is-dying/": {
-    "slug": "digest",
-    "title": "As AI eats the web, the internet’s collective memory is disappearing",
-    "date": "2026-08-11T07:08:13.888Z"
-  },
-  "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content": {
-    "slug": "digest",
-    "title": "How Claude marks AI-generated content",
-    "date": "2026-08-11T07:08:13.891Z"
-  },
-  "https://arachnoid.com/lutusp/sailbook.html": {
-    "slug": "digest",
-    "title": "Confessions of a Long-Distance Sailor",
-    "date": "2026-08-11T07:08:13.893Z"
-  },
-  "https://cactuscompute.com/needle": {
-    "slug": "digest",
-    "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
-    "date": "2026-08-11T07:08:13.895Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vlbvcl/just_wanna_drop_this_here_because_im_proud_of/ | https://www.reddit.com/r/dropshipping/comments/1vlaohd/looking_for_a_few_people_to_help_me_bootstrap/": {
     "slug": "m-ody-sukcesor-i-rewolucyjna-platforma-e-commerce-digest-tyg",
     "title": "11.08.2026, 11:07",
     "date": "2026-08-11T09:07:03.086Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vlbvcl/just_wanna_drop_this_here_because_im_proud_of/": {
-    "slug": "digest",
-    "title": "Just wanna drop this here because I’m proud of myself.",
-    "date": "2026-08-11T09:07:05.503Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vlaohd/looking_for_a_few_people_to_help_me_bootstrap/": {
-    "slug": "digest",
-    "title": "Looking for a few people to help me bootstrap Musters",
-    "date": "2026-08-11T09:07:05.510Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vld81j/7_shopify_technical_issues_that_can_create_google/ | https://www.reddit.com/r/dropshipping/comments/1vld77g/bad_comment_on_instagram_pls_help/ | https://doi.org/10.1016/j.watres.2026.125866": {
     "slug": "tygodniowy-digest-technologie-e-commerce-i-wp-yw-ai",
     "title": "11.08.2026, 12:08",
     "date": "2026-08-11T10:08:26.946Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vld81j/7_shopify_technical_issues_that_can_create_google/": {
-    "slug": "digest",
-    "title": "7 Shopify Technical Issues That Can Create Google Merchant Center Problems",
-    "date": "2026-08-11T10:08:28.648Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vld77g/bad_comment_on_instagram_pls_help/": {
-    "slug": "digest",
-    "title": "Bad comment on Instagram, pls Help",
-    "date": "2026-08-11T10:08:28.654Z"
-  },
-  "https://doi.org/10.1016/j.watres.2026.125866": {
-    "slug": "digest",
-    "title": "The Water Footprint of AI",
-    "date": "2026-08-11T10:08:28.661Z"
   },
   "https://techcrunch.com/2026/08/11/spotify-will-label-ai-persona-profiles-and-exclude-their-music-from-recommendations/ | https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/ | https://news.google.com/rss/articles/CBMiqwFBVV95cUxORG42VHhiRlpBeTRCdFY1aC1tXy14Z0VmQTZIR2tQbjNlQzB4OE8tZEkwcnlfZWh0a0NrLUVnWEpvT1JGd3llTlJPa1lnNTQxX1plbjloX044NzkxcDBULWRqM2xRZGhWTEpCYkNmTHd4LTQ3akUyUTFXLVhRM1BTNHVDbnppamt6eklpbXNEdUtLeGlUcnQxVk83dnBLZVYxVGs3dnE2UC1JUW8?oc=5 | https://news.google.com/rss/articles/CBMirgFBVV95cUxQMzYyRV9taVRET053QTE3MWg4Qmw4dEJRMFZjOXJ0MWx4V2hhd1F3VkphU3hXX1hMTWlPdzNxYnkzYVlySllvVkZMUGtwaWYtSThMU2dVaC1nWXpaWnJZZlNqR1RRQ3JaQXJMRERkQmEwOFJ6dVZuTTdvWkI1WUdPb1pnSUF2dVN2dHVjaXYwazVRMzAxZ2ZnSDFwdG9ZVHR4R2l0S21CcjZuUkJRZ0E?oc=5 | https://www.reddit.com/r/dropshipping/comments/1vlfhqv/117_orders_7834_in_sales_heres_what_the_numbers/ | https://www.reddit.com/r/dropshipping/comments/1vlgzcq/product_research/ | https://www.reddit.com/r/dropshipping/comments/1vlhed3/organic_or_paid_ads/ | https://www.reddit.com/r/dropshipping/comments/1vlgtha/how_to_increase_aov/ | https://www.reddit.com/r/dropshipping/comments/1vlfrou/removed_by_reddit/ | https://www.reddit.com/r/dropshipping/comments/1vle5fo/should_i_jump_straight_into_action_or_study_first/ | https://www.theaithinker.com/p/how-to-organize-claude-code-for-product": {
     "slug": "tygodniowy-digest-technologia-e-commerce-i-ai",
     "title": "11.08.2026, 15:48",
     "date": "2026-08-11T13:48:24.915Z"
   },
-  "https://techcrunch.com/2026/08/11/spotify-will-label-ai-persona-profiles-and-exclude-their-music-from-recommendations/": {
-    "slug": "digest",
-    "title": "Spotify will label ‘AI Persona’ profiles and exclude their music from recommendations",
-    "date": "2026-08-11T13:48:26.164Z"
-  },
-  "https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/": {
-    "slug": "digest",
-    "title": "Anthropic says it will watermark text generated by its AI models",
-    "date": "2026-08-11T13:48:26.167Z"
-  },
-  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORG42VHhiRlpBeTRCdFY1aC1tXy14Z0VmQTZIR2tQbjNlQzB4OE8tZEkwcnlfZWh0a0NrLUVnWEpvT1JGd3llTlJPa1lnNTQxX1plbjloX044NzkxcDBULWRqM2xRZGhWTEpCYkNmTHd4LTQ3akUyUTFXLVhRM1BTNHVDbnppamt6eklpbXNEdUtLeGlUcnQxVk83dnBLZVYxVGs3dnE2UC1JUW8?oc=5": {
-    "slug": "digest",
-    "title": "2025 Social Commerce Trends - DHL",
-    "date": "2026-08-11T13:48:26.170Z"
-  },
-  "https://news.google.com/rss/articles/CBMirgFBVV95cUxQMzYyRV9taVRET053QTE3MWg4Qmw4dEJRMFZjOXJ0MWx4V2hhd1F3VkphU3hXX1hMTWlPdzNxYnkzYVlySllvVkZMUGtwaWYtSThMU2dVaC1nWXpaWnJZZlNqR1RRQ3JaQXJMRERkQmEwOFJ6dVZuTTdvWkI1WUdPb1pnSUF2dVN2dHVjaXYwazVRMzAxZ2ZnSDFwdG9ZVHR4R2l0S21CcjZuUkJRZ0E?oc=5": {
-    "slug": "digest",
-    "title": "7 E-Commerce Trends That Will Transform Shopping In 2026 - Forbes",
-    "date": "2026-08-11T13:48:26.173Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vlfhqv/117_orders_7834_in_sales_heres_what_the_numbers/": {
-    "slug": "digest",
-    "title": "117 orders --> $7,834 in sales. Here's what the numbers don't tell you.",
-    "date": "2026-08-11T13:48:26.178Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vlgzcq/product_research/": {
-    "slug": "digest",
-    "title": "Product research?",
-    "date": "2026-08-11T13:48:26.180Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vlhed3/organic_or_paid_ads/": {
-    "slug": "digest",
-    "title": "Organic or paid ads",
-    "date": "2026-08-11T13:48:26.183Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vlgtha/how_to_increase_aov/": {
-    "slug": "digest",
-    "title": "How to increase AOV",
-    "date": "2026-08-11T13:48:26.186Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vlfrou/removed_by_reddit/": {
-    "slug": "digest",
-    "title": "[ Removed by Reddit ]",
-    "date": "2026-08-11T13:48:26.189Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vle5fo/should_i_jump_straight_into_action_or_study_first/": {
-    "slug": "digest",
-    "title": "Should I jump straight into action or study first? Need advice, resources & a roadmap for a complete beginner",
-    "date": "2026-08-11T13:48:26.193Z"
-  },
-  "https://www.theaithinker.com/p/how-to-organize-claude-code-for-product": {
-    "slug": "digest",
-    "title": "How to organize Claude Code for product work",
-    "date": "2026-08-11T13:48:26.197Z"
-  },
   "https://www.reddit.com/r/dropshipping/comments/1vlipm8/running_native_ads/ | https://www.reddit.com/r/dropshipping/comments/1vlima8/shipping_cost_normal/ | https://aimagazine.com/news/why-did-openai-head-of-ethics-chloe-bakalar-leave": {
     "slug": "tygodniowy-digest-reklamy-natywne-koszty-przesy-ek-i-wyst-pi",
     "title": "11.08.2026, 16:37",
     "date": "2026-08-11T14:37:33.015Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vlipm8/running_native_ads/": {
-    "slug": "digest",
-    "title": "Running Native ads",
-    "date": "2026-08-11T14:37:34.650Z"
-  },
-  "https://www.reddit.com/r/dropshipping/comments/1vlima8/shipping_cost_normal/": {
-    "slug": "digest",
-    "title": "Shipping cost normal?",
-    "date": "2026-08-11T14:37:34.652Z"
-  },
-  "https://aimagazine.com/news/why-did-openai-head-of-ethics-chloe-bakalar-leave": {
-    "slug": "digest",
-    "title": "Why Did OpenAI's Head of Ethics Chloé Bakalar Leave?",
-    "date": "2026-08-11T14:37:34.655Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vljkj1/too_long_to_upload_a_video/ | https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md | https://www.trykeet.com/": {
     "slug": "tygodniowy-digest-technologia-i-innowacje",
     "title": "11.08.2026, 17:37",
     "date": "2026-08-11T15:37:42.915Z"
   },
-  "https://www.reddit.com/r/dropshipping/comments/1vljkj1/too_long_to_upload_a_video/": {
-    "slug": "digest",
-    "title": "Too long to upload a video",
-    "date": "2026-08-11T15:37:44.315Z"
+  "https://techcrunch.com/2026/08/11/spotify-will-label-ai-persona-profiles-and-exclude-their-music-from-recommendations/": {
+    "slug": "jak-nawi-za-sukcesow-kolaboracj-artystyczno-ai-na-spotify-po",
+    "title": "Spotify will label ‘AI Persona’ profiles and exclude their music from recommendations",
+    "date": "2026-08-11T16:07:49.316Z"
   },
-  "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md": {
-    "slug": "digest",
-    "title": "Apple Silicon and macOS VMs: 11–16× Faster LLM Inference with Llama.cpp",
-    "date": "2026-08-11T15:37:44.320Z"
+  "https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/": {
+    "slug": "woda-w-tek-cie-jak-anthropic-markuje-tre-ci-generowane-przez",
+    "title": "Anthropic says it will watermark text generated by its AI models",
+    "date": "2026-08-11T16:09:57.480Z"
   },
-  "https://www.trykeet.com/": {
-    "slug": "digest",
-    "title": "Launch HN: Keet (YC S24) – An app to create video courses on anything",
-    "date": "2026-08-11T15:37:44.323Z"
+  "https://techcrunch.com/2026/08/10/openai-reportedly-completed-a-7-billion-employee-tender-offer/": {
+    "slug": "e-commerce-i-ai-najnowsze-trendy-i-kontrowersje",
+    "title": "OpenAI reportedly completed a $7 billion employee tender offer",
+    "date": "2026-08-11T16:11:09.392Z"
+  },
+  "https://techcrunch.com/2026/08/10/as-ai-led-attacks-multiply-openai-launches-a-new-cyber-model/": {
+    "slug": "e-commerce-i-ai-najnowsze-trendy-i-kontrowersje",
+    "title": "As AI-led attacks multiply, OpenAI launches a new cyber model",
+    "date": "2026-08-11T16:11:09.395Z"
+  },
+  "https://techcrunch.com/2026/08/10/mark-zuckerbergs-ai-manifesto-is-exactly-why-people-dont-like-ai/": {
+    "slug": "e-commerce-i-ai-najnowsze-trendy-i-kontrowersje",
+    "title": "Mark Zuckerberg’s AI manifesto is exactly why people don’t like AI",
+    "date": "2026-08-11T16:11:09.397Z"
+  },
+  "https://techcrunch.com/2026/08/10/tech-industry-is-buzzing-after-a-claude-agent-hacked-into-a-gym/": {
+    "slug": "e-commerce-i-ai-najnowsze-trendy-i-kontrowersje",
+    "title": "Tech industry is buzzing after a Claude agent hacked into a gym",
+    "date": "2026-08-11T16:11:09.398Z"
+  },
+  "https://techcrunch.com/2026/08/10/metas-new-glimmer-ai-model-offers-a-hint-at-zuckerbergs-personal-intelligence-vision/": {
+    "slug": "e-commerce-i-ai-najnowsze-trendy-i-kontrowersje",
+    "title": "Meta’s new Glimmer AI model offers a hint at Zuckerberg’s personal intelligence vision",
+    "date": "2026-08-11T16:11:09.400Z"
+  },
+  "https://techcrunch.com/2026/08/10/discovered-materials-is-playing-ai-whack-a-mole-to-hunt-cooler-chips/": {
+    "slug": "e-commerce-i-ai-najnowsze-trendy-i-kontrowersje",
+    "title": "Discovered Materials is playing AI whack-a-mole to hunt cooler chips",
+    "date": "2026-08-11T16:11:09.401Z"
+  },
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORG42VHhiRlpBeTRCdFY1aC1tXy14Z0VmQTZIR2tQbjNlQzB4OE8tZEkwcnlfZWh0a0NrLUVnWEpvT1JGd3llTlJPa1lnNTQxX1plbjloX044NzkxcDBULWRqM2xRZGhWTEpCYkNmTHd4LTQ3akUyUTFXLVhRM1BTNHVDbnppamt6eklpbXNEdUtLeGlUcnQxVk83dnBLZVYxVGs3dnE2UC1JUW8?oc=5": {
+    "slug": "e-commerce-i-ai-najnowsze-trendy-i-kontrowersje",
+    "title": "2025 Social Commerce Trends - DHL",
+    "date": "2026-08-11T16:11:09.403Z"
+  },
+  "https://news.google.com/rss/articles/CBMizAFBVV95cUxOcHVfcGl1SlhhalJaVWhueTh0NU9xY1hPejNla0hWYlNMX1EzQ0prZldkWDViMkpYb1hBRTdKM3JBLUF0YjlVZXdFbzVucDh4dVk1ZG1QREQ3SDFDWVR6cEc5Sk5uSEdDYWxzdFhXc043RkhYS2xmTGprZnlELUF5UzM4U1lXY0ZyUThkX1FDQ21jS2pjQnkta1VqalcxZXp5SGgtWFhpQ2lmY3BmSWd6T1VPU0JfRlBKc1lTLTZjLXpXaElILUphQnhWMG3SAdIBQVVfeXFMTnFzamh0Z1Y5ZUwwTnZfaENKQVBmbDExaVRaTkg5dWhQRWJudXdHVmFNYUV1QnNrdWI2c1dJNE1zYVZQaHR6QUNMdUpHVFFLeURjalNjdFdpZFF6QTBiNzZJMFIzNmNoNDRBN2UwbWpqQ25GVndDakh3aTNWazltenZHTXBva0FRWEZaR3UtU1FhWS1qNlAxSnROQTFiY3JraG84MUNJTGNoT1NDRldyblFOUVlLVXFOdjIwQmQ1U0lvOU0yVHkzajlTYWdmbzZqeDl3?oc=5": {
+    "slug": "e-commerce-i-ai-najnowsze-trendy-i-kontrowersje",
+    "title": "Ecommerce Trends: What online shoppers said will matter in 2026 holiday survey results - Digital Commerce 360",
+    "date": "2026-08-11T16:11:09.404Z"
+  },
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxQMzYyRV9taVRET053QTE3MWg4Qmw4dEJRMFZjOXJ0MWx4V2hhd1F3VkphU3hXX1hMTWlPdzNxYnkzYVlySllvVkZMUGtwaWYtSThMU2dVaC1nWXpaWnJZZlNqR1RRQ3JaQXJMRERkQmEwOFJ6dVZuTTdvWkI1WUdPb1pnSUF2dVN2dHVjaXYwazVRMzAxZ2ZnSDFwdG9ZVHR4R2l0S21CcjZuUkJRZ0E?oc=5": {
+    "slug": "e-commerce-i-ai-najnowsze-trendy-i-kontrowersje",
+    "title": "7 E-Commerce Trends That Will Transform Shopping In 2026 - Forbes",
+    "date": "2026-08-11T16:11:09.407Z"
   }
 }
