@@ -143,9 +143,15 @@ function spawnRun(run) {
   const per = body.persona || s.persona;
   const to = body.tone || s.tone;
   const lng = body.lang || s.lang;
-  if (fmt && fmt !== "article") { args.push("--format", fmt); }
-  if (per && per !== "journalist") { args.push("--persona", per); }
-  if (to && to !== "casual") { args.push("--tone", to); }
+  if (s.agent === false || body.format) {
+    if (fmt && fmt !== "article") { args.push("--format", fmt); }
+  }
+  if (s.agent === false || body.persona) {
+    if (per && per !== "journalist") { args.push("--persona", per); }
+  }
+  if (s.agent === false || body.tone) {
+    if (to && to !== "casual") { args.push("--tone", to); }
+  }
   if (lng && lng !== "pl") { args.push("--lang", lng); }
   if (s.queries > 0) { args.push("--queries", String(s.queries)); }
 

@@ -4,7 +4,7 @@
     "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
     "mode": "generate",
     "filter": null,
-    "lastGuid": "https://techcrunch.com/?p=3150297"
+    "lastGuid": "https://techcrunch.com/?p=3151435"
   },
   {
     "name": "Google News: dropshipping PL",
@@ -25,6 +25,22 @@
     "url": "https://www.reddit.com/r/dropshipping/.rss",
     "mode": "generate",
     "filter": null,
+    "digest": false,
+    "minLen": 300,
+    "block": [
+      "looking for",
+      "need a",
+      "help me",
+      "is it worth",
+      "how much",
+      "for beginners",
+      "where can i",
+      "does anyone",
+      "share your",
+      "do you think",
+      "recommend me",
+      "how to start"
+    ],
     "lastGuid": "https://www.reddit.com/r/dropshipping/comments/1nzytqk/new_rules_for_dropshipping_expert_verification/"
   },
   {
@@ -32,6 +48,22 @@
     "url": "https://www.reddit.com/r/ecommerce/.rss",
     "mode": "generate",
     "filter": null,
+    "digest": false,
+    "minLen": 300,
+    "block": [
+      "looking for",
+      "need a",
+      "help me",
+      "is it worth",
+      "how much",
+      "for beginners",
+      "where can i",
+      "does anyone",
+      "share your",
+      "do you think",
+      "recommend me",
+      "how to start"
+    ],
     "lastGuid": null
   },
   {
@@ -47,6 +79,6 @@
       "funding",
       "launch"
     ],
-    "lastGuid": "https://news.ycombinator.com/item?id=49207236"
+    "lastGuid": "https://news.ycombinator.com/item?id=49259611"
   }
 ]

@@ -4,6 +4,7 @@ import { execSync } from "child_process";
 import { fileURLToPath } from "url";
 import Parser from "rss-parser";
 import { C, ts, stepReset, step, log, loadGen, isGen, markGen, DEFAULT_MODEL, chatUrl, chatHeaders, providerStatus, parseFlag, FORMATS, PERSONAS, TONES, LANGS, buildPrompt, DEF_FORMAT, DEF_PERSONA, DEF_TONE, DEF_LANG, validate, streamResponse, buildHtml, gitPush, googleIndexingPing, generateIndex, generateSitemap, generateFeed, pushArticleToFirebase, NB_SOURCES_ID, NB_NEWS_ID, setJsonMode, isJsonMode, emitJSON } from "./lib/shared.mjs";
+import { pickPath } from "./lib/agent.mjs";
 import { postToLinkedIn } from "./social.mjs";
 import { generateNewsletter } from "./newsletter.mjs";
 
@@ -22,25 +23,61 @@ function nbPushArticle(url, title) {
 }
 
 const FEEDS_FILE = "feeds.json";
-const mi = process.argv.indexOf("--model"); const MODEL = (mi >= 0 && mi + 1 < process.argv.length) ? process.argv[mi + 1] : DEFAULT_MODEL;
+const SETTINGS_FILE = "settings.json";
+const RUN_STATE_FILE = "run-state.json";
+const PENDING_FILE = "digest-pending.json";
+
+const settings = (() => { try { return JSON.parse(readFileSync(SETTINGS_FILE, "utf8")); } catch { return {}; } })();
+
+function dayKey() { return new Date().toLocaleDateString("en-CA"); }
+function loadRunState() { try { return JSON.parse(readFileSync(RUN_STATE_FILE, "utf8")); } catch { return {}; } }
+function saveRunState(s) { writeFileSync(RUN_STATE_FILE, JSON.stringify(s, null, 2)); }
+function loadPending() { try { return JSON.parse(readFileSync(PENDING_FILE, "utf8")); } catch { return []; } }
+function savePending(list) { writeFileSync(PENDING_FILE, JSON.stringify(list, null, 2)); }
+
+const mi = process.argv.indexOf("--model"); const MODEL = (mi >= 0 && mi + 1 < process.argv.length) ? process.argv[mi + 1] : (settings.model || DEFAULT_MODEL);
 const MAX_ITEMS_PER_FEED = 5;
+const MAX_DIGEST_ITEMS = 15;
 const verb = process.argv.includes("--verbose") || process.argv.includes("-v");
 const flagReview = process.argv.includes("--review");
 const flagNonInteractive = process.argv.includes("--non-interactive");
 const flagPush = process.argv.includes("--push");
 const flagDigest = process.argv.includes("--digest");
-const queryCount = (() => { const i = process.argv.indexOf("--queries"); return (i >= 0 && i + 1 < process.argv.length) ? parseInt(process.argv[i + 1], 10) || 0 : 0; })();
+const queryCount = (() => { const i = process.argv.indexOf("--queries"); return (i >= 0 && i + 1 < process.argv.length) ? parseInt(process.argv[i + 1], 10) || 0 : (settings.queries || 0); })();
 const flagNewsletter = process.argv.includes("--newsletter");
+
+const digestMin = settings._digestMin || 3;
+const digestEveryMs = (settings._digestEveryHours || 12) * 3600e3;
+const dailyBudget = settings._dailyBudget || 8;
+const singlesPerRun = settings._singlesPerRun || 2;
 
 const optFormat  = parseFlag(process.argv, "--format", FORMATS, DEF_FORMAT);
 const optPersona = parseFlag(process.argv, "--persona", PERSONAS, DEF_PERSONA);
 const optTone    = parseFlag(process.argv, "--tone", TONES, DEF_TONE);
 const optLang    = parseFlag(process.argv, "--lang", LANGS, DEF_LANG);
 
+const hasFmt  = process.argv.includes("--format");
+const hasPer  = process.argv.includes("--persona");
+const hasTone = process.argv.includes("--tone");
+const hasLang = process.argv.includes("--lang");
+const agentOn = !process.argv.includes("--agent") && settings.agent !== false;
+
+function resolvePath() {
+  if (!agentOn) {
+    return { format: optFormat, persona: optPersona, tone: optTone, lang: optLang, angle: null, temperature: 0.3 };
+  }
+  return pickPath({
+    format: hasFmt ? optFormat : null,
+    persona: hasPer ? optPersona : null,
+    tone: hasTone ? optTone : null,
+    lang: hasLang ? optLang : (settings.lang || null),
+  });
+}
+
 // --- generate single ---
-async function generate(itemTitle, snippet, attempt = 0) {
-  const bp = buildPrompt({ format: optFormat, persona: optPersona, tone: optTone, lang: optLang, rssTitle: itemTitle, rssSnippet: snippet });
-  const body = { model: MODEL, messages: [{ role: "system", content: bp.system }, { role: "user", content: bp.user }], temperature: 0.3, max_tokens: 8192, stream: true, response_format: { type: "json_object" } };
+async function generate(itemTitle, snippet, attempt = 0, path = resolvePath()) {
+  const bp = buildPrompt({ format: path.format, persona: path.persona, tone: path.tone, lang: path.lang, angle: path.angle, rssTitle: itemTitle, rssSnippet: snippet });
+  const body = { model: MODEL, messages: [{ role: "system", content: bp.system }, { role: "user", content: bp.user }], temperature: path.temperature, max_tokens: 8192, stream: true, response_format: { type: "json_object" } };
   if (attempt > 0) console.log(`    ${C.ylw}RETRY ${attempt + 1}/2${C.rst}`);
   const t0 = Date.now();
   const res = await fetch(chatUrl(), { method: "POST", headers: chatHeaders(), body: JSON.stringify(body) });
@@ -51,17 +88,18 @@ async function generate(itemTitle, snippet, attempt = 0) {
   try { data = JSON.parse(raw); } catch { try { data = JSON.parse(raw.replace(/```json\s*/gi, "").replace(/```\s*/g, "").trim()); } catch { data = null; } }
   if (!data) { console.log(`    ${C.ylw}→ JSON fail${C.rst}`); return { data: null, raw }; }
   console.log(`    → title: "${(data.title || "").slice(0, 50)}" | body: ${(data.body || "").length} zn`);
-  const v = validate(data, raw, LANGS[optLang].minWords);
+  const v = validate(data, raw, LANGS[path.lang].minWords);
   console.log(`    → Słowa: ${v.words} | H2: ${v.hasH2 ? "✅" : "❌"} | Czyt: ${v.readability}`);
-  if (!v.ok && attempt < 1) { console.log(`    ${C.ylw}→ ${v.issues.join(", ")} — retry${C.rst}`); return generate(itemTitle, snippet, attempt + 1); }
+  if (!v.ok && attempt < 1) { console.log(`    ${C.ylw}→ ${v.issues.join(", ")} — retry${C.rst}`); return generate(itemTitle, snippet, attempt + 1, path); }
   return { data, raw, valid: v.ok, issues: v.issues };
 }
 
 // --- generate digest ---
-async function generateDigest(items) {
+async function generateDigest(items, path = resolvePath(), attempt = 0) {
+  const guard = attempt > 0 ? "\n\nWAŻNE: nie dodawaj własnych sekcji. Liczba sekcji <h2> musi być DOKŁADNIE równa liczbie podanych newsów." : "";
   const digLabel = `${new Date().toLocaleDateString("pl-PL")}, ${new Date().toLocaleTimeString("pl-PL", {hour:"2-digit",minute:"2-digit"})}`;
-  const bp = buildPrompt({ format: "digest", persona: optPersona, tone: optTone, lang: optLang, rssTitle: digLabel, rssSnippet: items.map((it, i) => `${i + 1}. ${it.title}\n${it.snippet.slice(0, 500)}`).join("\n---\n") });
-  const body = { model: MODEL, messages: [{ role: "system", content: bp.system }, { role: "user", content: bp.user }], temperature: 0.3, max_tokens: 8192, stream: true, response_format: { type: "json_object" } };
+  const bp = buildPrompt({ format: "digest", persona: path.persona, tone: path.tone, lang: path.lang, angle: path.angle, rssTitle: digLabel, rssSnippet: items.map((it, i) => `${i + 1}. ${it.title}\n${it.snippet.slice(0, 500)}`).join("\n---\n") + guard });
+  const body = { model: MODEL, messages: [{ role: "system", content: bp.system }, { role: "user", content: bp.user }], temperature: path.temperature, max_tokens: 8192, stream: true, response_format: { type: "json_object" } };
   console.log(`    → Digest: ${items.length} wpisów, ${bp.user.length} zn prompta`);
 
   const t0 = Date.now();
@@ -74,12 +112,17 @@ async function generateDigest(items) {
   try { data = JSON.parse(raw); } catch { try { data = JSON.parse(raw.replace(/```json\s*/gi, "").replace(/```\s*/g, "").trim()); } catch { data = null; } }
   if (!data) { console.log(`    ${C.ylw}→ JSON fail${C.rst}`); return null; }
   console.log(`    → "${(data.title || "").slice(0, 50)}" | ${(data.body || "").length} zn`);
+  const ph = /TUTAJ POWINIEN|Brak newsa|placeholder|XXX|do uzupełnienia|not provided|to be filled/i.test(`${data.title || ""} ${data.body || ""}`);
+  if (ph && attempt < 1) { console.log(`    ${C.ylw}→ Wykryto placeholder — retry${C.rst}`); return generateDigest(items, path, attempt + 1); }
+  if (ph) { console.log(`    ${C.red}→ Wykryto placeholder — odrzucono${C.rst}`); return null; }
   return { data, raw };
 }
 
 // --- save article ---
-function saveArticle(gen, title, link) {
-  const extra = link ? { sourceLink: link, sourceLabel: title, format: optFormat } : { format: optFormat };
+function saveArticle(gen, title, link, sources, fmt) {
+  const extra = { format: fmt || optFormat };
+  if (link) { extra.sourceLink = link; extra.sourceLabel = title; }
+  if (sources && sources.length) extra.sources = sources;
   const { html, fname, body, slug, artTitle, pageUrl } = buildHtml(gen.data, gen.raw, title, MODEL, extra);
   if (!isJsonMode()) console.log(`  → ${slug} | ${body.length} zn`);
   if (!existsSync("articles")) mkdirSync("articles");
@@ -104,9 +147,27 @@ function logCompetitor(feed, item, itemTitle, itemLink) {
 
 // --- keyword filter ---
 function matchFilter(feed, title, snippet) {
-  if (!feed.filter || !feed.filter.length) return true;
   const txt = (title + " " + (snippet || "")).toLowerCase();
+  if (feed.block?.length && feed.block.some(kw => txt.includes(kw.toLowerCase()))) return false;
+  if (feed.minLen && (snippet || "").length < feed.minLen) return false;
+  if (!feed.filter || !feed.filter.length) return true;
   return feed.filter.some(kw => txt.includes(kw.toLowerCase()));
+}
+
+// --- feed parse with retry/backoff (429/timeout) ---
+async function parseFeed(parser, url) {
+  let lastErr;
+  for (let a = 0; a < 3; a++) {
+    try { return await parser.parseURL(url); }
+    catch (e) {
+      lastErr = e;
+      if (a >= 2) break;
+      const wait = /429/.test(e.message || "") ? 8000 : (a === 0 ? 1500 : 4000);
+      if (!isJsonMode()) console.log(`  ${C.dim}→ parse retry (${a + 1}/3): ${(e.message || "").slice(0, 60)}...${C.rst}`);
+      await new Promise(r => setTimeout(r, wait));
+    }
+  }
+  throw lastErr;
 }
 
 // --- warmup (connectivity check) ---
@@ -131,10 +192,17 @@ async function main() {
     console.log(`║     RSS → AI → Blog v3${flagDigest ? " DIGEST" : ""}                  ║`);
     console.log("╚══════════════════════════════════════════╝");
     console.log(`  Tryb: ${verb ? "verbose" : "normalny"}${flagReview ? " + review" : " (auto)"}${flagDigest ? " + digest" : ""}`);
-    console.log(`  Model: ${MODEL} | Format: ${FORMATS[optFormat].label} | ${LANGS[optLang].label}`);
+    console.log(`  Model: ${MODEL} | Format: ${FORMATS[optFormat].label} | ${LANGS[optLang].label} | Agent: ${agentOn ? "Wł. (różnorodność)" : "Wył."}`);
+    console.log(`  Budżet dzienny: ${dailyBudget} artykułów | Digest: min ${digestMin} wpisów, co ${Math.round(digestEveryMs / 3600e3)}h`);
     console.log(`  Provider: ${providerStatus()}\n`);
   }
-  if (jsonMode) emitJSON("meta", { format: optFormat, persona: optPersona, tone: optTone, lang: optLang, model: MODEL, provider: "nvidia", mode: flagDigest ? "digest" : "watch", feeds: null });
+  if (jsonMode) emitJSON("meta", { format: optFormat, persona: optPersona, tone: optTone, lang: optLang, model: MODEL, provider: "nvidia", mode: flagDigest ? "digest" : "watch", agent: agentOn, budget: dailyBudget, feeds: null });
+
+  // dzienny budżet artykułów (bilans między przebiegami)
+  let rs = loadRunState();
+  if (rs.day !== dayKey()) rs = { day: dayKey(), count: 0, lastDigestAt: rs.lastDigestAt || 0 };
+  const remaining = Math.max(0, dailyBudget - (rs.count || 0));
+  const singleQueue = [];
 
   stepReset(99); step("Wczytywanie feedów", C.cyn, "rss_fetch");
   if (!existsSync(FEEDS_FILE)) { log("ERR", `Brak ${FEEDS_FILE}`, C.red); process.exit(1); }
@@ -176,7 +244,7 @@ async function main() {
     step(`[Feed ${fi + 1}/${feeds.length}] ${feed.name || feed.url}`, C.ylw, "feed_process");
 
     let parsed;
-    try { parsed = await parser.parseURL(feed.url); } catch (e) { log("ERR", `${e.message}`, C.red); continue; }
+    try { parsed = await parseFeed(parser, feed.url); } catch (e) { log("ERR", `${e.message}`, C.red); continue; }
     if (!jsonMode) console.log(`  → ${parsed.items.length} wpisów`);
     if (!parsed.items.length) continue;
 
@@ -232,11 +300,22 @@ async function main() {
       }
 
       if (flagDigest) {
-        digestItems.push({ title: itemTitle, snippet, link: itemLink });
-        console.log(`  ${C.dim}#${ii + 1}: ${itemTitle.slice(0, 70)} [digest]${C.rst}`);
+        if (singleQueue.length < singlesPerRun && totalGenerated < remaining) {
+          singleQueue.push({ title: itemTitle, snippet, link: itemLink });
+          if (verb) console.log(`  ${C.dim}→ "${itemTitle.slice(0, 60)}" [single queue]${C.rst}`);
+        } else if (feed.digest !== false && digestItems.length < MAX_DIGEST_ITEMS) {
+          digestItems.push({ title: itemTitle, snippet, link: itemLink });
+          console.log(`  ${C.dim}#${ii + 1}: ${itemTitle.slice(0, 70)} [digest]${C.rst}`);
+        } else if (feed.digest !== false && verb) {
+          console.log(`  ${C.dim}→ Limit wpisów digestu osiągnięty${C.rst}`);
+        }
         continue;
       }
 
+      if (totalGenerated >= remaining) {
+        if (verb) console.log(`  ${C.dim}→ Budżet dzienny wyczerpany — pomijam${C.rst}`);
+        continue;
+      }
       totalGenerated++;
       if (!jsonMode) {
         console.log(`\n  ── NOWY #${ii + 1}: ${itemTitle.slice(0, 80)} ──`);
@@ -279,28 +358,62 @@ async function main() {
     feed.lastGuid = resumeGuid || (markerIdx === -1 ? (parsed.items[startIdx]?.guid || feed.lastGuid) : feed.lastGuid);
   }
 
-  // --- digest mode: generate one roundup ---
-  if (flagDigest && digestItems.length > 0) {
-    if (digestItems.length <= 1) {
-      log("WARN", "Za mało wpisów do digestu — pomijam", C.ylw);
+  // --- digest mode: single articles from quality queue (up to budget) ---
+  if (flagDigest && singleQueue.length > 0) {
+    for (const sq of singleQueue) {
+      if (totalGenerated >= remaining) break;
+      if (!(await warmup())) { if (!jsonMode) console.log(`  ${C.red}NVIDIA API offline${C.rst}`); break; }
+      if (!jsonMode) console.log(`\n  ── [single] ${sq.title.slice(0, 80)} ──`);
+      let gen;
+      try { gen = await generate(sq.title, sq.snippet); }
+      catch (e) { log("ERR", `${e.message}`, C.red); digestItems.push({ title: sq.title, snippet: sq.snippet, link: sq.link }); continue; }
+      if (!gen.data) { digestItems.push({ title: sq.title, snippet: sq.snippet, link: sq.link }); continue; }
+      const sa = saveArticle(gen, sq.title, sq.link);
+      if (sa) {
+        totalGenerated++;
+        lastPageUrl = sa.pageUrl;
+        nbPushSource(sq.link, sq.title);
+        nbPushArticle(sq.link, sq.title);
+      }
+    }
+  }
+
+  // --- digest mode: generate one roundup (throttled, min items, pending buffer) ---
+  if (flagDigest) {
+    const pending = loadPending();
+    const merged = [...pending, ...digestItems].slice(-MAX_DIGEST_ITEMS);
+    const st = loadRunState();
+    const sinceLast = Date.now() - (st.lastDigestAt || 0);
+    if (merged.length < digestMin) {
+      savePending(merged);
+      log("WARN", `Za mało wpisów do digestu (${merged.length}/${digestMin}) — buforuję`, C.ylw);
+    } else if (remaining <= 0 || sinceLast < digestEveryMs) {
+      savePending(merged);
+      log("WARN", `Digest pominięty (${remaining <= 0 ? "dzienny budżet wyczerpany" : `ostatni digest ${Math.round((digestEveryMs - sinceLast) / 3600e3)}h temu`}) — buforuję ${merged.length} wpisów`, C.ylw);
     } else {
       step("Generowanie digestu", C.ylw, "generating");
-      if (!jsonMode) console.log(`  → ${digestItems.length} wpisów zebranych`);
-      if (!(await warmup())) { if (!jsonMode) console.log(`  ${C.red}NVIDIA API offline${C.rst}`); }
+      if (!jsonMode) console.log(`  → ${merged.length} wpisów zebranych`);
+      if (!(await warmup())) { if (!jsonMode) console.log(`  ${C.red}NVIDIA API offline${C.rst}`); savePending(merged); }
       else {
-        const dig = await generateDigest(digestItems);
+        const dig = await generateDigest(merged);
         if (dig && dig.data) {
           totalGenerated++;
-            const sources = digestItems.map(it => it.link).filter(Boolean).join(" | ");
+          const sources = merged.map(it => it.link).filter(Boolean);
           const digestLabel = `${new Date().toLocaleDateString("pl-PL")}, ${new Date().toLocaleTimeString("pl-PL", {hour:"2-digit",minute:"2-digit"})}`;
-          const sa = saveArticle(dig, digestLabel, sources);
-          if (sa) nbPushSource(sa.pageUrl, digestLabel);
-          if (sa) lastPageUrl = sa.pageUrl;
-          for (const it of digestItems) if (it.link) markGen(it.link, "digest", it.title);
+          const sa = saveArticle(dig, digestLabel, sources[0] || null, sources, "digest");
+          if (sa) { nbPushSource(sa.pageUrl, digestLabel); lastPageUrl = sa.pageUrl; }
+          for (const it of merged) if (it.link) markGen(it.link, sa.slug, it.title);
+          savePending([]);
+          const rs2 = loadRunState(); rs2.lastDigestAt = Date.now(); saveRunState(rs2);
+        } else {
+          savePending(merged);
         }
       }
     }
   }
+
+  // zapisz dzienny bilans budżetu
+  rs = loadRunState(); rs.day = dayKey(); rs.count = (rs.count || 0) + totalGenerated; saveRunState(rs);
 
   // zapisz lastGuids dynamicznych zapytań
   if (queryCount > 0 && existsSync("queries.json")) {
@@ -319,7 +432,7 @@ async function main() {
 
   if (totalGenerated > 0 && flagPush) {
     step("Git push", C.ylw, "publish");
-    if (gitPush("articles/sitemap.xml articles/feed.xml generated.json", `Auto: ${totalGenerated} artykuł(i) z RSS`)) {
+    if (gitPush("articles/ generated.json", `Auto: ${totalGenerated} artykuł(i) z RSS`)) {
       if (lastPageUrl) { googleIndexingPing(lastPageUrl); postToLinkedIn("KROKIET NEWS — Nowy artykuł", "", lastPageUrl); }
     }
     if (!jsonMode) console.log(`\n${C.cyn}🔗 https://pkrokosz.pl/${C.rst}\n`);

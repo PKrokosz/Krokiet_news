@@ -11,3 +11,8 @@ nb-auth-refresh.log
 
 # Debug artifacts from generate.mjs (raw JSON dumps on parse failure)
 articles/.raw-*.txt
+
+# Runtime state (regenerated on each run)
+variety-state.json
+run-state.json
+digest-pending.json

@@ -1541,6 +1541,7 @@
     const tiles = [
       { type:'config', icon:'', label:'Ustawienia auto-watch', desc: `${s.model || '—'} · ${FORMAT_OPTS[s.format] || s.format} · tryb${s._digest ? '' : ' standard'}` },
       { type:'toggle', icon:'🌙', label:'Tryb digest', desc: s._digest ? 'Wł.' : 'Wył.', toggled: !!s._digest, configKey:'_digest' },
+      { type:'toggle', icon:'🎲', label:'Różnorodność (agent)', desc: s.agent === false ? 'Wył.' : 'Wł.', toggled: s.agent !== false, configKey:'agent' },
       { type:'toggle', icon:'📬', label:'Newsletter', desc: s._newsletter ? 'Tak' : 'Nie', toggled: !!s._newsletter, configKey:'_newsletter' },
       { type:'toggle', icon:'📝', label:'Szczegółowe logi', desc: s._verbose ? 'Wł.' : 'Wył.', toggled: !!s._verbose, configKey:'_verbose' },
       { type:'action', icon:'▶', label:'Uruchom auto-watch', desc:'Monitoruj feedy i generuj', action:'auto-watch', askPush:true },

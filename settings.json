@@ -5,5 +5,10 @@
   "tone": "casual",
   "lang": "pl",
   "queries": 0,
-  "_digest": true
+  "_digest": true,
+  "agent": true,
+  "_digestMin": 3,
+  "_digestEveryHours": 12,
+  "_dailyBudget": 8,
+  "_singlesPerRun": 2
 }
