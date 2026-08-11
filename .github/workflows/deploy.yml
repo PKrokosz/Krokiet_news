@@ -1,7 +1,9 @@
 name: Deploy to GitHub Pages
+# WYŁĄCZONY — news jest wdrażany na pkrokosz.pl przez deploy-news.yml (FTP).
+# Trigger poniżej nigdy się nie odpala (push wymaga nieistniejącej gałęzi `disabled`).
 on:
   push:
-    branches: [master]
+    branches: [disabled]
   workflow_dispatch:
 
 jobs:

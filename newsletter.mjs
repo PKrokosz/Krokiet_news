@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 import { ARTICLE_CSS, esc } from "./lib/shared.mjs";
 
 const C = { rst: "\x1b[0m", red: "\x1b[31m", grn: "\x1b[32m", ylw: "\x1b[33m", dim: "\x1b[2m", cyn: "\x1b[36m" };
-const BASE = "https://pkrokosz.pl";
+const BASE = "https://pkrokosz.pl/news";
 const TERM_NAV = `<div class="term-nav">
   <a href="${BASE}/">home</a>
   <a href="${BASE}/articles/feed.xml">rss</a>
