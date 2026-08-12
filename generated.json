@@ -365,9 +365,9 @@
     "date": "2026-08-11T16:39:09.024Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vlfhqv/117_orders_7834_in_sales_heres_what_the_numbers/": {
-    "slug": "ponad-liczbami-co-naprawd-m-wi-dane-sprzeda-y-w-moim-sklepie",
+    "slug": "tendencje-i-wyzwania-technologiczne-podsumowanie-aktualno-ci",
     "title": "117 orders --> $7,834 in sales. Here's what the numbers don't tell you.",
-    "date": "2026-08-11T17:08:43.967Z"
+    "date": "2026-08-12T07:09:10.995Z"
   },
   "https://www.reddit.com/r/dropshipping/comments/1vlima8/shipping_cost_normal/": {
     "slug": "cena-dostawy-w-e-commerce-gdzie-jest-granica",
@@ -383,5 +383,55 @@
     "slug": "river-ai-rewolucyjne-agenty-osobiste-po-1-1-mld-usd-inwestyc",
     "title": "General Catalyst leads $1.1B round into 2-month-old River AI",
     "date": "2026-08-11T18:11:14.549Z"
+  },
+  "https://techcrunch.com/2026/08/11/openai-launches-chatgpt-desktop-app-for-linux/": {
+    "slug": "5-mit-w-vs-fakt-w-chatgpt-desktop-app-dla-linux-co-nale-y-wi",
+    "title": "OpenAI launches ChatGPT desktop app for Linux",
+    "date": "2026-08-12T07:07:26.095Z"
+  },
+  "https://dissentmagazine.org/online_articles/spacex-ipo-elon-musk-trillionaire/": {
+    "slug": "tendencje-i-wyzwania-technologiczne-podsumowanie-aktualno-ci",
+    "title": "The SpaceX Sham",
+    "date": "2026-08-12T07:09:10.998Z"
+  },
+  "https://guessingheadlights.com/yall-failed-me-woman-pulled-over-at-gunpoint-twice-after-flock-camera-glitch/": {
+    "slug": "tendencje-i-wyzwania-technologiczne-podsumowanie-aktualno-ci",
+    "title": "Woman Pulled over at Gunpoint Twice After Flock Camera Glitch",
+    "date": "2026-08-12T07:09:11.005Z"
+  },
+  "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/": {
+    "slug": "tendencje-i-wyzwania-technologiczne-podsumowanie-aktualno-ci",
+    "title": "Go is an ideal language for AI-assisted software engineering",
+    "date": "2026-08-12T07:09:11.015Z"
+  },
+  "https://www.openssh.org/releasenotes.html#10.5": {
+    "slug": "tendencje-i-wyzwania-technologiczne-podsumowanie-aktualno-ci",
+    "title": "OpenSSH 10.5 released, AI fixes now welcome",
+    "date": "2026-08-12T07:09:11.003Z"
+  },
+  "https://techcrunch.com/2026/08/11/googles-gemini-app-surges-to-one-billion-users/": {
+    "slug": "tendencje-i-wyzwania-technologiczne-podsumowanie-aktualno-ci",
+    "title": "Google’s Gemini app surges to 1 billion users",
+    "date": "2026-08-12T07:09:11.008Z"
+  },
+  "https://github.com/sgkdev/bad_garbage": {
+    "slug": "tendencje-i-wyzwania-technologiczne-podsumowanie-aktualno-ci",
+    "title": "CVE-2026-53361 AF_Unix GC vs. MSG_PEEK use-after-free container escape",
+    "date": "2026-08-12T07:09:11.010Z"
+  },
+  "https://www.404media.co/company-offering-100-human-written-never-ai-peer-review-is-entirely-ai/": {
+    "slug": "tendencje-i-wyzwania-technologiczne-podsumowanie-aktualno-ci",
+    "title": "Company Offering '100% Human-Written, Never AI' Medical Research Is 100% AI",
+    "date": "2026-08-12T07:09:11.012Z"
+  },
+  "https://x.ai/bot": {
+    "slug": "tendencje-i-wyzwania-technologiczne-podsumowanie-aktualno-ci",
+    "title": "Grok Bot",
+    "date": "2026-08-12T07:09:11.013Z"
+  },
+  "https://techcrunch.com/2026/08/11/accel-closes-oversubscribed-550m-india-fund-within-weeks-19-months-after-its-last/": {
+    "slug": "tendencje-i-wyzwania-technologiczne-podsumowanie-aktualno-ci",
+    "title": "Accel closes oversubscribed $550M India fund within weeks, 19 months after its last",
+    "date": "2026-08-12T07:09:11.016Z"
   }
 }
